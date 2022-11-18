@@ -1,10 +1,13 @@
-import { Layout } from "../../components/Layout/Layout";
+import { useState } from "react";
+import { Footer } from "../../components/Footer/Footer";
 
 export const HomePage: React.FC = () => {
+
   return (
-    <Layout>
-      HomePage
-    </Layout>
+    <>
+      <div>HomePage</div>
+      <Footer />
+    </>
   )
 }
 

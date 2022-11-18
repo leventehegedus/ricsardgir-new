@@ -1,10 +1,6 @@
-import { Layout } from "../Layout/Layout";
-
 export const Footer: React.FC = () => {
   return (
-    <Layout>
-      Footer
-    </Layout>
+    <span className="text-lg text-red-600">Footer</span>
   )
 }
 
