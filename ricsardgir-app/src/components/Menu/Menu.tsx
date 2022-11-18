@@ -48,16 +48,17 @@ const routes = [
 ]
 
 interface MenuProps {
-  isMenuOpen: boolean
+  isMenuOpen: boolean,
+  setMenuOpen: Function
 }
 
-export const Menu: React.FC<MenuProps> = ({isMenuOpen}) => {
+export const Menu: React.FC<MenuProps> = ({isMenuOpen, setMenuOpen}) => {
   return (
     <div className={"absolute top-20 w-full transition-all duration-500 ease-in-out"  + (isMenuOpen ? " left-0" : " left-[-100vw]")}>
       {
         routes.map((route, index) => {
           return (
-            <NavLink key={index} to={route.url} className="left-block h-12 flex justify-center items-center uppercase font-black text-black w-full hover:text-red-500">
+            <NavLink key={index} to={route.url} onClick={() => setMenuOpen(!isMenuOpen)} className="left-block h-12 flex justify-center items-center uppercase font-black text-black w-full hover:text-red-500">
               {route.title}
             </NavLink>
           )
