@@ -6,9 +6,7 @@ export interface IConcert {
   date: string,
   location: string,
   img: string,
-  size: string,
-  position: string,
-  height: number
+  size: string
 }
 
 export interface IConcertYear {
