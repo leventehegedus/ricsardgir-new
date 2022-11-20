@@ -1,6 +1,7 @@
 .item-original {
   grid-row: span 1;
 }
+
 .item-small {
   grid-row: span 2;
 }
@@ -22,4 +23,9 @@
 .item-rect-middle {
   grid-column: 2/4;
   grid-row-end: span 2;
+}
+
+.item-full {
+  grid-column: 1/5;
+  grid-row-end: span 3;
 }

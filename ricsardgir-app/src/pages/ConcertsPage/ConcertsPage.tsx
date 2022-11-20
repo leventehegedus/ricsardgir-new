@@ -1,6 +1,18 @@
+import { useState } from "react";
 import { ConcertYear } from "../../components/ConcertYear/ConcertYear";
 import { IConcertYear } from "../../types";
 import { concerts } from "../../data/concerts";
+
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+  },
+};
 
 const allConcerts: IConcertYear[] = [{
   year: 2007,
@@ -34,9 +46,9 @@ export const ConcertsPage: React.FC = () => {
 
   return (
     <div>
-      {allConcerts?.sort((a,b) => b.year - a.year).map((year, index) => {
+      {allConcerts ?.sort((a, b) => b.year - a.year).map((year, index) => {
         return (
-          <ConcertYear {...year} key={index} />
+          <ConcertYear {...year} key={index}/>
         )
       })}
     </div>

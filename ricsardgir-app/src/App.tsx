@@ -3,11 +3,14 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import { ErrorPage } from "./pages/ErrorPage/ErrorPage";
 import { ConcertsPage } from "./pages/ConcertsPage/ConcertsPage";
+import { Concert } from "./pages/Concert/Concert";
 import { HomePage } from "./pages/HomePage/HomePage";
 
 import { Menu } from "./components/Menu/Menu";
 import { TopBar } from "./components/TopBar/TopBar";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 function App() {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -20,6 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/buli" element={<ConcertsPage />} />
+          <Route path="/buli/:id" element={<Concert />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Router>
