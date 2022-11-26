@@ -13,11 +13,11 @@ export const Concert: React.FC<IConcert> = () => {
   useEffect(() => {
     let concert = concerts.filter(conc => conc.id === Number(id));
     setConcert(concert[0]);
-    window.scroll(0,0);
+    window.scroll(0, 0);
   }, [id])
 
   return (
-    <div className="max-w-5xl p-4 m-auto">
+    <div className="max-w-5xl p-4 pt-8 m-auto">
       {concert ?
         <>
           <div className="mb-4">

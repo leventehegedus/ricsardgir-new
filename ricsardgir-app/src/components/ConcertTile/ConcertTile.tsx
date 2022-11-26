@@ -1,6 +1,7 @@
 import { IConcert } from "../../types";
 import './style.css';
 import { Link } from "react-router-dom";
+import { animations } from "../../data/animations";
 
 const imgSizes: string[] = [
   "item-original",
@@ -21,14 +22,6 @@ const emptyImages: string[] = [
   "./concerts/empty_7.jpg"
 ]
 
-const animations: string[] = [
-  "zoom-in",
-  "zoom-in-down",
-  "flip-left",
-  "flip-right",
-  "flip-up",
-  "flip-down"
-]
 export const ConcertTile: React.FC<IConcert> = (props) => {
 
   const randomImg = Math.floor(Math.random() * imgSizes.length);

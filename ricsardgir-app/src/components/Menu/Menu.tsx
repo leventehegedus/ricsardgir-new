@@ -52,9 +52,9 @@ interface MenuProps {
   setMenuOpen: Function
 }
 
-export const Menu: React.FC<MenuProps> = ({isMenuOpen, setMenuOpen}) => {
+export const Menu: React.FC<MenuProps> = ({ isMenuOpen, setMenuOpen }) => {
   return (
-    <div className={"absolute top-20 w-full transition-all duration-500 ease-in-out"  + (isMenuOpen ? " left-0" : " left-[-100vw]")}>
+    <div className={"absolute top-20 w-full transition-all duration-500 ease-in-out z-40" + (isMenuOpen ? " left-0" : " left-[-100vw]")}>
       {
         routes.map((route, index) => {
           return (
