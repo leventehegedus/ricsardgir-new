@@ -24,6 +24,9 @@ function App() {
   return (
     <div className="App">
       <AnimatedBackground />
+      <div className="fixed w-full h-full left-0 top-0 right-0 bottom-0 font-black text-white text-9xl flex justify-center items-center uppercase z-index-minus-1">
+        <span>ricsárdgír</span>
+      </div>
       <Router>
         <TopBar isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
         <Menu isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />

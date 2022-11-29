@@ -30,7 +30,7 @@ export const ConcertTile: React.FC<IConcert> = (props) => {
 
   return (
     <>
-      <Link to={`/buli/${props.id}`} className={`flex flex-col border border-black overflow-hidden rounded-lg shadow-lg	${props.size ? props.size : imgSizes[randomImg]}`}
+      <Link to={`/buli/${props.id}`} className={`flex flex-col border border-black overflow-hidden shadow-lg	${props.size ? props.size : imgSizes[randomImg]}`}
         data-aos={animations[randomAnimation]}
       >
         <div className="h-full w-full overflow-hidden">

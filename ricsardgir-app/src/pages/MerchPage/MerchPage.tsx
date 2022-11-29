@@ -9,7 +9,7 @@ export const MerchPage: React.FC = () => {
         return (
           <div className="card row-span-2 col-span-2">
             <a href={merch.link}
-              className="card__face flex flex-col border border-black overflow-hidden rounded-lg shadow-lg"
+              className="card__face flex flex-col border border-black overflow-hidden shadow-lg"
               key={merch.id}
               data-aos={animations[Math.floor(Math.random() * animations.length)]}
               target="__blank">
@@ -24,7 +24,7 @@ export const MerchPage: React.FC = () => {
             </a>
             <div className="card__face card__face--back">
               <a href={merch.link}
-                className="flex h-full w-full flex-col border border-black overflow-hidden rounded-lg shadow-lg">
+                className="flex h-full w-full flex-col border border-black overflow-hidden shadow-lg">
                 <div className="flex justify-center items-center h-full w-full overflow-hidden bg-black">
                   <div className="p-4 text-white">{merch.description}</div>
                 </div>

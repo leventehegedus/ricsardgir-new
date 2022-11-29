@@ -19,25 +19,25 @@ export const Concert: React.FC<IConcert> = () => {
   return (
     <div className="max-w-5xl p-4 pt-8 m-auto">
       {concert ?
-        <>
+        <div className="text-white">
           <div className="mb-4">
-            <div className="uppercase font-black text-black text-center">
+            <div className="uppercase font-black text-center">
               {concert ?.id}. {concert ?.title}
             </div>
             <div className="text-center mb-4">
               {concert ?.location}, {concert ?.year}. {concert ?.date}
             </div>
-            <img src={"/concerts/" + concert.img} className="m-auto max-w-full rounded-lg mb-4" />
+            <img src={"/concerts/" + concert.img} className="m-auto max-w-full mb-4" />
             <div>
               {concert.description}
             </div>
           </div>
-          <div className="font-black text-black flex justify-between">
+          <div className="font-black flex justify-between">
             {id && <Link to={`/buli/${+id - 1}`} className="hover:text-red-500">Előző bulikrumpli</Link>}
             <Link to={'/buli'} className="hover:text-red-500">Vissza az összes bulikrumplira</Link>
             {id && <Link to={`/buli/${+id + 1}`} className="hover:text-red-500">Következő bulikrumpli</Link>}
           </div>
-        </>
+        </div>
         :
         <ErrorPage />
       }

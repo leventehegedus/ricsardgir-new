@@ -9,7 +9,7 @@ export const VideosPage: React.FC = () => {
       {videos ?.map((video) => {
         return (
           <Link to={`/video/${video.id}`}
-            className="flex flex-col border border-black overflow-hidden rounded-lg shadow-lg row-span-2 col-span-2"
+            className="flex flex-col border border-black overflow-hidden shadow-lg row-span-2 col-span-2"
             key={video.id}
             data-aos={animations[Math.floor(Math.random() * animations.length)]}>
             <div className="h-full w-full overflow-hidden">
