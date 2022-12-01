@@ -12,6 +12,7 @@ import { VideosPage } from "./pages/VideosPage/VideosPage";
 import { MerchPage } from "./pages/MerchPage/MerchPage";
 import { Video } from "./pages/Video/Video";
 import { MoviePage } from "./pages/MoviePage/MoviePage";
+import { ArticlesPage } from "./pages/ArticlesPage/ArticlesPage";
 
 import { Menu } from "./components/Menu/Menu";
 import { TopBar } from "./components/TopBar/TopBar";
@@ -41,6 +42,7 @@ function App() {
           <Route path="/video/:id" element={<Video />} />
           <Route path="/merch" element={<MerchPage />} />
           <Route path="/movie" element={<MoviePage />} />
+          <Route path="/shit" element={<ArticlesPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Router>
