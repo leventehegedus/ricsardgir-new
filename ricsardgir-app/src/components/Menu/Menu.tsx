@@ -1,51 +1,5 @@
 import { NavLink } from 'react-router-dom';
-
-const routes = [
-  {
-    url: "/tinder",
-    title: "Gírtinder"
-  },
-  {
-    url: "/buli",
-    title: "Bulikrumpli"
-  },
-  {
-    url: "/ricsaj",
-    title: "Ricsaj"
-  },
-  {
-    url: "/flappy",
-    title: "Repülő Koala"
-  },
-  {
-    url: "/video",
-    title: "Videók"
-  },
-  {
-    url: "/2049",
-    title: "2049"
-  },
-  {
-    url: "/szar",
-    title: "A ricsárdgír szar"
-  },
-  {
-    url: "/merch",
-    title: "Mörcs"
-  },
-  {
-    url: "/koala",
-    title: "Rise of Koala"
-  },
-  {
-    url: "/quiz",
-    title: "Ricsárd, kvíz, stb."
-  },
-  {
-    url: "/money",
-    title: "Ricsárdgír movie"
-  },
-]
+import { routes } from "../../data/routes";
 
 interface MenuProps {
   isMenuOpen: boolean,

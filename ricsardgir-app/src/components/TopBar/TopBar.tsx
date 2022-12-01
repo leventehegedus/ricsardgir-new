@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { WavyLink } from "react-wavy-transitions";
+
 const routes = [
   {
     url: "https://facebook.com/ricsardgir",
@@ -11,17 +13,21 @@ interface TopBarProps {
   setMenuOpen: Function
 }
 
-export const TopBar: React.FC<TopBarProps> = ({isMenuOpen, setMenuOpen}) => {
+export const TopBar: React.FC<TopBarProps> = ({ isMenuOpen, setMenuOpen }) => {
   return (
     <div className="sticky h-20 top-0 left-0 right-0 bg-black text-white z-50 flex items-center uppercase font-black">
-      <div onClick={() => {setMenuOpen(!isMenuOpen)}} className="w-1/4 h-full flex justify-center items-center cursor-pointer hover:text-gir-500 hover:bg-white/10">Menü</div>
-      <Link to={"/"} className="w-1/2 flex justify-center h-full items-center hover:text-gir-500">Ricsárdgír</Link>
+      <div onClick={() =>  { setMenuOpen(!isMenuOpen) }} className="w-1/4 h-full flex justify-center items-center cursor-pointer hover:text-gir-500 hover:bg-white/10">Menü</div>
+      <div className="w-1/2 flex justify-center h-full items-center hover:text-gir-500">
+        <WavyLink to={"/"} color="#ff0700" duration="1600" direction="up">
+          Ricsárdgír
+      </WavyLink>
+      </div>
       <div className="w-1/4 flex justify-right h-full items-center">
         {
           routes.map((route, index) => {
             return (
               <a key={index} href={route.url} target="_blank">
-                { route.favicon}
+                {route.favicon}
               </a>
             )
           })}

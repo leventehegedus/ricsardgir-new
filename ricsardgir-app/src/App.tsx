@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { WavyContainer } from "react-wavy-transitions";
 
 import { AnimatedBackground } from "./components/AnimatedBackground/AnimatedBackground";
 
@@ -28,6 +29,7 @@ function App() {
         <span>ricsárdgír</span>
       </div>
       <Router>
+        <WavyContainer />
         <TopBar isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
         <Menu isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
         <Routes>

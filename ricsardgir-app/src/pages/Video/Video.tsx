@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { IVideo } from "../../types";
+import { IVideo, IArticle } from "../../types";
 import { videos } from "../../data/videos";
 import { useParams } from 'react-router';
 import { Link } from "react-router-dom";
@@ -14,25 +14,55 @@ export const Video: React.FC<IVideo> = () => {
   useEffect(() => {
     let video = videos.filter(conc => conc.id === Number(id));
     setConcert(video[0]);
-    window.scroll(0,0);
+    window.scroll(0, 0);
   }, [id])
 
+  const renderArticles = (articles: IArticle[]) => {
+    return (
+      <div>
+        {
+          articles ?.map(article => {
+            return (
+              <div>
+                {article.url ?
+                  <a href={article.url} target="__blank" className="hover:text-gir-500">{article.title}</a>
+                  :
+                  <span>{article.title}</span>
+                }
+              </div>
+            )
+          })
+    }
+      </div>
+    )
+  }
+
   return (
-    <div className="max-w-5xl p-4 pt-8 m-auto">
+    <div className="max-w-5xl p-4 pt-8 m-auto text-white">
       {video ?
         <>
           <div className="mb-4">
-            <div className="uppercase font-black text-black text-center">
+            <div className="uppercase font-black text-center">
               {video ?.id}. {video ?.title}
             </div>
             <div className="text-center mb-4">
               {video ?.year}
             </div>
-            <div>
-              <YouTube videoId={video.ytId}/>
+            <div className="flex justify-center">
+              <YouTube videoId={video.ytId} />
             </div>
           </div>
-          <div className="font-black text-black flex justify-between">
+          <div>
+            {video.director && <div className="mb-4"><span className="font-black">Rendezte:</span> {video.director}</div>}
+            <div className="mb-4">
+              {video ?.highlights && renderArticles(video.highlights)}
+            </div>
+            <div className="mb-4 font-black">Cikkek:</div>
+            <div className="mb-4">
+              {video ?.articles && renderArticles(video.articles)}
+            </div>
+          </div>
+          <div className="font-black flex justify-between">
             <Link to={'/video'} className="hover:text-red-500">Vissza</Link>
           </div>
         </>

@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { ConcertYear } from "../../components/ConcertYear/ConcertYear";
+import { Map } from "../../components/Map/Map";
 import { IConcertYear } from "../../types";
 import { concerts } from "../../data/concerts";
-
 
 const allConcerts: IConcertYear[] = [{
   year: 2007,
@@ -50,18 +50,40 @@ const allConcerts: IConcertYear[] = [{
 }
 ]
 
+
 export const ConcertsPage: React.FC = () => {
 
+  const [showMap, setShowMap] = useState(false);
+
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, [])
+
+  useEffect(() => {
+    if(showMap){
+      window.scroll(0,0);
+    }
+  }, [showMap])
+
   return (
-    <div>
-      <div className="fixed p-8 z-50 w-full text-center">
-        {
-          allConcerts ?.sort((a, b) => b.year - a.year).map((year, index) => {
-            return (
-              <a key={index} href={`#year${year.year}`} className="p-2 bg-black text-white hover:text-gir-500 hover:font-black">{year.year}</a>
-            )
-          })}
-      </div >
+    <div className="pt-20">
+      <div className="fixed top-20 w-full z-20 p-4 text-center flex text-white justify-center">
+        <div className="bg-black p-2">
+          <span>Térképes nézet: </span>
+          <button onClick={() => {setShowMap(!showMap)}} className="border-solid border-white border hover:text-gir-500 p-2">{showMap ? 'kikapcs' : 'bekapcs'}</button>
+          {
+            allConcerts ?.sort((a, b) => b.year - a.year).map((year, index) => {
+              return (
+                <a key={index} href={`#year${year.year}`} className="p-2 hover:text-gir-500 hover:font-black">{year.year}</a>
+              )
+            })}
+        </div >
+      </div>
+      {showMap &&
+        <div className="p-8 z-20 w-full grayscale">
+          <Map />
+        </div>
+      }
       {allConcerts ?.sort((a, b) => b.year - a.year).map((year, index) => {
         return (
           <ConcertYear {...year} key={index} />

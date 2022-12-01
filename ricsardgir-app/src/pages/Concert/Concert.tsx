@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { IConcert } from "../../types";
 import { concerts } from "../../data/concerts";
+import { locations } from "../../data/locations";
 import { useParams } from 'react-router';
 import { Link } from "react-router-dom";
 import { ErrorPage } from "../../pages/ErrorPage/ErrorPage";
@@ -9,23 +10,28 @@ export const Concert: React.FC<IConcert> = () => {
 
   const { id } = useParams();
   const [concert, setConcert] = useState<IConcert>();
+  const [location, setLocation] = useState("");
 
   useEffect(() => {
-    let concert = concerts.filter(conc => conc.id === Number(id));
-    setConcert(concert[0]);
+    let concert = concerts.filter(conc => conc.id === Number(id))[0];
+    setConcert(concert);
+    let locationObject = locations.filter(loc => loc.id === concert.locationId)[0];
+    let locationString = locationObject.place ? locationObject.place + ', ' + locationObject.city : locationObject.city
+    setLocation(locationString);
     window.scroll(0, 0);
   }, [id])
 
+
   return (
-    <div className="max-w-5xl p-4 pt-8 m-auto">
+    <div className="max-w-5xl p-4 pb-8 pt-8 m-auto text-white">
       {concert ?
-        <div className="text-white">
+        <div>
           <div className="mb-4">
             <div className="uppercase font-black text-center">
               {concert ?.id}. {concert ?.title}
             </div>
             <div className="text-center mb-4">
-              {concert ?.location}, {concert ?.year}. {concert ?.date}
+              {location}, {concert ?.year}. {concert ?.date}
             </div>
             <img src={"/concerts/" + concert.img} className="m-auto max-w-full mb-4" />
             <div>

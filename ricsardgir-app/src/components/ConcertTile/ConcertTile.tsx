@@ -1,7 +1,9 @@
+import {useState, useEffect} from "react";
 import { IConcert } from "../../types";
 import './style.css';
 import { Link } from "react-router-dom";
 import { animations } from "../../data/animations";
+import { locations } from "../../data/locations";
 
 const imgSizes: string[] = [
   "item-original",
@@ -28,6 +30,15 @@ export const ConcertTile: React.FC<IConcert> = (props) => {
   const randomEmptyImg = Math.floor(Math.random() * emptyImages.length);
   const randomAnimation = Math.floor(Math.random() * animations.length);
 
+  const [location, setLocation] = useState("");
+
+  useEffect(() => {
+    let locationObject = locations.filter(loc => loc.id === props.locationId)[0];
+    let locationString = locationObject.place ? locationObject.place + ', ' + locationObject.city : locationObject.city
+    setLocation(locationString);
+  }, [])
+
+
   return (
     <>
       <Link to={`/buli/${props.id}`} className={`flex flex-col border border-black overflow-hidden shadow-lg	${props.size ? props.size : imgSizes[randomImg]}`}
@@ -47,7 +58,7 @@ export const ConcertTile: React.FC<IConcert> = (props) => {
             {props.id}. {props.title}
           </div>
           <div>
-            {props.location}, {props.year}. {props.date}
+            {location}, {props.year}. {props.date}
           </div>
         </div>
       </Link>

@@ -24,7 +24,8 @@ export const MerchPage: React.FC = () => {
             </a>
             <div className="card__face card__face--back">
               <a href={merch.link}
-                className="flex h-full w-full flex-col border border-black overflow-hidden shadow-lg">
+                className="flex h-full w-full flex-col border border-black overflow-hidden shadow-lg"
+                target="__blank">
                 <div className="flex justify-center items-center h-full w-full overflow-hidden bg-black">
                   <div className="p-4 text-white">{merch.description}</div>
                 </div>
