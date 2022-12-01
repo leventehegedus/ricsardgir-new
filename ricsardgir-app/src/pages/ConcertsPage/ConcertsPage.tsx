@@ -59,12 +59,6 @@ export const ConcertsPage: React.FC = () => {
     window.scroll(0, 0);
   }, [])
 
-  useEffect(() => {
-    if(showMap){
-      window.scroll(0,0);
-    }
-  }, [showMap])
-
   return (
     <div className="pt-20">
       <div className="fixed top-20 w-full z-20 p-4 text-center flex text-white justify-center">
