@@ -47,16 +47,11 @@ export const SlidingTileGame: React.FC = () => {
 
   const checkIfSolvable = (puzzle: number[][]): boolean => {
     {
-      // Count inversions in given puzzle
       let invCount = getInvCount(puzzle);
 
-      // If grid is odd, return true if inversion
-      // count is even.
       if (size % 2 === 1) {
-        console.log("pina", invCount);
         return !(invCount % 2 === 1);
-      } else     // grid is even
-      {
+      } else {
         let pos = findXPosition(puzzle) || 0;
         if (pos % 2 === 1) {
           return !(invCount % 2 === 1);
