@@ -6,7 +6,7 @@ import { useParams } from 'react-router';
 import { Link } from "react-router-dom";
 import { ErrorPage } from "../../pages/ErrorPage/ErrorPage";
 
-export const Concert: React.FC<IConcert> = () => {
+export const Concert: React.FC = () => {
 
   const { id } = useParams();
   const [concert, setConcert] = useState<IConcert>();

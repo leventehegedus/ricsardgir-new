@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { ErrorPage } from "../../pages/ErrorPage/ErrorPage";
 import YouTube from 'react-youtube';
 
-export const Video: React.FC<IVideo> = () => {
+export const Video: React.FC = () => {
 
   const { id } = useParams();
   const [video, setConcert] = useState<IVideo>();
