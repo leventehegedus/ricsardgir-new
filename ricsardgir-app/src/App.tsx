@@ -17,6 +17,8 @@ import { SlidingTileGame } from "./pages/SlidingTileGame/SlidingTileGame";
 
 import { Menu } from "./components/Menu/Menu";
 import { TopBar } from "./components/TopBar/TopBar";
+
+import MediaQuery from 'react-responsive'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './App.css';
@@ -26,11 +28,13 @@ function App() {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="App">
-      <AnimatedBackground />
-      <div className="fixed w-full h-full left-0 top-0 right-0 bottom-0 font-black text-white text-9xl flex justify-center items-center uppercase z-index-minus-1">
-        <span>ricsárdgír</span>
-      </div>
+    <div className="App bg-black md:bg-transparent">
+      <MediaQuery minWidth={768}>
+        <AnimatedBackground />
+        <div className="fixed w-full h-full left-0 top-0 right-0 bottom-0 font-black text-white text-9xl flex justify-center items-center uppercase z-index-minus-1">
+          <span>ricsárdgír</span>
+        </div>
+      </MediaQuery>
       <Router>
         <WavyContainer />
         <TopBar isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />

@@ -5,7 +5,7 @@ export const AnimatedBackground: React.FC = () => {
     for (let i = 0; i < 10; i++) {
       lis.push(
         <li key={i}>
-          <img src="http://ricsardgir.com/assets/fav.png" />
+          <img src="/fav.png" />
         </li>
       )
     }

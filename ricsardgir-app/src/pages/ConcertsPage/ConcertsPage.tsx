@@ -3,6 +3,7 @@ import { ConcertYear } from "../../components/ConcertYear/ConcertYear";
 import { Map } from "../../components/Map/Map";
 import { IConcertYear } from "../../types";
 import { concerts } from "../../data/concerts";
+import { useMediaQuery } from 'react-responsive'
 
 const allConcerts: IConcertYear[] = [{
   year: 2007,
@@ -53,6 +54,8 @@ const allConcerts: IConcertYear[] = [{
 
 export const ConcertsPage: React.FC = () => {
 
+  const isTabletOrBigger = useMediaQuery({ minWidth: 768 })
+
   const [showMap, setShowMap] = useState(false);
 
   useEffect(() => {
@@ -61,12 +64,12 @@ export const ConcertsPage: React.FC = () => {
 
   return (
     <div className="pt-20">
-      <div className="fixed top-20 w-full z-20 p-4 text-center flex text-white justify-center">
+      <div className="lg:fixed top-20 w-full z-20 p-4 text-center flex text-white justify-center">
         <div className="bg-black p-2">
           <span>Térképes nézet: </span>
           <button onClick={() => {setShowMap(!showMap)}} className="border-solid border-white border hover:text-gir-500 p-2">{showMap ? 'kikapcs' : 'bekapcs'}</button>
           {
-            allConcerts ?.sort((a, b) => b.year - a.year).map((year, index) => {
+            isTabletOrBigger && allConcerts ?.sort((a, b) => b.year - a.year).map((year, index) => {
               return (
                 <a key={index} href={`#year${year.year}`} className="p-2 hover:text-gir-500 hover:font-black">{year.year}</a>
               )

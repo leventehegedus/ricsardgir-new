@@ -4,6 +4,7 @@ import './style.css';
 import { Link } from "react-router-dom";
 import { animations } from "../../data/animations";
 import { locations } from "../../data/locations";
+import { useMediaQuery } from 'react-responsive'
 
 const imgSizes: string[] = [
   "item-original",
@@ -25,6 +26,8 @@ const emptyImages: string[] = [
 ]
 
 export const ConcertTile: React.FC<IConcert> = (props) => {
+  const isTabletOrBigger = useMediaQuery({ minWidth: 768 })
+  const isDesktop = useMediaQuery({ minWidth: 1024 })
 
   const randomImg = Math.floor(Math.random() * imgSizes.length);
   const randomEmptyImg = Math.floor(Math.random() * emptyImages.length);
@@ -41,8 +44,8 @@ export const ConcertTile: React.FC<IConcert> = (props) => {
 
   return (
     <>
-      <Link to={`/buli/${props.id}`} className={`flex flex-col border border-black overflow-hidden shadow-lg	${props.size ? props.size : imgSizes[randomImg]}`}
-        data-aos={animations[randomAnimation]}
+      <Link to={`/buli/${props.id}`} className={`flex flex-col border border-black overflow-hidden shadow-lg	${isDesktop ? props.size ? props.size : imgSizes[randomImg] : Math.random() > 0.5 ? "item-small" : "item-medium"}`}
+        data-aos={isTabletOrBigger && animations[randomAnimation]}
       >
         <div className="h-full w-full overflow-hidden">
           <img src={"./concerts/" + props.img}
