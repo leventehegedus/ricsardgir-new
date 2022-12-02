@@ -185,9 +185,14 @@ const movieStoryBlock = [
 export const MoviePage: React.FC = () => {
   const randomAnimation = Math.floor(Math.random() * animations.length);
 
-  const renderStoryBlock = (block, id) => {
+  const renderStoryBlock = (block: {
+    text: string,
+    img: string,
+    title: string,
+    size: string
+  }, id: number) => {
     return (
-      <div className={`flex flex-col border border-black overflow-hidden shadow-lg text-white bg-black p-2 transition-all duration-1000 ease-in-out hover:invert hover:scale-105	hover:rotate-1 ${block.size}`}
+      <div className={`flex flex-col border border-white overflow-hidden shadow-lg text-white bg-black p-2 transition-all duration-1000 ease-in-out hover:invert hover:scale-105 ${Math.random() > 0.5 ? "hover:rotate-1" : "hover:rotate-[-1deg]"} ${block.size}`}
         data-aos={animations[randomAnimation]}
         key={id}
       >

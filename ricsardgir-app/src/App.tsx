@@ -41,8 +41,8 @@ function App() {
           <Route path="/video" element={<VideosPage />} />
           <Route path="/video/:id" element={<Video />} />
           <Route path="/merch" element={<MerchPage />} />
-          <Route path="/movie" element={<MoviePage />} />
-          <Route path="/shit" element={<ArticlesPage />} />
+          <Route path="/money" element={<MoviePage />} />
+          <Route path="/szar" element={<ArticlesPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Router>

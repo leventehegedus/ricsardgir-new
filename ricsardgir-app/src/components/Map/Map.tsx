@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { IConcert, ILocation } from "../../types";
+import { ILocation } from "../../types";
 import './style.css';
 import { Link } from "react-router-dom";
 import { locations } from "../../data/locations";
@@ -7,8 +6,6 @@ import { concerts } from "../../data/concerts";
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 
 export const Map: React.FC = () => {
-
-  const [location, setLocation] = useState("");
 
   const listConcerts = (location: ILocation) => {
     let locationString = location.place ? location.place + ', ' + location.city : location.city

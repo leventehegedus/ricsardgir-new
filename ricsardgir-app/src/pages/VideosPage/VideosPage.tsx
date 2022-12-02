@@ -13,7 +13,7 @@ export const VideosPage: React.FC = () => {
             key={video.id}
             data-aos={animations[Math.floor(Math.random() * animations.length)]}>
             <div className="h-full w-full overflow-hidden">
-              <img src={`https://img.youtube.com/vi/${video.ytId}/0.jpg`} className="h-full w-full object-cover	object-center transition-all duration-1000 ease-in-out hover:invert hover:scale-105	hover:rotate-1" />
+              <img src={`https://img.youtube.com/vi/${video.ytId}/0.jpg`} className={`h-full w-full object-cover	object-center transition-all duration-1000 ease-in-out hover:invert hover:scale-105	${Math.random() > 0.5 ? "hover:rotate-1" : "hover:rotate-[-1deg]"}`} />
             </div>
             <div className="bg-black text-white p-2 text-xs">
               <div>

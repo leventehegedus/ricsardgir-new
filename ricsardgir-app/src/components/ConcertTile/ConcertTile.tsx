@@ -50,7 +50,7 @@ export const ConcertTile: React.FC<IConcert> = (props) => {
               currentTarget.onerror = null; // prevents looping
               currentTarget.src = emptyImages[randomEmptyImg];
             }}
-            className="h-full w-full object-cover	object-top transition-all duration-1000 ease-in-out hover:invert hover:scale-105	hover:rotate-1"
+            className={`h-full w-full object-cover	object-top transition-all duration-1000 ease-in-out hover:invert hover:scale-105 ${Math.random() > 0.5 ? "hover:rotate-1" : "hover:rotate-[-1deg]"}`}
           />
         </div>
         <div className="bg-black text-white p-2 text-xs">

@@ -14,7 +14,7 @@ export const MerchPage: React.FC = () => {
               data-aos={animations[Math.floor(Math.random() * animations.length)]}
               target="__blank">
               <div className="h-full w-full overflow-hidden">
-                <img src={"./merch/" + merch.img} className="h-full w-full object-cover	object-center transition-all duration-1000 ease-in-out hover:invert hover:scale-105	hover:rotate-1" />
+                <img src={"./merch/" + merch.img} className="h-full w-full object-cover	object-center transition-all duration-1000 ease-in-out" />
               </div>
               <div className="bg-black text-white p-2 text-xs">
                 <div>
