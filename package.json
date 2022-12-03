@@ -9,8 +9,7 @@
     "preview": "vite preview",
     "lint": "eslint src",
     "lint-fix": "eslint src --fix",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "npm run dev"
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
   },
   "lint-staged": {
     "*.{js,css,tsx,jsx,json,ts}": "prettier --write"
