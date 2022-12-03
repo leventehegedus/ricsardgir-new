@@ -14,6 +14,7 @@ import { Video } from "./pages/Video/Video";
 import { MoviePage } from "./pages/MoviePage/MoviePage";
 import { ArticlesPage } from "./pages/ArticlesPage/ArticlesPage";
 import { SlidingTileGame } from "./pages/SlidingTileGame/SlidingTileGame";
+import { Tinder } from "./pages/Tinder/Tinder";
 
 import { Menu } from "./components/Menu/Menu";
 import { TopBar } from "./components/TopBar/TopBar";
@@ -49,6 +50,7 @@ function App() {
           <Route path="/money" element={<MoviePage />} />
           <Route path="/szar" element={<ArticlesPage />} />
           <Route path="/tilitoli" element={<SlidingTileGame />} />
+          <Route path="/tinder" element={<Tinder />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Router>
