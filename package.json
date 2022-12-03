@@ -10,7 +10,7 @@
     "lint": "eslint src",
     "lint-fix": "eslint src --fix",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "node /assets/index.01cc30d2.js"
+    "start": "vite run dev"
   },
   "lint-staged": {
     "*.{js,css,tsx,jsx,json,ts}": "prettier --write"
