@@ -23,6 +23,8 @@ import MediaQuery from 'react-responsive'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './App.css';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 AOS.init();
 
 function App() {

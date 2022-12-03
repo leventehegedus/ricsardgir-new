@@ -201,3 +201,17 @@
   text-transform: uppercase;
   font-weight: 900;
 }
+.slick-slider .slick-prev {
+  left: 24px;
+}
+.slick-slider .slick-next {
+  right: 24px;
+}
+.slick-slider .slick-prev, .slick-slider .slick-next {
+  z-index: 50;
+  width: 24px;
+  height: 24px;
+}
+.slick-slider .slick-prev:before, .slick-slider .slick-next:before {
+  font-size: 24px;
+}
