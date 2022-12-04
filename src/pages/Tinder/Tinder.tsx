@@ -2,119 +2,31 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import { FaHeart, FaHeartBroken, FaImages } from "react-icons/fa";
+import { tinderMembers } from "../../data/tinder";
+import Modal from 'react-modal';
+import { ITinderProfile } from "../../types";
 
-const tinderMembers: { name: string, folder: string }[] = [
-  {
-    name: "Harrison Ford",
-    folder: "ford",
-    yearOfBirth: 1942,
-    location: "Millenium Falcon",
-    shortBio: "Vagyok olyan menő, mint én",
-    images: [
-      "/01.gif",
-      "/02.gif",
-      "/03.gif"
-    ]
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    width: '80%',
+    maxWidth: '800px',
+    height: '80%',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    zIndex: '100'
   },
-  {
-    name: "Hegedüs Levente",
-    folder: "levi",
-    yearOfBirth: 1992,
-    location: "Silicon Valley",
-    shortBio: "A honlap atya, beugró mindenes",
-    images: [
-      "/01.jpg",
-      "/02.jpg"
-    ]
-  },
-  {
-    name: "Pacsika Máté",
-    folder: "mate",
-    yearOfBirth: 1989,
-    location: "Silicon Valley",
-    shortBio: "Nem szoktatok látni, de ott vagyok. :(",
-    images: [
-      "/01.jpg",
-      "/02.jpg"
-    ]
-  },
-  {
-    name: "Tóth Dóra Lilla",
-    folder: "dori",
-    yearOfBirth: 1992,
-    location: "Nunky Bay Starship",
-    shortBio: "A próbákon úgy hívnak a srácok, hogy Tóth :(",
-    images: [
-      "/01.jpg",
-      "/02.jpg",
-      "/03.jpg"
-    ]
-  },
-  {
-    name: "Palvinbarbi",
-    folder: "barbi",
-    yearOfBirth: 1993,
-    location: "Paris, NY, BDPST",
-    shortBio: "Overálban is fázom",
-    images: [
-      "/01.jpg",
-      "/02.jpg",
-      "/03.jpg"
-    ]
-  },
-  {
-    name: "Mártondani",
-    folder: "martondani",
-    images: [
-      "/01.jpg",
-      "/02.jpg",
-      "/03.jpg"
-    ]
-  },
-  {
-    name: "Laci",
-    folder: "laci",
-    yearOfBirth: 1991,
-    location: "Szentendre",
-    shortBio: "Szintis Lacinak hívnak a rajongók",
-    images: [
-      "/01.jpg",
-      "/02.jpg",
-      "/03.jpg"
-    ]
-  },
-  {
-    name: "Alma",
-    folder: "alma",
-    images: [
-      "/01.jpg",
-      "/02.jpg",
-      "/03.jpg"
-    ]
-  }, {
-    name: "Flóra",
-    folder: "flora",
-    images: [
-      "/01.jpg",
-      "/02.jpg",
-      "/03.jpg"
-    ]
-  }, {
-    name: "Éva",
-    folder: "eva",
-    images: [
-      "/01.jpg",
-      "/02.jpg",
-      "/03.jpg"
-    ]
-  }
-]
-
+};
 export const Tinder: React.FC = () => {
 
   const [members, setMembers] = useState([])
   const [likedMembers, setLikedMembers] = useState([])
   const [dislikedMembers, setDislikedMembers] = useState([])
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [selectedMember, setSelectedMember] = useState<ITinderProfile>()
 
   useEffect(() => {
     setMembers(tinderMembers);
@@ -168,7 +80,7 @@ export const Tinder: React.FC = () => {
       <div key={index} className={`w-[360px] h-[540px] m-auto absolute top-0 left-0 right-0 bottom-0 m-auto border border-white bg-black text-white transition-all duration-1000 ${isLiked(index) && "text-gir-500 left-[10000px] rotate-90 transition-all duration-1000 ease-in-out"} ${isDisliked(index) && "text-gir-500 left-[-10000px] rotate-[-90deg] transition-all duration-1000 ease-in-out"}`}>
         <div className="h-[360px]">
           <Slider {...settings} className="w-full h-full">
-            {member.images.map((img) =>  {
+            {member.images.map((img) => {
               return (
                 <img key={img} src={`/tinder/${member.folder}/${img}`} className="w-full h-[360px] object-cover object-top border border-white border-8" />
               )
@@ -183,7 +95,7 @@ export const Tinder: React.FC = () => {
           </div>
           <div className="flex justify-between h-[33.33%]">
             <div onClick={() => { decideMember(index, false) }}><FaHeartBroken size={"3em"} color={"#fd8100"} className="hover:rotate-[360deg] cursor-pointer transition-all duration-1000 ease-in-out hover:scale-75" /></div>
-            <div><FaImages size={"3em"} className="cursor-pointer transition-all duration-1000 ease-in-out hover:scale-125" /></div>
+            <div onClick={() => { setSelectedMember(member); setIsOpen(true) }}><FaImages size={"3em"} className="cursor-pointer transition-all duration-1000 ease-in-out hover:scale-125" /></div>
             <div onClick={() => { decideMember(index, true) }}><FaHeart size={"3em"} className="hover:rotate-[360deg] cursor-pointer transition-all duration-1000 ease-in-out hover:scale-125" color={"#ff0700"} /></div>
           </div>
         </div>
@@ -191,11 +103,44 @@ export const Tinder: React.FC = () => {
     )
   }
 
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
   return (
     <div className="w-full h-[calc(100vh-80px)] relative">
       {members ?.map((member, index) => {
         return renderTinderCard(member, index)
       })}
+
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={customStyles}
+        ariaHideApp={false}
+        contentLabel="Example Modal"
+      >
+        {selectedMember &&
+          <div className="w-full h-full bg-black text-white p-4">
+            {selectedMember.name}
+            <div className="md:grid md:grid-cols-2 lg:grid-cols-[repeat(auto-fit,_minmax(240px,_1fr))] overflow-auto auto-rows-[160px] grid-flow-row-dense gap-x-8 gap-y-8">
+              {selectedMember ?.images.map((img, index) => {
+                return (
+                  <div className="flex flex-col border border-black overflow-hidden shadow-lg"
+                    key={index}
+                  >
+                    <img src={`/tinder/${selectedMember.folder}/${img}`} className="h-full w-full object-cover	object-top" />
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        }
+      </Modal>
     </div>
   )
 }

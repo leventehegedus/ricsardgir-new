@@ -215,3 +215,7 @@
 .slick-slider .slick-prev:before, .slick-slider .slick-next:before {
   font-size: 24px;
 }
+
+.ReactModal__Overlay--after-open {
+  z-index: 100;
+}

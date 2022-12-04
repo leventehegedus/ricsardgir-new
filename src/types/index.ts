@@ -53,3 +53,13 @@ export interface ILocation {
   place: string,
   latlng: [number, number]
 }
+
+export interface ITinderProfile {
+  name: string,
+  folder: string,
+  yearOfBirth: number,
+  location: string,
+  shortBio: string,
+  longBio: string,
+  images: string[]
+}
