@@ -14,7 +14,7 @@ const Notification: FC<NotificationProps> = ({ win, onClose }) => (
   <StyledModal>
     <StyledBackdrop />
     <Box paddingBlock="s5" background="transparent">
-      <Text fontSize={24} color="primary" fontWeight={900}>
+      <Text fontSize={24} color="primary" fontWeight="bold">
         {win ? 'Vagyok olyan menő, mint Harrison Ford' : 'Rossz, mint a gitár, rossz, mint a szinti'}
       </Text>
     </Box>

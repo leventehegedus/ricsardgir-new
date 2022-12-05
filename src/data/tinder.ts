@@ -1,4 +1,4 @@
-import { IVideo } from "../types";
+import { ITinderProfile } from "../types";
 
 export const tinderMembers: ITinderProfile[] = [
   {
@@ -7,6 +7,7 @@ export const tinderMembers: ITinderProfile[] = [
     yearOfBirth: 1942,
     location: "Millenium Falcon",
     shortBio: "Vagyok olyan menő, mint én",
+    longBio: "",
     images: [
       "/01.gif",
       "/02.gif",
@@ -19,6 +20,7 @@ export const tinderMembers: ITinderProfile[] = [
     yearOfBirth: 1992,
     location: "Silicon Valley",
     shortBio: "A honlap atya, beugró mindenes",
+    longBio: "",
     images: [
       "/01.jpg",
       "/02.jpg"
@@ -30,6 +32,7 @@ export const tinderMembers: ITinderProfile[] = [
     yearOfBirth: 1989,
     location: "Silicon Valley",
     shortBio: "Nem szoktatok látni, de ott vagyok. :(",
+    longBio: "",
     images: [
       "/01.jpg",
       "/02.jpg"
@@ -41,6 +44,7 @@ export const tinderMembers: ITinderProfile[] = [
     yearOfBirth: 1992,
     location: "Nunky Bay Starship",
     shortBio: "A próbákon úgy hívnak a srácok, hogy Tóth :(",
+    longBio: "",
     images: [
       "/01.jpg",
       "/02.jpg",
@@ -53,6 +57,7 @@ export const tinderMembers: ITinderProfile[] = [
     yearOfBirth: 1993,
     location: "Paris, NY, BDPST",
     shortBio: "Overálban is fázom",
+    longBio: "",
     images: [
       "/01.jpg",
       "/02.jpg",
@@ -62,6 +67,10 @@ export const tinderMembers: ITinderProfile[] = [
   {
     name: "Mártondani",
     folder: "martondani",
+    yearOfBirth: 1989,
+    location: "",
+    shortBio: "",
+    longBio: "",
     images: [
       "/01.jpg",
       "/02.jpg",
@@ -74,6 +83,7 @@ export const tinderMembers: ITinderProfile[] = [
     yearOfBirth: 1991,
     location: "Szentendre",
     shortBio: "Szintis Lacinak hívnak a rajongók",
+    longBio: "",
     images: [
       "/01.jpg",
       "/02.jpg",
@@ -83,6 +93,10 @@ export const tinderMembers: ITinderProfile[] = [
   {
     name: "Alma",
     folder: "alma",
+    yearOfBirth: 0,
+    location: "",
+    shortBio: "",
+    longBio: "",
     images: [
       "/01.jpg",
       "/02.jpg",
@@ -91,6 +105,10 @@ export const tinderMembers: ITinderProfile[] = [
   }, {
     name: "Flóra",
     folder: "flora",
+    yearOfBirth: 0,
+    location: "",
+    shortBio: "",
+    longBio: "",
     images: [
       "/01.jpg",
       "/02.jpg",

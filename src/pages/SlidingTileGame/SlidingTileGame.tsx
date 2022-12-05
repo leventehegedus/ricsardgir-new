@@ -120,7 +120,7 @@ export const SlidingTileGame: React.FC = () => {
 
     mypuzzle[y][x] = 0;
     if (JSON.stringify(mypuzzle) === JSON.stringify(solution)) {
-      setTimeout(() => alert('Puzzle solved!'), 100);
+      setTimeout(() => alert('Te sem vagy hétköznapi!'), 100);
     }
     console.log(getInvCount(mypuzzle));
     setPuzzle(mypuzzle);
@@ -132,7 +132,7 @@ export const SlidingTileGame: React.FC = () => {
   };
 
   return (
-    <div className="w-[400px] h-[400px] m-auto mt-20 mb-20">
+    <div className="w-[300px] md:w-[400px] h-[300px] md:h-[400px] m-auto mt-20 mb-20">
       {
         puzzle && puzzle.map((rows, y) => {
           return (
@@ -140,7 +140,7 @@ export const SlidingTileGame: React.FC = () => {
               {
                 rows.map((value, x) => {
                   return (
-                    <div className="w-[100px] h-[100px] flex justify-center items-center cursor-pointer text-white border border-black" key={x} onClick={() => handleClick(value, x, y)}>
+                    <div className="w-[75px] h-[75px] md:w-[100px] md:h-[100px] flex justify-center items-center cursor-pointer text-white border border-black" key={x} onClick={() => handleClick(value, x, y)}>
                       {value !== 0 ?
                         <>
                           <img className="h-full w-full object-cover object-center" src={`/tilitoli/row-${Math.ceil(value / size)}-column-${value % size === 0 ? size : value % size}.png`} />

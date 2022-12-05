@@ -26,9 +26,9 @@ const customStyles = {
 };
 export const Tinder: React.FC = () => {
 
-  const [members, setMembers] = useState([])
-  const [likedMembers, setLikedMembers] = useState([])
-  const [dislikedMembers, setDislikedMembers] = useState([])
+  const [members, setMembers] = useState<ITinderProfile[]>([])
+  const [likedMembers, setLikedMembers] = useState<number[]>([])
+  const [dislikedMembers, setDislikedMembers] = useState<number[]>([])
   const [modalIsOpen, setIsOpen] = useState(false);
   const [selectedMember, setSelectedMember] = useState<ITinderProfile>()
 
@@ -36,7 +36,7 @@ export const Tinder: React.FC = () => {
     setMembers(tinderMembers);
   }, [])
 
-  const decideMember = (index, isLike) => {
+  const decideMember = (index: number, isLike: boolean) => {
     if (isLike) {
       if (!likedMembers.includes(index)) {
         setLikedMembers([...likedMembers, index]);
@@ -61,11 +61,11 @@ export const Tinder: React.FC = () => {
     }
   }, [likedMembers, dislikedMembers]);
 
-  const isLiked = (index) => {
+  const isLiked = (index: number) => {
     return likedMembers.includes(index)
   }
 
-  const isDisliked = (index) => {
+  const isDisliked = (index: number) => {
     return dislikedMembers.includes(index)
   }
 
@@ -79,12 +79,12 @@ export const Tinder: React.FC = () => {
     autoplaySpeed: 3000
   };
 
-  const renderTinderCard = (member, index: number) => {
+  const renderTinderCard = (member: ITinderProfile, index: number) => {
     return (
       <div key={index} className={`w-[360px] h-[540px] m-auto absolute top-0 left-0 right-0 bottom-0 m-auto border border-white bg-black text-white transition-all duration-1000 ${isLiked(index) && "text-gir-500 left-[10000px] rotate-90 transition-all duration-1000 ease-in-out"} ${isDisliked(index) && "text-gir-500 left-[-10000px] rotate-[-90deg] transition-all duration-1000 ease-in-out"}`}>
         <div className="h-[360px]">
           <Slider {...settings} className="w-full h-full">
-            {member.images.map((img) => {
+            {member.images.map((img: string) => {
               return (
                 <img key={img} src={`/tinder/${member.folder}/${img}`} className="w-full h-[360px] object-cover object-top border border-white border-8" />
               )

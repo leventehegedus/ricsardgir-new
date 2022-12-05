@@ -3,6 +3,7 @@ import StyledButton, { StyledButtonProps } from './StyledButton';
 
 export interface ButtonProps extends StyledButtonProps {
   onClick: () => void;
+  className?: string
 }
 
 const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(

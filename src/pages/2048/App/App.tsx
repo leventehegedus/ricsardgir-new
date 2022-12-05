@@ -84,7 +84,7 @@ export const App: FC = () => {
   }, [rows, cols, best, themeName, setConfig]);
 
   return (
-    <div className="mt-20">
+    <div className="md:mt-20">
       <GlobalStyle />
       <ThemeProvider theme={themeValue}>
         <Box
@@ -106,11 +106,7 @@ export const App: FC = () => {
             >
                 <Box marginBlockStart="s2" marginBlockEnd="s6" inlineSize="100%">
                   <Control
-                    rows={rows}
-                    cols={cols}
                     onReset={onResetGame}
-                    onChangeRow={setRows}
-                    onChangeCol={setCols}
                   />
                 </Box>
                 <ScoreBoard total={total} title="pont" />
