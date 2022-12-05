@@ -73,9 +73,9 @@ export const routes: IRoute[] = [
   },
   {
     id: 0,
-    title: "2049",
-    img: "./home/2049.jpg",
-    gif: "./home/2049.gif",
-    url: "/2049"
+    title: "2048",
+    img: "./home/2048.jpg",
+    gif: "./home/2048.gif",
+    url: "/2048"
   },
 ]
