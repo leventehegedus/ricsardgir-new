@@ -1,6 +1,5 @@
 import {useState, useEffect} from "react";
 import { IConcert } from "../../types";
-import './style.css';
 import { Link } from "react-router-dom";
 import { animations } from "../../data/animations";
 import { locations } from "../../data/locations";

@@ -5,6 +5,10 @@
   scroll-behavior: smooth;
 }
 
+body {
+  cursor: url("./fav_mini.png"), auto;
+}
+
 .context {
   width: 100%;
   position: absolute;
@@ -208,7 +212,7 @@
   right: 24px;
 }
 .slick-slider .slick-prev, .slick-slider .slick-next {
-  z-index: 50;
+  z-index: 10;
   width: 24px;
   height: 24px;
 }
@@ -217,5 +221,38 @@
 }
 
 .ReactModal__Overlay--after-open {
-  z-index: 100;
+  z-index: 50;
+  background-color: rgba(255,255,255,0.1) !important;
+}
+
+.item-original {
+  grid-row: span 1;
+}
+
+.item-small {
+  grid-row: span 2;
+}
+
+.item-medium {
+  grid-row: span 3;
+}
+
+.item-rect-left {
+  grid-column: 1/3;
+  grid-row-end: span 2;
+}
+
+.item-rect-right {
+  grid-column: 3/5;
+  grid-row: span 2;
+}
+
+.item-rect-middle {
+  grid-column: 2/4;
+  grid-row-end: span 2;
+}
+
+.item-full {
+  grid-column: 1/5;
+  grid-row-end: span 3;
 }

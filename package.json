@@ -19,6 +19,7 @@
     "@emotion/styled": "^11.10.5",
     "@mui/icons-material": "^5.10.9",
     "@mui/material": "^5.10.12",
+    "@types/styled-components": "^5.1.26",
     "aos": "^2.3.4",
     "leaflet": "^1.9.3",
     "localforage": "^1.10.0",
@@ -36,7 +37,8 @@
     "react-wavy-transitions": "^1.1.1",
     "react-youtube": "^10.1.0",
     "slick-carousel": "^1.8.1",
-    "sort-by": "^0.0.2"
+    "sort-by": "^0.0.2",
+    "styled-normalize": "^8.0.7"
   },
   "devDependencies": {
     "@types/aos": "^3.0.4",

@@ -17,7 +17,11 @@ const customStyles = {
     height: '80%',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-    zIndex: '100'
+    zIndex: '100',
+    padding: 0,
+    borderRadius: 0,
+    border: 'none',
+    background: 'none'
   },
 };
 export const Tinder: React.FC = () => {
@@ -125,12 +129,14 @@ export const Tinder: React.FC = () => {
         contentLabel="Example Modal"
       >
         {selectedMember &&
-          <div className="w-full h-full bg-black text-white p-4">
-            {selectedMember.name}
+          <div className="w-full h-full bg-black text-white p-8 overflow-auto">
+            <div className="mb-4">{selectedMember.name}</div>
+            <div className="mb-4">{selectedMember.shortBio}</div>
+            <div className="mb-4">{selectedMember.longBio}</div>
             <div className="md:grid md:grid-cols-2 lg:grid-cols-[repeat(auto-fit,_minmax(240px,_1fr))] overflow-auto auto-rows-[160px] grid-flow-row-dense gap-x-8 gap-y-8">
               {selectedMember ?.images.map((img, index) => {
                 return (
-                  <div className="flex flex-col border border-black overflow-hidden shadow-lg"
+                  <div className={`flex flex-col border border-black overflow-hidden shadow-lg ${Math.random() > 0.5 ? "item-original" : "item-small"}`}
                     key={index}
                   >
                     <img src={`/tinder/${selectedMember.folder}/${img}`} className="h-full w-full object-cover	object-top" />

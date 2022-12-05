@@ -99,6 +99,10 @@ export const tinderMembers: ITinderProfile[] = [
   }, {
     name: "Éva",
     folder: "eva",
+    yearOfBirth: 1986,
+    location: "Otthon",
+    shortBio: "Nem csak arra vagyok jó",
+    longBio: "Nem csak arra vagyok jó, Nem csak arra vagyok jó, Nem csak arra vagyok jó, Nem csak arra vagyok jó, Nem csak arra vagyok jó, Nem csak arra vagyok jó",
     images: [
       "/01.jpg",
       "/02.jpg",
