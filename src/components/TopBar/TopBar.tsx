@@ -25,7 +25,7 @@ export const TopBar: React.FC<TopBarProps> = ({ isMenuOpen, setMenuOpen }) => {
           <a href="https://instagram.com/ricsardgir" target="_blank">
             <FaInstagram size={"2em"} className="hover:text-gir-500"/>
           </a>
-          <a href="https://youtube.com/RHCDGR" target="_blank">
+          <a href="https://www.youtube.com/RCHRDGR" target="_blank">
             <FaYoutube size={"2em"} className="hover:text-gir-500"/>
           </a>
         </div>
