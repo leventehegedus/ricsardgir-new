@@ -15,6 +15,7 @@ import { MoviePage } from "./pages/MoviePage/MoviePage";
 import { ArticlesPage } from "./pages/ArticlesPage/ArticlesPage";
 import { SlidingTileGame } from "./pages/SlidingTileGame/SlidingTileGame";
 import { Tinder } from "./pages/Tinder/Tinder";
+import { Flappy } from "./pages/Flappy/Flappy";
 import { App as Game2048 } from "./pages/2048/App/App";
 
 import { Menu } from "./components/Menu/Menu";
@@ -24,6 +25,9 @@ import MediaQuery from 'react-responsive'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './App.css';
+import './style/flappycss/reset.css';
+import './style/flappycss/main.css';
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 AOS.init();
@@ -35,7 +39,7 @@ function App() {
     <div className="App bg-black md:bg-transparent min-h-screen">
       <MediaQuery minWidth={768}>
         <AnimatedBackground />
-        <div className="fixed w-full h-full left-0 top-0 right-0 bottom-0 font-black text-white text-9xl flex justify-center items-center uppercase z-index-minus-1">
+        <div className="fixed w-full h-full left-0 top-0 right-0 bottom-0 font-black text-white text-9xl flex justify-center items-center uppercase z-index-minus-1 opacity-5">
           <span>ricsárdgír</span>
         </div>
       </MediaQuery>
@@ -55,6 +59,7 @@ function App() {
           <Route path="/tilitoli" element={<SlidingTileGame />} />
           <Route path="/tinder" element={<Tinder />} />
           <Route path="/2048" element={<Game2048 />} />
+          <Route path="/flappy" element={<Flappy />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Router>
