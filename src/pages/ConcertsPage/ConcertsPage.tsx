@@ -71,7 +71,7 @@ export const ConcertsPage: React.FC = () => {
           {
             isTabletOrBigger && allConcerts ?.sort((a, b) => b.year - a.year).map((year, index) => {
               return (
-                <a key={index} href={`#year${year.year}`} className="p-2 hover:text-gir-500 hover:font-black">{year.year}</a>
+                <a key={index} href={`#year${year.year}`} className={`p-2 hover:text-gir-500 hover:font-black ${Math.random() > 0.6 && "rotate-180"}`}>{year.year}</a>
               )
             })}
         </div >
