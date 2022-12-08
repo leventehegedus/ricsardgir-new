@@ -6,21 +6,21 @@ import { concerts } from "../../data/concerts";
 import { useMediaQuery } from 'react-responsive'
 
 const allConcerts: IConcertYear[] = [{
-  year: 2007,
-  content: concerts.filter(concert => concert.year === 2007)
-}, {
-  year: 2008,
-  content: concerts.filter(concert => concert.year === 2008)
-}, {
-  year: 2009,
-  content: concerts.filter(concert => concert.year === 2009)
-}, {
-  year: 2010,
-  content: concerts.filter(concert => concert.year === 2010)
-}, {
-  year: 2011,
-  content: concerts.filter(concert => concert.year === 2011)
-}, {
+//   year: 2007,
+//   content: concerts.filter(concert => concert.year === 2007)
+// }, {
+//   year: 2008,
+//   content: concerts.filter(concert => concert.year === 2008)
+// }, {
+//   year: 2009,
+//   content: concerts.filter(concert => concert.year === 2009)
+// }, {
+//   year: 2010,
+//   content: concerts.filter(concert => concert.year === 2010)
+// }, {
+//   year: 2011,
+//   content: concerts.filter(concert => concert.year === 2011)
+// }, {
   year: 2012,
   content: concerts.filter(concert => concert.year === 2012)
 }, {
@@ -37,18 +37,18 @@ const allConcerts: IConcertYear[] = [{
   year: 2016,
   content: concerts.filter(concert => concert.year === 2016)
 },
-{
-  year: 2017,
-  content: concerts.filter(concert => concert.year === 2017)
-},
-{
-  year: 2018,
-  content: concerts.filter(concert => concert.year === 2018)
-},
-{
-  year: 2019,
-  content: concerts.filter(concert => concert.year === 2019)
-}
+// {
+//   year: 2017,
+//   content: concerts.filter(concert => concert.year === 2017)
+// },
+// {
+//   year: 2018,
+//   content: concerts.filter(concert => concert.year === 2018)
+// },
+// {
+//   year: 2019,
+//   content: concerts.filter(concert => concert.year === 2019)
+// }
 ]
 
 

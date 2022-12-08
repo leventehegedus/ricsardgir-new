@@ -37,6 +37,7 @@ export const ConcertTile: React.FC<IConcert> = (props) => {
   useEffect(() => {
     let locationObject = locations.filter(loc => loc.id === props.locationId)[0];
     let locationString = locationObject.place ? locationObject.place + ', ' + locationObject.city : locationObject.city
+    console.log(locationString);
     setLocation(locationString);
   }, [])
 

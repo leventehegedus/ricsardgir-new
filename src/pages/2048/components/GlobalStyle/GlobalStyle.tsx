@@ -5,7 +5,6 @@ const GlobalStyle = createGlobalStyle`
   ${normalize};
 
   body {
-    font-size: 18px;
     font-family: 'Roboto', Arial, sans-serif;
     /** Disable eslastic scrolling on mobile */
     overflow: hidden;

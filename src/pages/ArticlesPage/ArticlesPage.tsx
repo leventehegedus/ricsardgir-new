@@ -23,7 +23,7 @@ export const ArticlesPage: React.FC = () => {
 
   const renderBlock = (content: IArticle[], title: string) => {
     return (
-      <div className="grid grid-cols-[repeat(auto-fit,_minmax(240px,_1fr))] auto-rows-[160px] grid-flow-dense gap-x-8 gap-y-8 mb-8">
+      <div className="grid grid-cols-[repeat(auto-fit,_minmax(15rem,_1fr))] auto-rows-[10rem] grid-flow-dense gap-x-8 gap-y-8 mb-8">
         <div className="font-black uppercase text-gir-500">{title}</div>
         {content.map((block, index) => {
           return renderArticleBlock(block, index)
