@@ -37,7 +37,6 @@ export const ConcertTile: React.FC<IConcert> = (props) => {
   useEffect(() => {
     let locationObject = locations.filter(loc => loc.id === props.locationId)[0];
     let locationString = locationObject.place ? locationObject.place + ', ' + locationObject.city : locationObject.city
-    console.log(locationString);
     setLocation(locationString);
   }, [])
 
@@ -45,7 +44,7 @@ export const ConcertTile: React.FC<IConcert> = (props) => {
   return (
     <>
       <Link to={`/buli/${props.id}`} className={`flex flex-col border border-black overflow-hidden shadow-lg	${isDesktop ? props.size ? props.size : imgSizes[randomImg] : Math.random() > 0.5 ? "item-small" : "item-medium"}`}
-        data-aos={isTabletOrBigger && 0 && animations[randomAnimation]}
+        data-aos={isTabletOrBigger && animations[randomAnimation]}
       >
         <div className="h-full w-full overflow-hidden">
           <img src={"./concerts/" + props.img}

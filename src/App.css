@@ -251,6 +251,15 @@ body {
   grid-column: 2/4;
   grid-row-end: span 2;
 }
+.item-wide-left {
+  grid-column: 1/4;
+  grid-row-end: span 2;
+}
+.item-wide-right {
+  grid-column: 2/5;
+  grid-row-end: span 2;
+}
+
 
 .item-full {
   grid-column: 1/5;
