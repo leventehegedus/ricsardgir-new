@@ -65,9 +65,9 @@ export const ConcertsPage: React.FC = () => {
   return (
     <div className="pt-20">
       <div className="lg:fixed top-20 w-full z-20 p-4 text-center flex text-white justify-center">
-        <div className="bg-black p-2">
+        <div className="bg-black p-2 flex items-center">
           <span>Térképes nézet: </span>
-          <button onClick={() => {setShowMap(!showMap)}} className="border-solid border-white border hover:text-gir-500 p-2">{showMap ? 'kikapcs' : 'bekapcs'}</button>
+          <button onClick={() => {setShowMap(!showMap)}} className="border-solid border-white border hover:text-gir-500 hover:font-black p-2 shadow-[2px_2px_0_rgb(255,255,255)] hover:shadow-[0px_0px_0_rgb(255,255,255)] hover:mt-[2px] hover:mb-[-2px] hover:ml-[2px] hover:mr-[-2px]">{showMap ? 'kikapcs' : 'bekapcs'}</button>
           {
             isTabletOrBigger && allConcerts ?.sort((a, b) => b.year - a.year).map((year, index) => {
               return (
