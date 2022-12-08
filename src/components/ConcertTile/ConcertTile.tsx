@@ -1,9 +1,10 @@
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import { IConcert } from "../../types";
 import { Link } from "react-router-dom";
 import { animations } from "../../data/animations";
 import { locations } from "../../data/locations";
 import { useMediaQuery } from 'react-responsive'
+import { FaVideo } from "react-icons/fa";
 
 const imgSizes: string[] = [
   "item-original",
@@ -34,8 +35,8 @@ export const ConcertTile: React.FC<IConcert> = (props) => {
 
   const [location, setLocation] = useState("");
 
-  useEffect(() => {
-    let locationObject = locations.filter(loc => loc.id === props.locationId)[0];
+  useEffect(() =>  {
+    let locationObject = locations.filter(loc =>  loc.id === props.locationId)[0];
     let locationString = locationObject.place ? locationObject.place + ', ' + locationObject.city : locationObject.city
     setLocation(locationString);
   }, [])
@@ -43,7 +44,7 @@ export const ConcertTile: React.FC<IConcert> = (props) => {
 
   return (
     <>
-      <Link to={`/buli/${props.id}`} className={`flex flex-col border border-black overflow-hidden shadow-lg	${isDesktop ? props.size ? props.size : imgSizes[randomImg] : Math.random() > 0.5 ? "item-small" : "item-medium"}`}
+      <Link to={`/buli/${props.id}`} className={`flex flex-col border border-black overflow-hidden shadow-lg	${isDesktop ? props.size ? props.size : imgSizes[randomImg] : Math.random() >  0.5 ? "item-small" : "item-medium"}`}
         data-aos={isTabletOrBigger && animations[randomAnimation]}
       >
         <div className="h-full w-full overflow-hidden">
@@ -52,8 +53,11 @@ export const ConcertTile: React.FC<IConcert> = (props) => {
               currentTarget.onerror = null; // prevents looping
               currentTarget.src = emptyImages[randomEmptyImg];
             }}
-            className={`h-full w-full object-cover	object-top transition-all duration-1000 ease-in-out hover:invert hover:scale-105 ${Math.random() > 0.5 ? "hover:rotate-1" : "hover:rotate-[-1deg]"}`}
+            className={`h-full w-full object-cover	object-top transition-all duration-1000 ease-in-out hover:invert hover:scale-105 ${Math.random() >  0.5 ? "hover:rotate-1" : "hover:rotate-[-1deg]"}`}
           />
+          { props.ytIds?.length > 0 &&
+            <FaVideo size={"2em"} className="absolute top-2 right-2 text-gir-500"/>
+          }
         </div>
         <div className="bg-black text-white p-2 text-xs">
           <div>

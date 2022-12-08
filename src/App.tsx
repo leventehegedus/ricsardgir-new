@@ -12,6 +12,8 @@ import { VideosPage } from "./pages/VideosPage/VideosPage";
 import { MerchPage } from "./pages/MerchPage/MerchPage";
 import { Video } from "./pages/Video/Video";
 import { MoviePage } from "./pages/MoviePage/MoviePage";
+import { MusicPage } from "./pages/MusicPage/MusicPage";
+import { Music } from "./pages/Music/Music";
 import { ArticlesPage } from "./pages/ArticlesPage/ArticlesPage";
 import { SlidingTileGame } from "./pages/SlidingTileGame/SlidingTileGame";
 import { Tinder } from "./pages/Tinder/Tinder";
@@ -20,6 +22,7 @@ import { App as Game2048 } from "./pages/2048/App/App";
 
 import { Menu } from "./components/Menu/Menu";
 import { TopBar } from "./components/TopBar/TopBar";
+import ReactAudioPlayer from 'react-audio-player';
 
 import MediaQuery from 'react-responsive'
 import AOS from 'aos';
@@ -55,6 +58,8 @@ function App() {
           <Route path="/video/:id" element={<Video />} />
           <Route path="/merch" element={<MerchPage />} />
           <Route path="/money" element={<MoviePage />} />
+          <Route path="/ricsaj" element={<MusicPage />} />
+          <Route path="/ricsaj/:id" element={<Music />} />
           <Route path="/szar" element={<ArticlesPage />} />
           <Route path="/tilitoli" element={<SlidingTileGame />} />
           <Route path="/tinder" element={<Tinder />} />

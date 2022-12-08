@@ -69,6 +69,12 @@ export const Tinder: React.FC = () => {
     return dislikedMembers.includes(index)
   }
 
+  const playSound = (member: ITinderProfile, isItLike: boolean) =>  {
+    let profileSound = document.getElementById("tinderAudio");
+    profileSound.src = `/tinder/${member.id}/hang/${isItLike ? "like" : "dislike"}/01.mp3`;
+    profileSound.play();
+  }
+
   const settings = {
     dots: false,
     infinite: true,
@@ -86,11 +92,11 @@ export const Tinder: React.FC = () => {
           <Slider {...settings} className="w-full h-full">
             {member.images.map((img: string) => {
               return (
-                <img key={img} src={`/tinder/${member.folder}/${img}`} className="w-full h-[360px] object-cover object-top border border-white border-8" />
+                <img key={img} src={`/tinder/${member.id}/${img}`} className="w-full h-[360px] object-cover object-top border border-white border-8" />
               )
             })}
           </Slider>
-          {/* <img src={`/tinder/${member.folder}/profil/profil.jpg`} className="w-full h-full object-cover object-center" /> */}
+          {/* <img src={`/tinder/${member.id}/profil/profil.jpg`} className="w-full h-full object-cover object-center" /> */}
         </div>
         <div className="p-4 h-[180px]">
           <div className="h-[66.66%]">
@@ -98,9 +104,9 @@ export const Tinder: React.FC = () => {
             <div>{member.shortBio}</div>
           </div>
           <div className="flex justify-between h-[33.33%]">
-            <div onClick={() => { decideMember(index, false) }}><FaHeartBroken size={"3em"} color={"#fd8100"} className="hover:rotate-[360deg] cursor-pointer transition-all duration-1000 ease-in-out hover:scale-75" /></div>
+            <div onClick={() => { playSound(member, false); decideMember(index, false) }}><FaHeartBroken size={"3em"} color={"#fd8100"} className="hover:rotate-[360deg] cursor-pointer transition-all duration-1000 ease-in-out hover:scale-75" /></div>
             <div onClick={() => { setSelectedMember(member); setIsOpen(true) }}><FaImages size={"3em"} className="cursor-pointer transition-all duration-1000 ease-in-out hover:scale-125" /></div>
-            <div onClick={() => { decideMember(index, true) }}><FaHeart size={"3em"} className="hover:rotate-[360deg] cursor-pointer transition-all duration-1000 ease-in-out hover:scale-125" color={"#ff0700"} /></div>
+            <div onClick={() => { playSound(member, true); decideMember(index, true) }}><FaHeart size={"3em"} className="hover:rotate-[360deg] cursor-pointer transition-all duration-1000 ease-in-out hover:scale-125" color={"#ff0700"} /></div>
           </div>
         </div>
       </div>
@@ -139,7 +145,7 @@ export const Tinder: React.FC = () => {
                   <div className={`flex flex-col border border-black overflow-hidden shadow-lg ${Math.random() > 0.5 ? "item-original" : "item-small"}`}
                     key={index}
                   >
-                    <img src={`/tinder/${selectedMember.folder}/${img}`} className="h-full w-full object-cover	object-top" />
+                    <img src={`/tinder/${selectedMember.id}/${img}`} className="h-full w-full object-cover	object-top" />
                   </div>
                 )
               })}
@@ -147,6 +153,9 @@ export const Tinder: React.FC = () => {
           </div>
         }
       </Modal>
+      <audio id="tinderAudio" className="invisible">
+        <source src="" autoPlay />
+      </audio>
     </div>
   )
 }

@@ -6,7 +6,8 @@ export interface IConcert {
   date: string,
   locationId: number,
   img: string,
-  size: string
+  size: string,
+  ytIds?: string[]
 }
 
 export interface IConcertYear {
@@ -27,6 +28,22 @@ export interface IVideo {
   director?: string,
   highlights?: IArticle[],
   articles?: IArticle[]
+}
+
+export interface ISong {
+  title: "string",
+  duration: number,
+  contributors: string[]
+}
+
+export interface IAlbum {
+  id: string,
+  title: string,
+  year: number,
+  link: string,
+  articles?: IArticle[],
+  contributors?: string[],
+  songs: ISong[]
 }
 
 export interface IMerch {
@@ -55,8 +72,8 @@ export interface ILocation {
 }
 
 export interface ITinderProfile {
+  id: string,
   name: string,
-  folder: string,
   yearOfBirth: number,
   location: string,
   shortBio: string,

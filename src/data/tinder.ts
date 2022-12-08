@@ -2,8 +2,8 @@ import { ITinderProfile } from "../types";
 
 export const tinderMembers: ITinderProfile[] = [
   {
+    id: "ford",
     name: "Harrison Ford",
-    folder: "ford",
     yearOfBirth: 1942,
     location: "Millenium Falcon",
     shortBio: "Vagyok olyan menő, mint én",
@@ -15,8 +15,8 @@ export const tinderMembers: ITinderProfile[] = [
     ]
   },
   {
+    id: "levi",
     name: "Hegedüs Levente",
-    folder: "levi",
     yearOfBirth: 1992,
     location: "Silicon Valley",
     shortBio: "A honlap atya, beugró mindenes",
@@ -27,8 +27,8 @@ export const tinderMembers: ITinderProfile[] = [
     ]
   },
   {
+    id: "mate",
     name: "Pacsika Máté",
-    folder: "mate",
     yearOfBirth: 1989,
     location: "Silicon Valley",
     shortBio: "Nem szoktatok látni, de ott vagyok. :(",
@@ -39,8 +39,8 @@ export const tinderMembers: ITinderProfile[] = [
     ]
   },
   {
+    id: "dori",
     name: "Tóth Dóra Lilla",
-    folder: "dori",
     yearOfBirth: 1992,
     location: "Nunky Bay Starship",
     shortBio: "A próbákon úgy hívnak a srácok, hogy Tóth :(",
@@ -52,8 +52,8 @@ export const tinderMembers: ITinderProfile[] = [
     ]
   },
   {
+    id: "barbi",
     name: "Palvinbarbi",
-    folder: "barbi",
     yearOfBirth: 1993,
     location: "Paris, NY, BDPST",
     shortBio: "Overálban is fázom",
@@ -65,8 +65,8 @@ export const tinderMembers: ITinderProfile[] = [
     ]
   },
   {
+    id: "martondani",
     name: "Mártondani",
-    folder: "martondani",
     yearOfBirth: 1989,
     location: "",
     shortBio: "",
@@ -78,8 +78,8 @@ export const tinderMembers: ITinderProfile[] = [
     ]
   },
   {
+    id: "laci",
     name: "Laci",
-    folder: "laci",
     yearOfBirth: 1991,
     location: "Szentendre",
     shortBio: "Szintis Lacinak hívnak a rajongók",
@@ -91,8 +91,8 @@ export const tinderMembers: ITinderProfile[] = [
     ]
   },
   {
+    id: "alma",
     name: "Alma",
-    folder: "alma",
     yearOfBirth: 0,
     location: "",
     shortBio: "",
@@ -103,8 +103,8 @@ export const tinderMembers: ITinderProfile[] = [
       "/03.jpg"
     ]
   }, {
+    id: "flora",
     name: "Flóra",
-    folder: "flora",
     yearOfBirth: 0,
     location: "",
     shortBio: "",
@@ -115,8 +115,8 @@ export const tinderMembers: ITinderProfile[] = [
       "/03.jpg"
     ]
   }, {
+    id: "eva",
     name: "Éva",
-    folder: "eva",
     yearOfBirth: 1986,
     location: "Otthon",
     shortBio: "Nem csak arra vagyok jó",
