@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       colors: {
         gir: {
-          500: '#ff0700'
+          500: '#ff002b'
         }
       }
     },

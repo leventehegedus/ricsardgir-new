@@ -31,19 +31,26 @@ export interface IVideo {
 }
 
 export interface ISong {
+  id: number,
+  albumId: number,
   title: "string",
   duration: number,
-  contributors: string[]
+  contributors: string[],
+  spotifyLink?: string,
+  concertVideos?: number[],
+  articles?: IArticle[],
+  videoClip?: string
 }
 
 export interface IAlbum {
   id: string,
   title: string,
   year: number,
-  link: string,
+  spotifyLink: string,
   articles?: IArticle[],
   contributors?: string[],
-  songs: ISong[]
+  albumCover?: string,
+  songIds: number[]
 }
 
 export interface IMerch {

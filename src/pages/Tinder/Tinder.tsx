@@ -106,7 +106,7 @@ export const Tinder: React.FC = () => {
           <div className="flex justify-between h-[33.33%]">
             <div onClick={() => { playSound(member, false); decideMember(index, false) }}><FaHeartBroken size={"3em"} color={"#fd8100"} className="hover:rotate-[360deg] cursor-pointer transition-all duration-1000 ease-in-out hover:scale-75" /></div>
             <div onClick={() => { setSelectedMember(member); setIsOpen(true) }}><FaImages size={"3em"} className="cursor-pointer transition-all duration-1000 ease-in-out hover:scale-125" /></div>
-            <div onClick={() => { playSound(member, true); decideMember(index, true) }}><FaHeart size={"3em"} className="hover:rotate-[360deg] cursor-pointer transition-all duration-1000 ease-in-out hover:scale-125" color={"#ff0700"} /></div>
+            <div onClick={() => { playSound(member, true); decideMember(index, true) }}><FaHeart size={"3em"} className="hover:rotate-[360deg] cursor-pointer transition-all duration-1000 ease-in-out hover:scale-125" color={"#ff002b"} /></div>
           </div>
         </div>
       </div>

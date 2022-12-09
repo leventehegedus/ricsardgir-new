@@ -6,7 +6,7 @@ const theme: Theme = {
   ...defaultTheme,
   palette: {
     ...defaultPalette,
-    primary: '#ff0700',
+    primary: '#ff002b',
     secondary: '#222831',
     tertiary: '#4c5f7a',
     foreground: '#ffffff',
