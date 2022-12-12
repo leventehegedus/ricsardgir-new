@@ -55,7 +55,7 @@ export const ConcertTile: React.FC<IConcert> = (props) => {
             }}
             className={`h-full w-full object-cover	object-top transition-all duration-1000 ease-in-out hover:invert hover:scale-105 ${Math.random() >  0.5 ? "hover:rotate-1" : "hover:rotate-[-1deg]"}`}
           />
-          { props.ytIds?.length > 0 &&
+          { props.ytIds &&
             <FaVideo size={"2em"} className="absolute top-2 right-2 text-gir-500"/>
           }
         </div>

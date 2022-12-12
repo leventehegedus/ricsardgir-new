@@ -30,27 +30,43 @@ export interface IVideo {
   articles?: IArticle[]
 }
 
-export interface ISong {
-  id: number,
-  albumId: number,
-  title: "string",
-  duration: number,
-  contributors: string[],
-  spotifyLink?: string,
-  concertVideos?: number[],
-  articles?: IArticle[],
-  videoClip?: string
+export interface ITrack {
+  duration_ms: number,
+  external_urls: {
+    spotify: string
+  },
+  href: string,
+  id: string,
+  name: string,
+  preview_url: string,
+  track_number: number,
+  type: string,
+  uri: string
 }
 
 export interface IAlbum {
+  album_type: string,
+  external_urls: {
+    spotify: string
+  },
+  href: string,
   id: string,
-  title: string,
-  year: number,
-  spotifyLink: string,
-  articles?: IArticle[],
-  contributors?: string[],
-  albumCover?: string,
-  songIds: number[]
+  images: [
+    {
+      height: number,
+      url: string,
+      width: number
+    }
+  ],
+  name: string,
+  release_date: string,
+  total_tracks: number,
+  type: string,
+  uri: string,
+  tracks: {
+    href: string,
+    items: ITrack[]
+  }
 }
 
 export interface IMerch {

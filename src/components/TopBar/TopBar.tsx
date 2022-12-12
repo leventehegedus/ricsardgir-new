@@ -1,7 +1,5 @@
-import { Link } from "react-router-dom";
 import { WavyLink } from "react-wavy-transitions";
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
-import { Audio } from "../../components/AudioPlayer/Audio";
 
 
 interface TopBarProps {
@@ -20,7 +18,6 @@ export const TopBar: React.FC<TopBarProps> = ({ isMenuOpen, setMenuOpen }) => {
           </WavyLink>
         </div>
         <div className="w-1/4 flex justify-end h-full items-center gap-4">
-          <Audio url={"/midi_lightsaber.mp3"} className="hover:text-gir-500"/>
           <a href="https://facebook.com/ricsardgir" target="_blank">
             <FaFacebook size={"2em"} className="hover:text-gir-500"/>
           </a>

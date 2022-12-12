@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import { FaHeart, FaHeartBroken, FaImages } from "react-icons/fa";
 import { tinderMembers } from "../../data/tinder";
@@ -70,7 +69,7 @@ export const Tinder: React.FC = () => {
   }
 
   const playSound = (member: ITinderProfile, isItLike: boolean) =>  {
-    let profileSound = document.getElementById("tinderAudio");
+    let profileSound: HTMLAudioElement = document.getElementById("tinderAudio") as HTMLAudioElement;
     profileSound.src = `/tinder/${member.id}/hang/${isItLike ? "like" : "dislike"}/01.mp3`;
     profileSound.play();
   }
@@ -113,10 +112,6 @@ export const Tinder: React.FC = () => {
     )
   }
 
-  function openModal() {
-    setIsOpen(true);
-  }
-
   function closeModal() {
     setIsOpen(false);
   }
@@ -153,9 +148,7 @@ export const Tinder: React.FC = () => {
           </div>
         }
       </Modal>
-      <audio id="tinderAudio" className="invisible">
-        <source src="" autoPlay />
-      </audio>
+      <audio id="tinderAudio" className="invisible" src="" autoPlay/>
     </div>
   )
 }
