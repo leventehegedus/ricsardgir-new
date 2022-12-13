@@ -48,24 +48,28 @@ export const Concert: React.FC = () => {
             <div className="text-center mb-4">
               {location}, {concert ?.year}. {concert ?.date}
             </div>
-            <div class="relative">
+            <div className="relative">
               <img src={"/concerts/" + concert.img} className="m-auto max-w-full mb-4"
                 onError={({ currentTarget }) => {
                   currentTarget.onerror = null; // prevents looping
                   currentTarget.src = emptyImages[randomEmptyImg];
                 }}
               />
-              {id && <Link to={`/buli/${+id - 1}`} className="absolute top-[50%] translate-y-[-50%] left-0 transition-all duration-1000 ease-in-out hover:text-red-500 hover:scale-125"><FaChevronLeft size={"3em"}/></Link>}
-              {id && <Link to={`/buli/${+id + 1}`} className="absolute top-[50%] translate-y-[-50%] right-0 transition-all duration-1000 ease-in-out hover:text-red-500 hover:scale-125"><FaChevronRight size={"3em"}/></Link>}
+              {id && <Link to={`/buli/${+id - 1}`} className="absolute top-[50%] translate-y-[-50%] left-0 transition-all duration-1000 ease-in-out hover:text-red-500 hover:scale-125"><FaChevronLeft size={"3em"} /></Link>}
+              {id && <Link to={`/buli/${+id + 1}`} className="absolute top-[50%] translate-y-[-50%] right-0 transition-all duration-1000 ease-in-out hover:text-red-500 hover:scale-125"><FaChevronRight size={"3em"} /></Link>}
             </div>
             <div className="mb-4">
               {concert.description}
             </div>
-            { concert.ytIds && <div className="mb-4">Koncertvideók:</div>}
-            {concert.ytIds?.map(ytId => {
+            {concert.ytIds && <div className="mb-4">Koncertvideók:</div>}
+            {concert.ytIds ?.map(ytId => {
               return (
                 <div className="flex justify-center mb-4">
-                  <YouTube videoId={ytId} className="max-w-full" opts={!isTabletOrBigger && {width: '100%'}}/>
+                  {isTabletOrBigger ?
+                    <YouTube videoId={ytId} className="max-w-full" />
+                    :
+                    <YouTube videoId={ytId} className="max-w-full" opts={{ width: '100%' }} />
+                  }
                 </div>
               )
             })

@@ -13,7 +13,6 @@ import { MerchPage } from "./pages/MerchPage/MerchPage";
 import { Video } from "./pages/Video/Video";
 import { MoviePage } from "./pages/MoviePage/MoviePage";
 import { MusicPage } from "./pages/MusicPage/MusicPage";
-import { Music } from "./pages/Music/Music";
 import { ArticlesPage } from "./pages/ArticlesPage/ArticlesPage";
 import { SlidingTileGame } from "./pages/SlidingTileGame/SlidingTileGame";
 import { Tinder } from "./pages/Tinder/Tinder";
@@ -59,7 +58,6 @@ function App() {
           <Route path="/merch" element={<MerchPage />} />
           <Route path="/money" element={<MoviePage />} />
           <Route path="/ricsaj" element={<MusicPage />} />
-          <Route path="/ricsaj/:id" element={<Music />} />
           <Route path="/szar" element={<ArticlesPage />} />
           <Route path="/tilitoli" element={<SlidingTileGame />} />
           <Route path="/tinder" element={<Tinder />} />

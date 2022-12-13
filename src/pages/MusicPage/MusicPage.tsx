@@ -10,7 +10,6 @@ export const MusicPage: React.FC = () => {
       .then(res => res.json())
       .then(response => {
         setAlbums(response);
-        console.log(response);
       }).catch(err => {
         console.log(err);
       })

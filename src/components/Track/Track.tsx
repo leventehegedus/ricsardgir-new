@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, MutableRefObject } from "react";
 import { FaRegPlayCircle, FaRegPauseCircle } from "react-icons/fa"
 import ReactAudioPlayer from 'react-audio-player';
 import { animations } from "../../data/animations";
@@ -17,7 +17,8 @@ export const Track: React.FC<ITrackProps> = (props) => {
   const isTabletOrBigger = useMediaQuery({ minWidth: 768 })
 
   const [isPlaying, setPlaying] = useState(false);
-  const audioRef = useRef(new Audio(props.preview_url));
+  const audioRef = useRef(new Audio(props.preview_url)) as any;
+  //todo, check how refs works with typescript properly
 
   const calculateDuration = (duration_ms: number): string => {
     let mins = Math.floor(duration_ms / 1000 / 60);
@@ -26,11 +27,11 @@ export const Track: React.FC<ITrackProps> = (props) => {
   }
 
   const onButtonClick = (play: boolean) => {
-    console.log(play)
+    let myAudio: any = audioRef.current;
     if (play) {
-      audioRef.current.audioEl.current.play();
+      myAudio.audioEl.current.play();
     } else {
-      audioRef.current.audioEl.current.pause();
+      myAudio.audioEl.current.pause();
     }
     setPlaying(play);
   }
