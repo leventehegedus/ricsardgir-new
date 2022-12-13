@@ -5,13 +5,7 @@ import { animations } from "../../data/animations";
 import { useMediaQuery } from 'react-responsive'
 import { ITrack } from "../../types";
 
-interface ITrackProps extends ITrack {
-  images: [{
-    url: string
-  }]
-}
-
-export const Track: React.FC<ITrackProps> = (props) => {
+export const Track: React.FC<ITrack> = (props) => {
 
   const randomAnimation = Math.floor(Math.random() * animations.length);
   const isTabletOrBigger = useMediaQuery({ minWidth: 768 })
@@ -23,7 +17,7 @@ export const Track: React.FC<ITrackProps> = (props) => {
   const calculateDuration = (duration_ms: number): string => {
     let mins = Math.floor(duration_ms / 1000 / 60);
     let secs = Math.floor(duration_ms / 1000) % 60;
-    return `${mins}:${secs < 10 ? "0"+secs : secs}`;
+    return `${mins}:${secs < 10 ? "0" + secs : secs}`;
   }
 
   const onButtonClick = (play: boolean) => {
@@ -36,21 +30,19 @@ export const Track: React.FC<ITrackProps> = (props) => {
     setPlaying(play);
   }
 
-
   return (
     <div className="flex flex-col border border-black overflow-hidden shadow-lg item-small mb-4 md:mb-0"
       data-aos={isTabletOrBigger && animations[randomAnimation]}
     >
       <div className="h-full w-full overflow-hidden relative">
-        <img src={props.images[0].url}
-          className={`h-full w-full object-cover	object-top transition-all duration-1000 ease-in-out hover:invert hover:scale-105 ${Math.random() > 0.9 && "rotate-90"} ${Math.random() < 0.1 && "rotate-180"}`}
+        <img src={props.image}
+          className={`h-full w-full object-cover	object-top ${Math.random() > 0.9 && "rotate-90"} ${Math.random() < 0.1 && "rotate-180"}`}
         />
-        <div className="absolute top-0 left-0 right-0 bottom-0 w-full h-full flex justify-center items-center" onClick={() => { onButtonClick(!isPlaying) }} onMouseLeave={() => { onButtonClick(false) }}>
-          {isPlaying ?
-            <FaRegPauseCircle className="transition-all duration-1000 ease-in-out" size={"9em"} />
-            :
-            <FaRegPlayCircle className="transition-all duration-1000 ease-in-out opacity-0 hover:opacity-100" size={"9em"} />}
-        </div>
+        {isPlaying ?
+          <FaRegPauseCircle onClick={() => { onButtonClick(!isPlaying) }} onMouseLeave={() => { onButtonClick(false) }} className="absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] transition-all duration-1000 ease-in-out z-10" size={"9em"} />
+          :
+          <FaRegPlayCircle onClick={() => { onButtonClick(!isPlaying) }} onMouseLeave={() => { onButtonClick(false) }} className="absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] transition-all duration-1000 ease-in-out opacity-0 hover:opacity-100 z-10" size={"9em"} />
+        }
       </div>
       <div className="bg-black text-white p-2 text-xs">
         <div>
@@ -63,7 +55,7 @@ export const Track: React.FC<ITrackProps> = (props) => {
       <ReactAudioPlayer
         src={props.preview_url}
         ref={audioRef}
-        onEnded={() =>  { setPlaying(!isPlaying) }}
+        onEnded={() => { setPlaying(!isPlaying) }}
       />
     </div>
   )

@@ -28,7 +28,7 @@ export const MusicPage: React.FC = () => {
                   <div className="text-2xl text-white mb-4 md:mb-0">{album.release_date}</div>
                 </a>
                 {
-                  album.tracks.items.map((track: ITrack) => <Track key={track.id} {...track} images={album.images} />)
+                  album.tracks.items.map((track: ITrack) => <Track key={track.id} {...track} image={album.images[0].url} />)
                 }
               </Fragment>
             )

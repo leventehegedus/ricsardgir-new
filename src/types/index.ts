@@ -41,7 +41,8 @@ export interface ITrack {
   preview_url: string,
   track_number: number,
   type: string,
-  uri: string
+  uri: string,
+  image?: string
 }
 
 export interface IAlbum {
