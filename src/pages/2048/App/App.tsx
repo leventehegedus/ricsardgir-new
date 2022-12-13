@@ -10,11 +10,12 @@ import useGameBoard from '../hooks/useGameBoard';
 import useGameScore from '../hooks/useGameScore';
 import useGameState, { GameStatus } from '../hooks/useGameState';
 import useScaleControl from '../hooks/useScaleControl';
-import { GRID_SIZE, MIN_SCALE, SPACING } from '../utils/constants';
+import { GRID_SIZE, MIN_SCALE, SPACING, GRID_SIZE_MOBILE } from '../utils/constants';
 import useLocalStorage from '../hooks/useLocalStorage';
 import { ThemeName } from '../themes/types';
 import useTheme from '../hooks/useTheme';
 import { canGameContinue, isWin } from '../utils/rules';
+import { useMediaQuery } from 'react-responsive'
 
 
 export type Configuration = {
@@ -45,6 +46,7 @@ export const App: FC = () => {
 
   const [rows, setRows] = useScaleControl(config.rows);
   const [cols, setCols] = useScaleControl(config.cols);
+  const isTabletOrBigger = useMediaQuery({ minWidth: 768 })
 
   const { total, best, addScore, setTotal } = useGameScore(config.bestScore);
 
@@ -114,7 +116,7 @@ export const App: FC = () => {
             </Box>
             <GameBoard
               tiles={tiles}
-              boardSize={GRID_SIZE}
+              boardSize={isTabletOrBigger ? GRID_SIZE : GRID_SIZE_MOBILE}
               rows={rows}
               cols={cols}
               spacing={SPACING}

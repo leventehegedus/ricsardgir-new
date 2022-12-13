@@ -192,7 +192,7 @@ export const MoviePage: React.FC = () => {
     size: string
   }, id: number) => {
     return (
-      <div className={`flex flex-col border border-solid border-white overflow-hidden shadow-lg text-white bg-black p-2 transition-all duration-1000 ease-in-out hover:invert hover:scale-105 ${Math.random() > 0.5 ? "hover:rotate-1" : "hover:rotate-[-1deg]"} ${block.size}`}
+      <div className={`mb-4 md:mb-0 flex flex-col border border-solid border-white overflow-hidden shadow-lg text-white bg-black p-2 transition-all duration-1000 ease-in-out hover:invert hover:scale-105 ${Math.random() > 0.5 ? "hover:rotate-1" : "hover:rotate-[-1deg]"} ${block.size}`}
         data-aos={animations[randomAnimation]}
         key={id}
       >
@@ -207,7 +207,7 @@ export const MoviePage: React.FC = () => {
 
   return (
     <div className="p-4 max-w-7xl	m-auto">
-      <div className="grid grid-cols-[repeat(auto-fit,_minmax(15rem,_1fr))] auto-rows-[10rem] gap-x-8 gap-y-8">
+      <div className="md:grid grid-cols-[repeat(auto-fit,_minmax(15rem,_1fr))] auto-rows-[10rem] gap-x-8 gap-y-8">
         {movieStoryBlock.map((block, index) => {
           return renderStoryBlock(block, index)
         })

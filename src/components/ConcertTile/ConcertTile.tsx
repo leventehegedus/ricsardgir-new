@@ -16,13 +16,13 @@ const imgSizes: string[] = [
 ]
 
 const emptyImages: string[] = [
-  "./concerts/empty.jpg",
-  "./concerts/empty_2.jpg",
-  "./concerts/empty_3.jpg",
-  "./concerts/empty_4.jpg",
-  "./concerts/empty_5.jpg",
-  "./concerts/empty_6.jpg",
-  "./concerts/empty_7.jpg"
+  "/concerts/empty.jpg",
+  "/concerts/empty_2.jpg",
+  "/concerts/empty_3.jpg",
+  "/concerts/empty_4.jpg",
+  "/concerts/empty_5.jpg",
+  "/concerts/empty_6.jpg",
+  "/concerts/empty_7.jpg"
 ]
 
 export const ConcertTile: React.FC<IConcert> = (props) => {
@@ -47,7 +47,7 @@ export const ConcertTile: React.FC<IConcert> = (props) => {
       <Link to={`/buli/${props.id}`} className={`flex flex-col border border-black overflow-hidden shadow-lg	${isDesktop ? props.size ? props.size : imgSizes[randomImg] : Math.random() >  0.5 ? "item-small" : "item-medium"}`}
         data-aos={isTabletOrBigger && animations[randomAnimation]}
       >
-        <div className="h-full w-full overflow-hidden">
+        <div className="h-full w-full overflow-hidden relative">
           <img src={"./concerts/" + props.img}
             onError={({ currentTarget }) => {
               currentTarget.onerror = null; // prevents looping

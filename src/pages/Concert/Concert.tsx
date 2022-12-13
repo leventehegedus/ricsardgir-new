@@ -6,12 +6,26 @@ import { useParams } from 'react-router';
 import { Link } from "react-router-dom";
 import { ErrorPage } from "../../pages/ErrorPage/ErrorPage";
 import YouTube from 'react-youtube';
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useMediaQuery } from 'react-responsive'
+
+const emptyImages: string[] = [
+  "/concerts/empty.jpg",
+  "/concerts/empty_2.jpg",
+  "/concerts/empty_3.jpg",
+  "/concerts/empty_4.jpg",
+  "/concerts/empty_5.jpg",
+  "/concerts/empty_6.jpg",
+  "/concerts/empty_7.jpg"
+]
 
 export const Concert: React.FC = () => {
 
   const { id } = useParams();
   const [concert, setConcert] = useState<IConcert>();
   const [location, setLocation] = useState("");
+  const randomEmptyImg = Math.floor(Math.random() * emptyImages.length);
+  const isTabletOrBigger = useMediaQuery({ minWidth: 768 })
 
   useEffect(() => {
     let concert = concerts.filter(conc => conc.id === Number(id))[0];
@@ -34,7 +48,16 @@ export const Concert: React.FC = () => {
             <div className="text-center mb-4">
               {location}, {concert ?.year}. {concert ?.date}
             </div>
-            <img src={"/concerts/" + concert.img} className="m-auto max-w-full mb-4" />
+            <div class="relative">
+              <img src={"/concerts/" + concert.img} className="m-auto max-w-full mb-4"
+                onError={({ currentTarget }) => {
+                  currentTarget.onerror = null; // prevents looping
+                  currentTarget.src = emptyImages[randomEmptyImg];
+                }}
+              />
+              {id && <Link to={`/buli/${+id - 1}`} className="absolute top-[50%] translate-y-[-50%] left-0 transition-all duration-1000 ease-in-out hover:text-red-500 hover:scale-125"><FaChevronLeft size={"3em"}/></Link>}
+              {id && <Link to={`/buli/${+id + 1}`} className="absolute top-[50%] translate-y-[-50%] right-0 transition-all duration-1000 ease-in-out hover:text-red-500 hover:scale-125"><FaChevronRight size={"3em"}/></Link>}
+            </div>
             <div className="mb-4">
               {concert.description}
             </div>
@@ -42,16 +65,14 @@ export const Concert: React.FC = () => {
             {concert.ytIds?.map(ytId => {
               return (
                 <div className="flex justify-center mb-4">
-                  <YouTube videoId={ytId} />
+                  <YouTube videoId={ytId} className="max-w-full" opts={!isTabletOrBigger && {width: '100%'}}/>
                 </div>
               )
             })
             }
           </div>
-          <div className="font-black flex justify-between">
-            {id && <Link to={`/buli/${+id - 1}`} className="hover:text-red-500">Előző bulikrumpli</Link>}
-            <Link to={'/buli'} className="hover:text-red-500">Vissza az összes bulikrumplira</Link>
-            {id && <Link to={`/buli/${+id + 1}`} className="hover:text-red-500">Következő bulikrumpli</Link>}
+          <div className="font-black flex justify-between items-center">
+            <Link to={'/buli'} className="hover:text-red-500">Vissza</Link>
           </div>
         </div>
         :

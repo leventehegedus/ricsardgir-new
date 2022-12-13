@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import { FaHeart, FaHeartBroken, FaImages } from "react-icons/fa";
+import { RiCloseCircleLine } from "react-icons/ri";
 import { tinderMembers } from "../../data/tinder";
 import Modal from 'react-modal';
 import { ITinderProfile } from "../../types";
+import { useMediaQuery } from 'react-responsive'
 
 const customStyles = {
   content: {
@@ -30,6 +32,8 @@ export const Tinder: React.FC = () => {
   const [dislikedMembers, setDislikedMembers] = useState<number[]>([])
   const [modalIsOpen, setIsOpen] = useState(false);
   const [selectedMember, setSelectedMember] = useState<ITinderProfile>()
+  const isTabletOrBigger = useMediaQuery({ minWidth: 768 })
+
 
   useEffect(() => {
     setMembers(tinderMembers);
@@ -46,8 +50,6 @@ export const Tinder: React.FC = () => {
         setDislikedMembers([...dislikedMembers, index]);
       }
     }
-
-    //    todo
   }
 
   useEffect(() => {
@@ -86,26 +88,25 @@ export const Tinder: React.FC = () => {
 
   const renderTinderCard = (member: ITinderProfile, index: number) => {
     return (
-      <div key={index} className={`w-[360px] h-[540px] m-auto absolute top-0 left-0 right-0 bottom-0 m-auto border border-white bg-black text-white transition-all duration-1000 ${isLiked(index) && "text-gir-500 left-[10000px] rotate-90 transition-all duration-1000 ease-in-out"} ${isDisliked(index) && "text-gir-500 left-[-10000px] rotate-[-90deg] transition-all duration-1000 ease-in-out"}`}>
-        <div className="h-[360px]">
+      <div key={index} className={`w-[16rem] h-[24rem] md:w-[24rem] md:h-[36rem] m-auto absolute top-0 left-0 right-0 bottom-0 m-auto border border-solid md:border-none border-white bg-black text-white transition-all duration-1000 ${isLiked(index) && "text-gir-500 left-[10000px] rotate-90 transition-all duration-1000 ease-in-out"} ${isDisliked(index) && "text-gir-500 left-[-10000px] rotate-[-90deg] transition-all duration-1000 ease-in-out"}`}>
+        <div className="h-[16rem] md:h-[24rem]">
           <Slider {...settings} className="w-full h-full">
             {member.images.map((img: string) => {
               return (
-                <img key={img} src={`/tinder/${member.id}/${img}`} className="w-full h-[360px] object-cover object-top border border-white border-8" />
+                <img key={img} src={`/tinder/${member.id}/${img}`} className="w-full h-[16rem] md:h-[24rem] object-cover object-top border border-white border-8" />
               )
             })}
           </Slider>
-          {/* <img src={`/tinder/${member.id}/profil/profil.jpg`} className="w-full h-full object-cover object-center" /> */}
         </div>
-        <div className="p-4 h-[180px]">
-          <div className="h-[66.66%]">
+        <div className="p-4 h-[8rem] md:h-[12rem]">
+          <div className="h-[4rem] md:h-[7rem]">
             <div><b>{member.name}</b>, {new Date().getFullYear() - member.yearOfBirth}, {member.location}</div>
             <div>{member.shortBio}</div>
           </div>
-          <div className="flex justify-between h-[33.33%]">
-            <div onClick={() => { playSound(member, false); decideMember(index, false) }}><FaHeartBroken size={"3em"} color={"#fd8100"} className="hover:rotate-[360deg] cursor-pointer transition-all duration-1000 ease-in-out hover:scale-75" /></div>
-            <div onClick={() => { setSelectedMember(member); setIsOpen(true) }}><FaImages size={"3em"} className="cursor-pointer transition-all duration-1000 ease-in-out hover:scale-125" /></div>
-            <div onClick={() => { playSound(member, true); decideMember(index, true) }}><FaHeart size={"3em"} className="hover:rotate-[360deg] cursor-pointer transition-all duration-1000 ease-in-out hover:scale-125" color={"#ff002b"} /></div>
+          <div className="flex justify-between h-2rem md:h-[3rem]">
+            <div onClick={() => { playSound(member, false); decideMember(index, false) }}><FaHeartBroken size={isTabletOrBigger ? "3rem" : "1.5rem"} color={"#fd8100"} className="hover:rotate-[360deg] cursor-pointer transition-all duration-1000 ease-in-out hover:scale-75" /></div>
+            <div onClick={() => { setSelectedMember(member); setIsOpen(true) }}><FaImages size={isTabletOrBigger ? "3rem" : "1.5rem"} className="cursor-pointer transition-all duration-1000 ease-in-out hover:scale-125" /></div>
+            <div onClick={() => { playSound(member, true); decideMember(index, true) }}><FaHeart size={isTabletOrBigger ? "3rem" : "1.5rem"} className="hover:rotate-[360deg] cursor-pointer transition-all duration-1000 ease-in-out hover:scale-125" color={"#ff002b"} /></div>
           </div>
         </div>
       </div>
@@ -130,11 +131,11 @@ export const Tinder: React.FC = () => {
         contentLabel="Example Modal"
       >
         {selectedMember &&
-          <div className="w-full h-full bg-black text-white p-8 overflow-auto">
+          <div className="w-full h-full bg-black text-white p-8 overflow-auto relative">
             <div className="mb-4">{selectedMember.name}</div>
             <div className="mb-4">{selectedMember.shortBio}</div>
             <div className="mb-4">{selectedMember.longBio}</div>
-            <div className="md:grid md:grid-cols-2 lg:grid-cols-[repeat(auto-fit,_minmax(240px,_1fr))] overflow-auto auto-rows-[160px] grid-flow-row-dense gap-x-8 gap-y-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-[repeat(auto-fit,_minmax(240px,_1fr))] overflow-auto auto-rows lg:auto-rows-[160px] grid-flow-row-dense gap-x-8 gap-y-8">
               {selectedMember ?.images.map((img, index) => {
                 return (
                   <div className={`flex flex-col border border-black overflow-hidden shadow-lg ${Math.random() > 0.5 ? "item-original" : "item-small"}`}
@@ -145,6 +146,7 @@ export const Tinder: React.FC = () => {
                 )
               })}
             </div>
+            <RiCloseCircleLine size={isTabletOrBigger ? "2rem" : "1.5rem"} onClick={() => {closeModal()}} className="absolute top-8 right-8"/>
           </div>
         }
       </Modal>

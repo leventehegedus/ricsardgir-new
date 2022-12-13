@@ -12,6 +12,7 @@ export const DIRECTION_MAP: Record<ArrowKeyType | DirectionType, Vector> = {
 };
 
 export const GRID_SIZE = 360;
+export const GRID_SIZE_MOBILE = 288;
 export const MIN_SCALE = 4;
 export const MAX_SCALE = 8;
 export const SPACING = 8;

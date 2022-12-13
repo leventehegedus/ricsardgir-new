@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { routes } from "../../data/routes";
+import { useMediaQuery } from 'react-responsive'
 
 interface MenuProps {
   isMenuOpen: boolean,
@@ -8,7 +9,7 @@ interface MenuProps {
 
 export const Menu: React.FC<MenuProps> = ({ isMenuOpen, setMenuOpen }) => {
   return (
-    <div className={"fixed bg-black top-20 w-full h-full transition-all duration-500 ease-in-out z-40" + (isMenuOpen ? " left-0" : " left-[-100vw]")}>
+    <div className={"fixed bg-black top-20 w-full h-[calc(100vh-80px)] transition-all duration-500 ease-in-out z-40 overflow-auto" + (isMenuOpen ? " left-0" : " left-[-100vw]")}>
       {
         routes.map((route, index) => {
           return (

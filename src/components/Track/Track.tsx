@@ -37,7 +37,7 @@ export const Track: React.FC<ITrackProps> = (props) => {
 
 
   return (
-    <div className="flex flex-col border border-black overflow-hidden shadow-lg item-small"
+    <div className="flex flex-col border border-black overflow-hidden shadow-lg item-small mb-4 md:mb-0"
       data-aos={isTabletOrBigger && animations[randomAnimation]}
     >
       <div className="h-full w-full overflow-hidden relative">
