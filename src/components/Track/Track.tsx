@@ -23,9 +23,9 @@ export const Track: React.FC<ITrack> = (props) => {
   const onButtonClick = (play: boolean) => {
     let myAudio: any = audioRef.current;
     if (play) {
-      myAudio.audioEl.current.play();
+      myAudio.play();
     } else {
-      myAudio.audioEl.current.pause();
+      myAudio.pause();
     }
     setPlaying(play);
   }
@@ -52,7 +52,7 @@ export const Track: React.FC<ITrack> = (props) => {
           {calculateDuration(props.duration_ms)}
         </div>
       </div>
-      <ReactAudioPlayer
+      <audio
         src={props.preview_url}
         ref={audioRef}
         onEnded={() => { setPlaying(!isPlaying) }}
