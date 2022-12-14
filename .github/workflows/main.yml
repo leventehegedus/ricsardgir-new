@@ -9,7 +9,7 @@ jobs:
       uses: actions/checkout@v2
     
     - name: 📂 Sync files
-      uses: leventehegedus/ricsardgir-new/ricsardgir-app@v0.0.1
+      uses: leventehegedus/ricsardgir-new/FTP-Deploy-Action@0.0.1
       with:
         server: ftpx.forpsi.com
         username: ricsardgircom
