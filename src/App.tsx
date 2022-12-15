@@ -17,6 +17,7 @@ import { ArticlesPage } from "./pages/ArticlesPage/ArticlesPage";
 import { SlidingTileGame } from "./pages/SlidingTileGame/SlidingTileGame";
 import { Tinder } from "./pages/Tinder/Tinder";
 import { Timeline } from "./pages/Timeline/Timeline";
+import { Quiz } from "./pages/Quiz/Quiz";
 import { App as Game2048 } from "./pages/2048/App/App";
 
 import { Menu } from "./components/Menu/Menu";
@@ -59,6 +60,7 @@ function App() {
           <Route path="/tilitoli" element={<SlidingTileGame />} />
           <Route path="/tinder" element={<Tinder />} />
           <Route path="/timeline" element={<Timeline />} />
+          <Route path="/quiz" element={<Quiz />} />
           <Route path="/2048" element={<Game2048 />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
