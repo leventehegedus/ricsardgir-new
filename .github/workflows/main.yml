@@ -1,16 +1,22 @@
 on: push
 name: 🚀 Deploy website on push
 jobs:
-  web-deploy:
-    name: 🎉 Deploy
+  deploy:
+    name: Deploy 🚀
+    needs: build
     runs-on: ubuntu-latest
     steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v2
-
-    - name: 📂 Sync files
-      uses: leventehegedus/ricsardgir-new@0.0.1
-      with:
-        server: ftpx.forpsi.com
-        username: ricsardgircom
-        password: ${{ secrets.password }}
+      - name: Checkout repository
+        uses: actions/checkout@main
+      - name: Download artifact
+        uses: actions/download-artifact@main
+        with:
+          name: dist
+          path: dist
+      - name: Sync files to hosting
+        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        uses: leventehegedus/ricsardgir-new@0.0.1
+        with:
+          server: ftpx.forpsi.com
+          username: ricsardgircom
+          password: ${{ secrets.password }}
