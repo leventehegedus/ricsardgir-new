@@ -1,0 +1,12 @@
+name: ricsardgir-actions
+on: [push]
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@0.0.1
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - run: npm install -g bats
+      - run: bats -v
