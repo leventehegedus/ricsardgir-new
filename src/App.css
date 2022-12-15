@@ -178,10 +178,11 @@ body {
   background-image: url("./home/bulikrumpli.gif");
 }
 
-.home-page-block:nth-child(odd){
+.home-page-block:nth-child(odd) {
   grid-column: 1/3;
 }
-.home-page-block:nth-child(even){
+
+.home-page-block:nth-child(even) {
   grid-column: 2/4;
 }
 
@@ -205,18 +206,24 @@ body {
   text-transform: uppercase;
   font-weight: 900;
 }
+
 .slick-slider .slick-prev {
   left: 1.5rem;
 }
+
 .slick-slider .slick-next {
   right: 1.5rem;
 }
-.slick-slider .slick-prev, .slick-slider .slick-next {
+
+.slick-slider .slick-next,
+.slick-slider .slick-prev {
   z-index: 10;
   width: 1.5rem;
   height: 1.5rem;
 }
-.slick-slider .slick-prev:before, .slick-slider .slick-next:before {
+
+.slick-slider .slick-next:before,
+.slick-slider .slick-prev:before {
   font-size: 1.5rem;
 }
 
@@ -251,15 +258,16 @@ body {
   grid-column: 2/4;
   grid-row-end: span 2;
 }
+
 .item-wide-left {
   grid-column: 1/4;
   grid-row-end: span 2;
 }
+
 .item-wide-right {
   grid-column: 2/5;
   grid-row-end: span 2;
 }
-
 
 .item-full {
   grid-column: 1/5;

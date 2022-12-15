@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import { Footer } from "../../components/Footer/Footer";
 import { routes } from "../../data/routes";
 import { SlidingTileGame } from "../SlidingTileGame/SlidingTileGame";
+import { Typewriter } from 'react-simple-typewriter'
 
 export const HomePage: React.FC = () => {
 
@@ -59,7 +60,7 @@ export const HomePage: React.FC = () => {
       <div>
         <SlidingTileGame />
         <div className="p-4 max-w-7xl	m-auto grid grid-cols-[repeat(auto-fit,_minmax(15rem,_1fr))] auto-rows-[10rem] grid-flow-row-dense gap-y-16">
-          <div className="row-span-1 col-span-3 text-white">Üdv a Ricsárdgír zenekar honlapján. Görgess tovább, ha kiraktad a koalát!</div>
+          <div className="row-span-1 col-span-3 text-white"><Typewriter words={["Üdv a Ricsárdgír zenekar honlapján. Görgess tovább, ha kiraktad a koalát!"]} loop={false}/></div>
           {renderHomePageBlock()}
         </div>
         <Footer />

@@ -16,19 +16,16 @@ import { MusicPage } from "./pages/MusicPage/MusicPage";
 import { ArticlesPage } from "./pages/ArticlesPage/ArticlesPage";
 import { SlidingTileGame } from "./pages/SlidingTileGame/SlidingTileGame";
 import { Tinder } from "./pages/Tinder/Tinder";
-import { Flappy } from "./pages/Flappy/Flappy";
+import { Timeline } from "./pages/Timeline/Timeline";
 import { App as Game2048 } from "./pages/2048/App/App";
 
 import { Menu } from "./components/Menu/Menu";
 import { TopBar } from "./components/TopBar/TopBar";
-import ReactAudioPlayer from 'react-audio-player';
 
 import MediaQuery from 'react-responsive'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './App.css';
-import './style/flappycss/reset.css';
-import './style/flappycss/main.css';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -61,8 +58,8 @@ function App() {
           <Route path="/szar" element={<ArticlesPage />} />
           <Route path="/tilitoli" element={<SlidingTileGame />} />
           <Route path="/tinder" element={<Tinder />} />
+          <Route path="/timeline" element={<Timeline />} />
           <Route path="/2048" element={<Game2048 />} />
-          <Route path="/flappy" element={<Flappy />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Router>

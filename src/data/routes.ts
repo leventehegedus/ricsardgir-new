@@ -72,10 +72,17 @@ export const routes: IRoute[] = [
     url: "/money"
   },
   {
-    id: 0,
+    id: 10,
     title: "2048",
     img: "./home/2048.jpg",
     gif: "./home/2048.gif",
     url: "/2048"
+  },
+  {
+    id: 11,
+    title: "ez volt a ricsárdgír",
+    img: "",
+    gif: "",
+    url: "/timeline"
   },
 ]

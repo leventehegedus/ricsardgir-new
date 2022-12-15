@@ -1,4 +1,6 @@
 import { animations } from "../../data/animations";
+import { Typewriter } from 'react-simple-typewriter'
+
 const movieStoryBlock = [
   {
     text: "",
@@ -194,10 +196,11 @@ export const MoviePage: React.FC = () => {
     return (
       <div className={`mb-4 md:mb-0 flex flex-col border border-solid border-white overflow-hidden shadow-lg text-white bg-black p-2 transition-all duration-1000 ease-in-out hover:invert hover:scale-105 ${Math.random() > 0.5 ? "hover:rotate-1" : "hover:rotate-[-1deg]"} ${block.size}`}
         data-aos={animations[randomAnimation]}
+        data-aos-duration="1000"
         key={id}
       >
-        <span className="font-black uppercase">{block.title}</span>
-        <span>{block.text}</span>
+        <span className="font-black uppercase"><Typewriter words={[block.title]}/></span>
+        <span><Typewriter words={[block.text]} typeSpeed={100}/></span>
         {block.img &&
           <img src={block.img} className="h-full w-full object-cover object-top" />
         }

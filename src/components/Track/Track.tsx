@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef, MutableRefObject } from "react";
 import { FaRegPlayCircle, FaRegPauseCircle } from "react-icons/fa"
-import ReactAudioPlayer from 'react-audio-player';
 import { animations } from "../../data/animations";
 import { useMediaQuery } from 'react-responsive'
 import { ITrack } from "../../types";
@@ -28,6 +27,10 @@ export const Track: React.FC<ITrack> = (props) => {
       myAudio.pause();
     }
     setPlaying(play);
+    const timer = setTimeout(() => {
+      myAudio.pause();
+    }, 300);
+    return () => clearTimeout(timer);
   }
 
   return (
