@@ -34,7 +34,7 @@ jobs:
           path: dist
       - name: Sync files to hosting
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
-        with: 
+        with:
           server: ftpx.forpsi.com
           username: ricsardgircom
-          password: ${{ secrets.password }}
+          password: ${{ secrets.PASSWORD }}
