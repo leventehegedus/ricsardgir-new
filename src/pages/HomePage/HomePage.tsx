@@ -1,73 +1,54 @@
-import {useEffect} from "react";
-import {Link} from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Footer } from "../../components/Footer/Footer";
 import { routes } from "../../data/routes";
 import { SlidingTileGame } from "../SlidingTileGame/SlidingTileGame";
 import { Typewriter } from 'react-simple-typewriter'
+import { useParallax } from 'react-scroll-parallax';
+import { HomePageParallaxElement } from '../../components/HomePageParallaxElement/HomePageParallaxElement';
+
 
 export const HomePage: React.FC = () => {
 
   useEffect(() => {
-    window.scroll(0,0);
+    window.scroll(0, 0);
   }, [])
-
-  const fn = (e: any) => {
-    let tooltip: HTMLElement[] = Array.from(document.querySelectorAll('.tooltip'));
-    for (let i = 0; i < tooltip.length; i++) {
-      tooltip[i].style.left = e.pageX + 'px';
-      tooltip[i].style.top = e.pageY + 'px';
-    }
-  }
-
-  const toggleBgEnter = (block: any) =>  {
-    let htmlBlock = document.getElementById(block.title)
-    if (htmlBlock) {
-      htmlBlock.style.backgroundImage = `url(${block.gif})`;
-    }
-  }
-  const toggleBgLeave = (block: any) =>  {
-    let htmlBlock = document.getElementById(block.title)
-    if (htmlBlock) {
-      htmlBlock.style.backgroundImage = `url(${block.img})`;
-    }
-  }
 
   const renderHomePageBlock = () => {
     return (
-      routes.map(route =>  {
-        return (
-          <Link to={route.url} className="home-page-block flex flex-col shadow-lg row-span-2 col-span-3"
-            onMouseMove={fn}
-            onMouseEnter={() =>  {
-              toggleBgEnter(route)
-            }}
-            onMouseLeave={() =>  {
-              toggleBgLeave(route)
-            }}
-            style={{ backgroundImage: `url(${route.img})` }}
-            id={route.title}
-            key={route.id}
-          >
-            <span className="tooltip">{route.title}</span>
-          </Link>
-        )
+      routes.map((route, index) => {
+        {
+          let hue = 350;
+          let saturation = Math.floor(Math.random() * 100);
+          let light = Math.floor(Math.random() * 100);
+          return (
+            <Link to={route.url} className="card">
+              <div className={`card__face border border-solid border-white w-[300px] h-[300px] font-black text-3xl text-center flex justify-center items-center ${light < 50 ? "text-white" : "text-black"} p-4`} key={route.id} style={{ backgroundColor: 'hsl(' + hue + ',' + saturation + '%,' + light + '%)' }}>
+                {route.title}
+              </div>
+              <div className={`card__face card__face--back border border-solid border-white w-[300px] h-[300px] text-center flex justify-center items-center ${light < 50 ? "text-white" : "text-black"} p-4`} key={route.id} style={{ backgroundColor: 'hsl(' + hue + ',' + saturation + '%,' + light + '%)' }}>
+                {route.description}
+              </div>
+            </Link>
+          )
+          /*return <HomePageParallaxElement {...route} key={index} />*/
+        }
       })
     )
   }
 
   return (
     <>
-      <div>
-        <SlidingTileGame />
-        <div className="p-4 max-w-7xl	m-auto grid grid-cols-[repeat(auto-fit,_minmax(15rem,_1fr))] auto-rows-[10rem] grid-flow-row-dense gap-y-16">
-          <div className="row-span-1 col-span-3 text-white"><Typewriter words={["Üdv a Ricsárdgír zenekar honlapján. Görgess tovább, ha kiraktad a koalát!"]} loop={false}/></div>
+      <div className="p2 sm:p-4 max-w-7xl	m-auto overflow-hidden">
+        <div className="m-auto w-fit max-w-7xl m-auto grid grid-cols-[repeat(1,300px)] sm:grid-cols-[repeat(2,300px)]  auto-rows-[300px] lg:grid-cols-[repeat(3,300px)] xl:grid-cols-[repeat(4,300px)] grid-flow-row-dense gap-y-2 gap-x-2 text-white">
+          <SlidingTileGame folder={"koala"} />
           {renderHomePageBlock()}
-        </div>
+          <SlidingTileGame folder={"danilaci"} />
+        </div >
         <Footer />
       </div>
     </>
   )
 }
-
 
 export default HomePage;
