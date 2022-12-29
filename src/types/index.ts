@@ -30,6 +30,11 @@ export interface IVideo {
   articles?: IArticle[]
 }
 
+export interface IQuote {
+  text: string,
+  quoteFrom: string
+}
+
 export interface ITrack {
   duration_ms: number,
   external_urls: {
@@ -83,6 +88,7 @@ export interface IMerch {
 export interface IRoute {
   id: number,
   title: string,
+  description: string,
   img: string,
   gif: string,
   url: string,

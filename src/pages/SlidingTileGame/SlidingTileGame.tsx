@@ -1,8 +1,13 @@
 import { useState, useEffect } from 'react';
 
-export const SlidingTileGame: React.FC = props => {
+interface SlidingTileGameProps {
+  folder: string,
+  size: number
+}
 
-  const [size, setSize] = useState(4);
+export const SlidingTileGame: React.FC<SlidingTileGameProps> = props => {
+
+  const [size, setSize] = useState(props.size || 4);
   const [puzzle, setPuzzle] = useState<number[][]>([]);
   const [solution, setSolution] = useState<number[][]>([]);
 
@@ -121,7 +126,6 @@ export const SlidingTileGame: React.FC = props => {
     mypuzzle[y][x] = 0;
     if (JSON.stringify(mypuzzle) === JSON.stringify(solution)) {
       setTimeout(() => alert('Te sem vagy hétköznapi!'), 100);
-      setTimeout(() => newPuzzle(), 5000);
     }
     console.log(getInvCount(mypuzzle));
     setPuzzle(mypuzzle);
@@ -141,13 +145,15 @@ export const SlidingTileGame: React.FC = props => {
               {
                 rows.map((value, x) => {
                   return (
-                    <div className="w-[75px] h-[75px] flex justify-center items-center cursor-pointer text-white border border-black" key={x} onClick={() => handleClick(value, x, y)}>
+                    <div className={`w-[${300 / size}px] w-[${300 / size}px] flex justify-center items-center cursor-pointer text-white`} key={x} onClick={() => handleClick(value, x, y)}>
                       {value !== 0 ?
                         <>
-                          <img className="h-full w-full object-cover object-center" src={`/tilitoli/${props.folder}/row-${Math.ceil(value / size)}-column-${value % size === 0 ? size : value % size}.png`} />
+                          <img className="h-full w-full object-cover object-center box-border border border-[rgba(0,0,0,0.2)]" src={`/tilitoli/${props.folder}/row-${Math.ceil(value / size)}-column-${value % size === 0 ? size : value % size}.png`} />
                         </>
                         :
-                        <span className="text-white text-center">rakj ki!</span>
+                        <div className={`h-[${300 / size}px] w-[${300 / size}px] flex text-white text-center items-center`}>
+                          <span style={{ minWidth: 300 / size + 'px', minHeight: 300 / size + 'px' }}></span>
+                        </div>
                       }
                     </div>
                   )

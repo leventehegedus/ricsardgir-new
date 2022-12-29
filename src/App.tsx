@@ -14,14 +14,15 @@ import { Video } from "./pages/Video/Video";
 import { MoviePage } from "./pages/MoviePage/MoviePage";
 import { MusicPage } from "./pages/MusicPage/MusicPage";
 import { ArticlesPage } from "./pages/ArticlesPage/ArticlesPage";
-import { SlidingTileGame } from "./pages/SlidingTileGame/SlidingTileGame";
 import { Tinder } from "./pages/Tinder/Tinder";
 import { Timeline } from "./pages/Timeline/Timeline";
 import { Quiz } from "./pages/Quiz/Quiz";
+import { QuotesPage } from "./pages/QuotesPage/QuotesPage";
 import { App as Game2048 } from "./pages/2048/App/App";
 
 import { Menu } from "./components/Menu/Menu";
 import { TopBar } from "./components/TopBar/TopBar";
+import { Footer } from "./components/Footer/Footer";
 
 import MediaQuery from 'react-responsive'
 import AOS from 'aos';
@@ -43,28 +44,31 @@ function App() {
           <span>ricsárdgír</span>
         </div>
       </MediaQuery>
-      <Router>
-        <WavyContainer />
-        <TopBar isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
-        <Menu isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/buli" element={<ConcertsPage />} />
-          <Route path="/buli/:id" element={<Concert />} />
-          <Route path="/video" element={<VideosPage />} />
-          <Route path="/video/:id" element={<Video />} />
-          <Route path="/merch" element={<MerchPage />} />
-          <Route path="/money" element={<MoviePage />} />
-          <Route path="/ricsaj" element={<MusicPage />} />
-          <Route path="/szar" element={<ArticlesPage />} />
-          <Route path="/tilitoli" element={<SlidingTileGame />} />
-          <Route path="/tinder" element={<Tinder />} />
-          <Route path="/timeline" element={<Timeline />} />
-          <Route path="/quiz" element={<Quiz />} />
-          <Route path="/2048" element={<Game2048 />} />
-          <Route path="*" element={<ErrorPage />} />
-        </Routes>
-      </Router>
+      <div className="min-h-[calc(100vh-80px)]">
+        <Router>
+          <WavyContainer />
+          <TopBar isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
+          <Menu isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/buli" element={<ConcertsPage />} />
+            <Route path="/buli/:id" element={<Concert />} />
+            <Route path="/video" element={<VideosPage />} />
+            <Route path="/video/:id" element={<Video />} />
+            <Route path="/merch" element={<MerchPage />} />
+            <Route path="/money" element={<MoviePage />} />
+            <Route path="/ricsaj" element={<MusicPage />} />
+            <Route path="/szar" element={<ArticlesPage />} />
+            <Route path="/tinder" element={<Tinder />} />
+            <Route path="/timeline" element={<Timeline />} />
+            <Route path="/quiz" element={<Quiz />} />
+            <Route path="/2048" element={<Game2048 />} />
+            <Route path="/idezetek" element={<QuotesPage />} />
+            <Route path="*" element={<ErrorPage />} />
+          </Routes>
+        </Router>
+      </div>
+      <Footer />
     </div>
   )
 }

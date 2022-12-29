@@ -1,6 +1,24 @@
 import { useState, useEffect } from 'react';
 
-const questions = [
+interface IQuestion {
+  id: number,
+  question: string,
+  answers: IAnswer[],
+  correctId: number
+}
+
+interface IAnswer {
+  id: number,
+  text: string
+}
+
+interface IUserAnswer {
+  questionId: number,
+  answerId: number
+}
+
+
+const questions: IQuestion[] = [
   {
     id: 0,
     question: "Mennyi 3+1?",
@@ -106,24 +124,24 @@ const questions = [
 export const Quiz: React.FC = () => {
 
   const [correctAnswers, setCorrectAnswers] = useState(0);
-  const [answeredQuestionIds, setAnsweredQuestionIds] = useState([]);
-  const [answers, setAnswers] = useState([]);
+  const [answeredQuestionIds, setAnsweredQuestionIds] = useState<number[]>([]);
+  const [answers, setAnswers] = useState<IUserAnswer[]>([]);
 
-  const answerTheQuestion = (question, answerId): void => {
+  const answerTheQuestion = (question: IQuestion, answerId: number): void => {
     const answeredIds = [...answeredQuestionIds];
     if (!answeredIds.includes(question.id)) {
       answeredIds.push(question.id)
       setAnsweredQuestionIds(answeredIds)
     }
     const answersHelper = [...answers];
-    let myAnswer = {};
+    let myAnswer: IUserAnswer = {questionId: 0, answerId: 0};
     myAnswer["questionId"] = question.id;
     myAnswer["answerId"] = answerId;
     answersHelper.push(myAnswer);
     setAnswers(answersHelper);
   }
 
-  const checkIfCorrect = (questionId, answerId) => {
+  const checkIfCorrect = (questionId: number, answerId: number) => {
     let answerObject = answers.filter(answer => answer.answerId);
     if (questions[questionId].correctId === answerId) {
       return true
@@ -131,7 +149,7 @@ export const Quiz: React.FC = () => {
     return false
   }
 
-  const renderAnswerText = (question, answer): string => {
+  const renderAnswerText = (question: IQuestion, answer: IAnswer): string => {
     let returnText = "";
     let answerObject = answers.filter(answer => answer.questionId === question.id)[0];
     if (answeredQuestionIds.includes(question.id)) {

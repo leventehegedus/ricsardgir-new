@@ -28,6 +28,11 @@ export type Configuration = {
 const APP_NAME = 'react-2048';
 
 export const App: FC = () => {
+
+  useEffect(() => {
+    window.scroll(0,0)
+  }, [])
+
   const [gameState, setGameStatus] = useGameState({
     status: 'running',
     pause: false,

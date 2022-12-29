@@ -27,10 +27,10 @@ export const Track: React.FC<ITrack> = (props) => {
       myAudio.pause();
     }
     setPlaying(play);
-    const timer = setTimeout(() => {
-      myAudio.pause();
-    }, 1000);
-    return () => clearTimeout(timer);
+    // const timer = setTimeout(() => {
+    //   myAudio.pause();
+    // }, 1000);
+    // return () => clearTimeout(timer);
   }
 
   return (

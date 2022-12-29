@@ -65,7 +65,7 @@ export const routes: IRoute[] = [
     emoji: "📹"
   },
   {
-    id: 9,
+    id: 7,
     title: "pénzt",
     description: "Szeretnénk forgatni egy filmet nagyon sok pénzből, hogy senki se nézze meg.",
     img: "./home/money.jpg",
@@ -74,7 +74,7 @@ export const routes: IRoute[] = [
     emoji: "💸"
   },
   {
-    id: 10,
+    id: 8,
     title: "2048",
     description: "Ha unatkozol és meguntad a szerelmed. Vagy az életet. Vagy mind a kettőt.",
     img: "./home/2048.jpg",
@@ -83,7 +83,16 @@ export const routes: IRoute[] = [
     emoji: "🔢"
   },
   {
-    id: 11,
+    id: 9,
+    title: "idézetek",
+    description: "Jól csak a szívével lát az ember, ami igazán lényeges az a vaníliaízű piskótasütemény",
+    img: "",
+    gif: "",
+    url: "/idezetek",
+    emoji: "📚"
+  },
+  {
+    id: 10,
     title: "ez volt a ricsárdgír",
     description: "Hallottad, hogy feloszlott a Beatles?",
     img: "",
