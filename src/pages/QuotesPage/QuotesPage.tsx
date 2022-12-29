@@ -3,7 +3,7 @@ import { IQuote } from "../../types";
 
 export const QuotesPage: React.FC = () => {
   const [quotes, setQuotes] = useState<IQuote[]>([]);
-  const [quoteNumber, setQuoteNumber] = useState(0);
+  const [quoteNumber, setQuoteNumber] = useState<number>();
 
   useEffect(() => {
     generateRandomQuote();
@@ -46,7 +46,7 @@ export const QuotesPage: React.FC = () => {
       <div className="m-8 text-center">
         {renderButton()}
       </div>
-      {quotes && quotes[quoteNumber] &&
+      {quotes && quoteNumber && quotes[quoteNumber] &&
         <div className="card w-[300px] h-[300px] md:w-[450px] md:h-[450px] m-auto" style={{ backgroundColor: getBackgroundColor() }}>
           <div className="card__face w-full h-full font-black text-xl border border-white border-8 text-center flex justify-center items-center p-4">
             <span className={`z-10 ${quotes[quoteNumber].text.length > 100 && "text-left"}`}>„{quotes[quoteNumber] ?.text}”</span>
