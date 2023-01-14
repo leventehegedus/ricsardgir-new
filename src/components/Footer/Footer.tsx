@@ -11,17 +11,17 @@ const urls: IUrl[] = [
   {
     name: "facebook",
     url: "https://facebook.com/ricsardgir",
-    text: "facebook.com/ricsardgir"
+    text: "ricsardgir"
   },
   {
     name: "instagram",
     url: "https://instagram.com/ricsardgir",
-    text: "insta.com/ricsardgir"
+    text: "ricsardgir"
   },
   {
     name: "youtube",
     url: "https://youtube.com/user/RCHRDGR",
-    text: "lyútyúb/RCHRDGR"
+    text: "RCHRDGR"
   },
   {
     name: "email",
@@ -36,12 +36,12 @@ const urls: IUrl[] = [
   {
     name: "bandcamp",
     url: "https://rcsrdgr.bandcamp.com",
-    text: "bandcamp"
+    text: "rcsrdgr"
   },
   {
     name: "soundcloud",
     url: "https://soundcloud.com/ricsardgir",
-    text: "soundcloud"
+    text: "ricsardgir"
   },
 ]
 
@@ -50,8 +50,8 @@ export const Footer: React.FC = () => {
 
   const renderLink = (url: IUrl) => {
     return (
-      <a href={url.url} target="_blank" className="fb text-white hover:text-gir-500 flex justify-center items-center gap-x-2">
-        {renderLogo(url.name)}
+      <a href={url.url} target="_blank" className="text-white hover:text-gir-500 flex justify-center items-center gap-x-2">
+        <span>{renderLogo(url.name)}</span>
         <span>{url.text}</span>
       </a>
     )
@@ -79,14 +79,14 @@ export const Footer: React.FC = () => {
   }
 
   return (
-    <div className="p-4 w-full mt-16">
+    <div className="p-4 w-full mt-16 bg-black">
       <div className="flex justify-center items-center gap-x-4 flex-wrap">
         {urls && urls.map(url => {
           return renderLink(url)
         })}
         <div>
-          <a href="https://www.linkedin.com/in/levente-hegedüs-79197b98" target="_blank" className="text-white hover:text-gir-500">
-            <span>Készítette sok szeretettel és még több pénzért (ja, nem): Hegedüs Levente | Katt ide, ha sok pénzt akarsz adni nekem és egy honlapot magadnak</span>
+          <a href="http://leventehegedus.hu" target="_blank" className="text-white hover:text-gir-500">
+            <span>Készítette sok szeretettel és még több pénzért (ja, nem): Hegedüs Levente</span>
           </a>
         </div>
       </div>

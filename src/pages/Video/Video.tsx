@@ -43,13 +43,13 @@ export const Video: React.FC = () => {
         <>
           <div className="mb-4">
             <div className="uppercase font-black text-center">
-              {video ?.id}. {video ?.title}
+              {video ?.title}
             </div>
             <div className="text-center mb-4">
               {video ?.year}
             </div>
             <div className="flex justify-center">
-              <YouTube videoId={video.ytId} />
+              <YouTube videoId={video.ytId} className="w-full"/>
             </div>
           </div>
           <div>

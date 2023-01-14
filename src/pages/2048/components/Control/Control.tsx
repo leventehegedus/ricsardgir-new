@@ -11,7 +11,7 @@ const Control: FC<ControlProps> = ({
   onReset
 }) => (
   <Box inlineSize="100%" justifyContent="space-between">
-    <Button onClick={onReset} className="h-full">
+    <Button onClick={onReset} className="p-4">
       <Text fontSize={16} textTransform="capitalize">
         Új játék
       </Text>

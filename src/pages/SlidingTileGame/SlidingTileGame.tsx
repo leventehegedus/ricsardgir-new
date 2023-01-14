@@ -127,7 +127,6 @@ export const SlidingTileGame: React.FC<SlidingTileGameProps> = props => {
     if (JSON.stringify(mypuzzle) === JSON.stringify(solution)) {
       setTimeout(() => alert('Te sem vagy hétköznapi!'), 100);
     }
-    console.log(getInvCount(mypuzzle));
     setPuzzle(mypuzzle);
   };
 

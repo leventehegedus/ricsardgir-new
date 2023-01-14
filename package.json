@@ -21,6 +21,7 @@
     "@mui/material": "^5.10.12",
     "@types/styled-components": "^5.1.26",
     "aos": "^2.3.4",
+    "canvas-sketch-util": "^1.10.0",
     "leaflet": "^1.9.3",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",

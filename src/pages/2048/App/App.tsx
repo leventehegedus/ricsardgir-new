@@ -110,8 +110,9 @@ export const App: FC = () => {
               inlineSize="100%"
               justifyContent="space-between"
               marginBlockStart="s2"
+              marginBlockEnd="s2"
             >
-                <Box marginBlockStart="s2" marginBlockEnd="s6" inlineSize="100%">
+                <Box inlineSize="100%">
                   <Control
                     onReset={onResetGame}
                   />
