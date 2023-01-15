@@ -26,6 +26,22 @@
     "name": "Nincsen sárkány",
     "release_date": "2013-05-10",
     "total_tracks": 15,
+    "additional_info": [
+      "Ricsárdgír:",
+      "Mártondani - ének, gitár, dalszöveg",
+      "Paál Laci - szinti",
+      "Zsirai Andris - basszus",
+      "Németh Bali - dob",
+      "Papp Éva - Ez volt a Ricsárdgír vokál",
+      "Deák Edina - \"ének\" (Repülőgép)",
+      "Pájer Alma - ének (Én dalom)",
+      "Szurcsik Erika - ének (Isztambul, Szüljmeg)",
+      "Kiss Janó - Klarinét (Kád)",
+      "Tóth Levente, Rigó Benjamin, Paál László - Lightsaber, Ez volt a Ricsárdgír, Szörf férfi kórus",
+      "Hoffmanntamás Tamás Boldi - A lemez füzetet és minden más csodát ő készített.",
+      "A felvételek a Zombi Sport Stúdióban készültek 2013-ban."
+    ],
+    "shop_link": "https://popshop.hu/ricsardgir/16584-ricsardgir-nincsen-sarkany-cd.html",
     "tracks": {
       "href": "https://api.spotify.com/v1/albums/56KVRT4uUdQ5iuXkUlnCCE/tracks?offset=0&limit=50&locale=en,hu;q=0.9,en-US;q=0.8,de;q=0.7,it;q=0.6,fr;q=0.5",
       "items": [
@@ -500,6 +516,22 @@
     "release_date": "2016-10-30",
     "release_date_precision": "day",
     "total_tracks": 12,
+    "additional_info": [
+      "Ricsárdgír:",
+      "Mártondani - ének, gitár, dalszöveg",
+      "Paál László - szintis",
+      "Zsirai Andris - basszus",
+      "Németh Balázs - dob",
+      "Széles Flóra -ének",
+      "Papp Éva - ének",
+      "Deák Edina - ének",
+      "Előd Eszter - ének",
+      "Zsemberi Orsolya - furulya",
+      "Deák Edina - A borítóképet festette.",
+      "Hoffmann Tamás Boldi - A lemez füzetet és minden más csodát ő készített.",
+      "A felvételek az Artist Factoryban készültek 2016-ban."
+    ],
+    "shop_link": "https://popshop.hu/ricsardgir/16547-ricsardgir-dark-side-of-the-moon-cd.html",
     "tracks": {
       "href": "https://api.spotify.com/v1/albums/7neukvPZBtFyNt2yWLKzQQ/tracks?offset=0&limit=50&locale=en,hu;q=0.9,en-US;q=0.8,de;q=0.7,it;q=0.6,fr;q=0.5",
       "items": [
@@ -905,6 +937,22 @@
     "release_date": "2019-12-13",
     "release_date_precision": "day",
     "total_tracks": 12,
+    "additional_info": [
+      "Ricsárdgír:",
+      "Mártondani - ének, gitár, dalszöveg",
+      "Paál László - szintis",
+      "Zsirai Andris - basszus",
+      "Huszár Ákos - dob",
+      "Borszukovszky Flóra -ének",
+      "Papp Éva - ének",
+      "Tóth Dóra Lilla - kórus, hegedű",
+      "Dunai Boróka - ének",
+      "Gerse Dalma - a cowboy vele beszélget a My Horse-ban",
+      "Szabó Gyula - szólógitár",
+      "Deák Edina - arculat, lemez design",
+      "A felvételeket, mixet és mastert Cserny Kálmám 'Bogi' készítette az Origó Stúdióban Budapesten 2019 őszén."
+    ],
+    "shop_link": "https://popshop.hu/ricsardgir/16546-ricsardgir-rise-of-the-koala.html",
     "tracks": {
       "href": "https://api.spotify.com/v1/albums/71wf7P2raoraMSHrbymNv1/tracks?offset=0&limit=50&locale=en,hu;q=0.9,en-US;q=0.8,de;q=0.7,it;q=0.6,fr;q=0.5",
       "items": [

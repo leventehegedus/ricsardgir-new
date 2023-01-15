@@ -19,7 +19,7 @@ export const tinderMembers: ITinderProfile[] = [
     name: "Hegedüs Levente",
     yearOfBirth: 1992,
     location: "Silicon Valley",
-    shortBio: "A honlap atya, beugró mindenes",
+    shortBio: "A honlap atyja, beugró mindenes",
     longBio: "",
     images: [
       "/01.jpg",

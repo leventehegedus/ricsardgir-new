@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { routes } from "../../data/routes";
 import { SlidingTileGame } from "../SlidingTileGame/SlidingTileGame";
 import CanvasKoala from "../../components/CanvasKoala/CanvasKoala";
-import { useParallax } from 'react-scroll-parallax';
 
 export const HomePage: React.FC = () => {
 

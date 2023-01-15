@@ -52,6 +52,8 @@ export interface ITrack {
 
 export interface IAlbum {
   album_type: string,
+  additional_info: string[],
+  shop_link: string,
   external_urls: {
     spotify: string
   },
@@ -110,4 +112,11 @@ export interface ITinderProfile {
   shortBio: string,
   longBio: string,
   images: string[]
+}
+
+export interface IMovieStoryBlock {
+  text: string,
+  img: string,
+  title: string,
+  size: string
 }

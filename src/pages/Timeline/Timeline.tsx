@@ -1,5 +1,4 @@
 import { animations } from "../../data/animations";
-import { Typewriter } from 'react-simple-typewriter'
 
 const movieStoryBlock = [
   {
@@ -42,8 +41,8 @@ export const Timeline: React.FC = () => {
         data-aos={animations[randomAnimation]}
         data-aos-duration="1000"
       >
-        <span className="font-black uppercase text-gir-500"><Typewriter words={[block.title]} /></span>
-        <span><Typewriter words={[block.text]} /></span>
+        <span className="font-black uppercase text-gir-500">{block.title}</span>
+        <span>{block.text}</span>
         {block.img &&
           <img src={block.img} className="h-full w-full object-cover object-top" />
         }
@@ -54,7 +53,7 @@ export const Timeline: React.FC = () => {
   return (
     <>
       <div className="w-full p-4 font-black text-gir-500 text-6xl flex justify-center">
-        <Typewriter words={["ez volt a ricsárdgír"]} typeSpeed={100} />
+        <span>"ez volt a ricsárdgír"</span>
       </div>
       <div className="relative p-4 m-auto max-w-7xl after:content after:absolute after:bg-white after:top-0 after:bottom-0 after:left-1/2 after:w-1">
         {movieStoryBlock.map((block, index) => {
@@ -66,7 +65,7 @@ export const Timeline: React.FC = () => {
         })}
       </div>
       <div className="w-full mt-[1000px] p-4 font-black text-gir-500 text-6xl flex justify-center">
-        <Typewriter words={["vagy. nem."]} typeSpeed={100} />
+        <span>"vagy. nem."</span>
       </div>
     </>
   )

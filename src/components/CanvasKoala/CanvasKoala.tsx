@@ -200,7 +200,7 @@ const CanvasKoala = (props: any) => {
                 agents.splice(i, 1);
             }
             if (agents.length === 0) {
-                window.alert('megölted az összes koalát, ezért miattad feloszlik a zenekar!');
+                window.alert('Megölted az összes koalát, ezért feloszlik a zenekar. MIATTAD!');
             }
         }
         context.beginPath();

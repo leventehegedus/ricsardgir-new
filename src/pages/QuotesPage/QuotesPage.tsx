@@ -5,9 +5,9 @@ export const QuotesPage: React.FC = () => {
   const [quotes, setQuotes] = useState<IQuote[]>([]);
   const [quoteNumber, setQuoteNumber] = useState<number>();
 
-  useEffect(() => {
+  useEffect(() => {
     generateRandomQuote();
-  },[])
+  }, [])
 
   useEffect(() => {
     fetch("/data/quotes.ts")
@@ -21,6 +21,7 @@ export const QuotesPage: React.FC = () => {
 
   const generateRandomQuote = () => {
     let randomNumber = Math.floor(Math.random() * quotes.length);
+    console.log(randomNumber);
     if (randomNumber === quoteNumber) {
       generateRandomQuote();
     } else {
@@ -41,24 +42,30 @@ export const QuotesPage: React.FC = () => {
     return 'hsl(' + hue + ',' + saturation + '%,' + light + '%)';
   }
 
-  return (
-    <div className="p-4 text-white m-auto">
-      <div className="m-8 text-center">
-        {renderButton()}
-      </div>
-      {quotes && quoteNumber && quotes[quoteNumber] &&
+  const renderQuotes = () => {
+    if (quotes && typeof quoteNumber === 'number' && quotes.length > 0) {
+      return (
         <div className="card w-[300px] h-[300px] md:w-[450px] md:h-[450px] m-auto" style={{ backgroundColor: getBackgroundColor() }}>
           <div className="card__face w-full h-full font-black text-xl border border-white border-8 text-center flex justify-center items-center p-4">
-            <span className={`z-10 ${quotes[quoteNumber].text.length > 100 && "text-left"}`}>„{quotes[quoteNumber] ?.text}”</span>
+            <span className={`z-10 ${quotes[quoteNumber].text.length > 100 && "text-left"}`}>„{quotes[quoteNumber]?.text}”</span>
             <div className="absolute top-0 left-0 right-0 bottom-0 opacity-20">
               <img className="h-full w-full object-cover object-top" src={`/concerts/empty_${Math.floor(Math.random() * 6) + 2}.jpg`} />
             </div>
           </div>
           <div className="card__face card__face--back w-full h-full border border-white border-8 text-center flex justify-center items-center">
-            {quotes[quoteNumber] ?.quoteFrom}
+            {quotes[quoteNumber]?.quoteFrom}
           </div>
         </div>
-      }
+      )
+    }
+  }
+
+  return (
+    <div className="p-4 text-white m-auto">
+      <div className="m-8 text-center">
+        {renderButton()}
+      </div>
+      {renderQuotes()}
     </div>
   )
 }

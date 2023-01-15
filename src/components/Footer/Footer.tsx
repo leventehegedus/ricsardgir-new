@@ -50,7 +50,7 @@ export const Footer: React.FC = () => {
 
   const renderLink = (url: IUrl) => {
     return (
-      <a href={url.url} target="_blank" className="text-white hover:text-gir-500 flex justify-center items-center gap-x-2">
+      <a key={url.url} href={url.url} target="_blank" className="text-white hover:text-gir-500 flex justify-center items-center gap-x-2">
         <span>{renderLogo(url.name)}</span>
         <span>{url.text}</span>
       </a>
