@@ -58,7 +58,7 @@ export const Tinder: React.FC = () => {
       {members?.map((member, index) => <TinderCard
         key={index}
         member={member}
-        index={0}
+        index={index}
         setSelectedMember={setSelectedMember}
         likedMembers={likedMembers}
         dislikedMembers={dislikedMembers}

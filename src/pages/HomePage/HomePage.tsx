@@ -4,11 +4,31 @@ import { routes } from "../../data/routes";
 import { SlidingTileGame } from "../SlidingTileGame/SlidingTileGame";
 import CanvasKoala from "../../components/CanvasKoala/CanvasKoala";
 
+const tileStyle = "card__face w-[300px] h-[300px] text-center flex justify-center items-center p-4"
+
 export const HomePage: React.FC = () => {
 
   useEffect(() => {
     window.scroll(0, 0);
   }, [])
+
+  const getTextColor = (light: number) => {
+    return light < 50 ? "text-white" : "text-black"
+  }
+
+  const getRotation = (rotation: number) => {
+    if (rotation > 0.8) {
+      return "rotate-90"
+    } else if (rotation < 0.2) {
+      return "rotate-180"
+    } else {
+      return ""
+    }
+  }
+
+  const getBg = (hue: number, saturation: number, light: number) => {
+    return `hsl(${hue},${saturation}%,${light}%)`
+  }
 
   const renderHomePageBlock = (from: number, to: number) => {
     return (
@@ -18,12 +38,13 @@ export const HomePage: React.FC = () => {
             let hue = Math.floor(Math.random() * 10) + 345;
             let saturation = Math.floor(Math.random() * 60) + 40;
             let light = Math.floor(Math.random() * 35) + 30;
+
             return (
-              <Link to={route.url} className={`card ${Math.random() > 0.8 && "rotate-90"} ${Math.random() < 0.2 && "rotate-180"}`}>
-                <div className={`card__face w-[300px] h-[300px] font-black text-3xl uppercase text-center flex justify-center items-center ${light < 50 ? "text-white" : "text-black"} p-4`} key={route.id} style={{ backgroundColor: 'hsl(' + hue + ',' + saturation + '%,' + light + '%)' }}>
+              <Link to={route.url} className={`card ${getRotation(Math.random())}`} key={route.id}>
+                <div className={`${tileStyle} font-black text-3xl uppercase ${getTextColor(light)}`} style={{ backgroundColor: getBg(hue, saturation, light) }}>
                   {route.title}
                 </div>
-                <div className={`card__face card__face--back w-[300px] h-[300px] text-center flex justify-center items-center ${light < 50 ? "text-white" : "text-black"} p-4`} key={route.id} style={{ backgroundColor: 'hsl(' + hue + ',' + saturation + '%,' + light + '%)' }}>
+                <div className={`${tileStyle} card__face--back ${getTextColor(light)}`} style={{ backgroundColor: getBg(hue, saturation, light) }}>
                   {route.description}
                 </div>
               </Link>
