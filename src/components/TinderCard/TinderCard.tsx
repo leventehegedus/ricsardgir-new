@@ -57,7 +57,7 @@ export const TinderCard: React.FC<TinderCardProps> = (props) => {
     }
 
     return (
-        <div key={index} className={`w-[16rem] h-[24rem] md:w-[24rem] md:h-[36rem] m-auto absolute top-0 left-0 right-0 bottom-0 m-auto border border-solid border-white bg-black text-white transition-all duration-1000 ${isLiked(index) && "text-gir-500 left-[10000px] rotate-90 transition-all duration-1000 ease-in-out"} ${isDisliked(index) && "text-gir-500 left-[-10000px] rotate-[-90deg] transition-all duration-1000 ease-in-out"}`}>
+        <div key={index} className={`w-[16rem] h-[24rem] md:w-[24rem] md:h-[36rem] m-auto absolute top-0 left-0 right-0 bottom-0 m-auto border border-solid border-white bg-black transition-all duration-1000 ${isLiked(index) && "text-gir-500 left-[10000px] rotate-90 transition-all duration-1000 ease-in-out"} ${isDisliked(index) && "text-gir-500 left-[-10000px] rotate-[-90deg] transition-all duration-1000 ease-in-out"}`}>
             <div className="h-[16rem] md:h-[24rem]">
                 <Slider {...settings} className="w-full h-full">
                     {member.images.map((img: string) => {

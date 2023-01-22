@@ -4,7 +4,7 @@ import { animations } from "../../data/animations";
 import { useMediaQuery } from 'react-responsive'
 import { ITrack } from "../../types";
 
-const iconStyle = "absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] transition-all duration-1000 ease-in-out z-10 text-white";
+const iconStyle = "absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] transition-all duration-1000 ease-in-out z-10";
 
 export const Track: React.FC<ITrack> = (props) => {
 
@@ -45,7 +45,7 @@ export const Track: React.FC<ITrack> = (props) => {
           <FaRegPlayCircle onClick={() => { onButtonClick(!isPlaying) }} onMouseLeave={() => { onButtonClick(false) }} className={`${iconStyle} opacity-0 hover:opacity-100`} size={"9em"} />
         }
       </div>
-      <div className="bg-black text-white p-2 text-xs">
+      <div className="bg-black p-2 text-xs">
         <div>
           {props.track_number}. {props.name}
         </div>

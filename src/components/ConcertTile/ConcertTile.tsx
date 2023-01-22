@@ -59,7 +59,7 @@ export const ConcertTile: React.FC<IConcert> = (props) => {
             <FaVideo size={"2em"} className="absolute top-2 right-2 text-gir-500"/>
           }
         </div>
-        <div className="bg-black text-white p-2 text-xs">
+        <div className="bg-black p-2 text-xs">
           <div>
             {props.id}. {props.title}
           </div>

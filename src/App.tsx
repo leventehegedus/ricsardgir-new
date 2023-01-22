@@ -23,6 +23,7 @@ import { App as Game2048 } from "./pages/2048/App/App";
 import { Menu } from "./components/Menu/Menu";
 import { TopBar } from "./components/TopBar/TopBar";
 import { Footer } from "./components/Footer/Footer";
+import { Layout } from "./components/Layout/Layout";
 
 import MediaQuery from 'react-responsive'
 import AOS from 'aos';
@@ -49,23 +50,25 @@ function App() {
           <WavyContainer />
           <TopBar isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
           <Menu isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/buli" element={<ConcertsPage />} />
-            <Route path="/buli/:id" element={<Concert />} />
-            <Route path="/video" element={<VideosPage />} />
-            <Route path="/video/:id" element={<Video />} />
-            <Route path="/merch" element={<MerchPage />} />
-            <Route path="/money" element={<MoviePage />} />
-            <Route path="/ricsaj" element={<MusicPage />} />
-            <Route path="/szar" element={<ArticlesPage />} />
-            <Route path="/tinder" element={<Tinder />} />
-            <Route path="/timeline" element={<Timeline />} />
-            <Route path="/quiz" element={<Quiz />} />
-            <Route path="/2048" element={<Game2048 />} />
-            <Route path="/idezetek" element={<QuotesPage />} />
-            <Route path="*" element={<ErrorPage />} />
-          </Routes>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/buli" element={<ConcertsPage />} />
+              <Route path="/buli/:id" element={<Concert />} />
+              <Route path="/video" element={<VideosPage />} />
+              <Route path="/video/:id" element={<Video />} />
+              <Route path="/merch" element={<MerchPage />} />
+              <Route path="/money" element={<MoviePage />} />
+              <Route path="/ricsaj" element={<MusicPage />} />
+              <Route path="/szar" element={<ArticlesPage />} />
+              <Route path="/tinder" element={<Tinder />} />
+              <Route path="/timeline" element={<Timeline />} />
+              <Route path="/quiz" element={<Quiz />} />
+              <Route path="/2048" element={<Game2048 />} />
+              <Route path="/idezetek" element={<QuotesPage />} />
+              <Route path="*" element={<ErrorPage />} />
+            </Routes>
+          </Layout>
         </Router>
       </div>
       <Footer />

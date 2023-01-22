@@ -9,6 +9,7 @@ import YouTube from 'react-youtube';
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useMediaQuery } from 'react-responsive'
 
+
 const emptyImages: string[] = [
   "/concerts/empty.jpg",
   "/concerts/empty_2.jpg",
@@ -38,7 +39,7 @@ export const Concert: React.FC = () => {
 
 
   return (
-    <div className="max-w-5xl p-4 pb-8 pt-8 m-auto text-white">
+    <div className="max-w-5xl pb-8 pt-8 ">
       {concert ?
         <div>
           <div className="mb-4">

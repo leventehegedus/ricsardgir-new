@@ -144,13 +144,13 @@ export const SlidingTileGame: React.FC<SlidingTileGameProps> = props => {
               {
                 rows.map((value, x) => {
                   return (
-                    <div className={`w-[${300 / size}px] w-[${300 / size}px] flex justify-center items-center cursor-pointer text-white`} key={props.folder + '_x_' + x} onClick={() => handleClick(value, x, y)}>
+                    <div className={`w-[${300 / size}px] w-[${300 / size}px] flex justify-center items-center cursor-pointer `} key={props.folder + '_x_' + x} onClick={() => handleClick(value, x, y)}>
                       {value !== 0 ?
                         <>
                           <img className="h-full w-full object-cover object-center box-border border border-[rgba(0,0,0,0.2)]" src={`/tilitoli/${props.folder}/row-${Math.ceil(value / size)}-column-${value % size === 0 ? size : value % size}.png`} />
                         </>
                         :
-                        <div className={`h-[${300 / size}px] w-[${300 / size}px] flex text-white text-center items-center`}>
+                        <div className={`h-[${300 / size}px] w-[${300 / size}px] flex  text-center items-center`}>
                           <span style={{ minWidth: 300 / size + 'px', minHeight: 300 / size + 'px' }}></span>
                         </div>
                       }

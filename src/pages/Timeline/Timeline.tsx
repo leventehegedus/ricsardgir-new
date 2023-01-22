@@ -1,5 +1,6 @@
 import { animations } from "../../data/animations";
 
+
 const movieStoryBlock = [
   {
     text: "Megszületik Mártondani",
@@ -37,7 +38,7 @@ export const Timeline: React.FC = () => {
     title: string
   }) => {
     return (
-      <div className="mb-4 md:mb-0 flex flex-col border border-solid border-white overflow-hidden shadow-lg text-white p-2"
+      <div className="mb-4 md:mb-0 flex flex-col border border-solid border-white overflow-hidden shadow-lg p-2"
         data-aos={animations[randomAnimation]}
         data-aos-duration="1000"
       >
@@ -52,7 +53,7 @@ export const Timeline: React.FC = () => {
 
   return (
     <>
-      <div className="w-full p-4 font-black text-gir-500 text-6xl flex justify-center">
+      <div className="w-full font-black text-gir-500 text-6xl flex justify-center">
         <span>"ez volt a ricsárdgír"</span>
       </div>
       <div className="relative p-4 m-auto max-w-7xl after:content after:absolute after:bg-white after:top-0 after:bottom-0 after:left-1/2 after:w-1">

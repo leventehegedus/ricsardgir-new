@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { ErrorPage } from "../../pages/ErrorPage/ErrorPage";
 import YouTube from 'react-youtube';
 
+
 export const Video: React.FC = () => {
 
   const { id } = useParams();
@@ -14,7 +15,6 @@ export const Video: React.FC = () => {
   useEffect(() => {
     let video = videos.filter(conc => conc.id === Number(id));
     setConcert(video[0]);
-    window.scroll(0, 0);
   }, [id])
 
   const renderArticles = (articles: IArticle[]) => {
@@ -38,7 +38,7 @@ export const Video: React.FC = () => {
   }
 
   return (
-    <div className="max-w-5xl p-4 pt-8 m-auto text-white">
+    <div className="max-w-5xl pt-8">
       {video ?
         <>
           <div className="mb-4">
@@ -49,7 +49,7 @@ export const Video: React.FC = () => {
               {video ?.year}
             </div>
             <div className="flex justify-center">
-              <YouTube videoId={video.ytId} className="w-full"/>
+              <YouTube videoId={video.ytId} className="w-full" />
             </div>
           </div>
           <div>

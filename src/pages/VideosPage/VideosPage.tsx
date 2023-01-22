@@ -2,6 +2,7 @@ import { videos } from "../../data/videos";
 import { animations } from "../../data/animations";
 import { Link } from "react-router-dom";
 
+
 export const VideosPage: React.FC = () => {
 
   return (
@@ -13,9 +14,9 @@ export const VideosPage: React.FC = () => {
             key={video.id}
             data-aos={animations[Math.floor(Math.random() * animations.length)]}>
             <div className="h-full w-full overflow-hidden">
-              <img src={`https://img.youtube.com/vi/${video.ytId}/0.jpg`} className={`h-full w-full object-cover	object-center transition-all duration-1000 ease-in-out hover:invert hover:scale-105	${Math.random() > 0.5 ? "hover:rotate-1" : "hover:rotate-[-1deg]"}`} />
+              <img src={`https://img.youtube.com/vi/${video.ytId}/0.jpg`} className={`h-full w-full object-cover	object-center transition-all duration-1000 ease-in-out hover:invert hover:scale-105	${Math.random() > 0.5 ? "hover:rotate-1" : "hover:rotate-[-1deg]"}`} />
             </div>
-            <div className="bg-black text-white p-2 text-xs">
+            <div className="bg-black p-2 text-xs">
               <div>
                 {video.title} - {video.year}
               </div>
