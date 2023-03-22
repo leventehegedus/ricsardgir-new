@@ -1,6 +1,10 @@
 import { useEffect } from "react";
 
-export const Layout: React.FC = (props) => {
+interface Props {
+  children: React.ReactNode;
+}
+
+export const Layout: React.FC<Props> = ({ children }) => {
 
   useEffect(() => {
     window.scroll(0, 0);
@@ -8,7 +12,7 @@ export const Layout: React.FC = (props) => {
 
   return (
     <div className="p-2 sm:p-4 max-w-7xl m-auto overflow-hidden text-white">
-      {props.children}
+      {children}
     </div>
   )
 }
