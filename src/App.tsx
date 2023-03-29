@@ -18,6 +18,7 @@ import { Tinder } from "./pages/Tinder/Tinder";
 import { Timeline } from "./pages/Timeline/Timeline";
 import { Quiz } from "./pages/Quiz/Quiz";
 import { QuotesPage } from "./pages/QuotesPage/QuotesPage";
+import { ContentPage } from "./pages/ContentPage/ContentPage";
 import { App as Game2048 } from "./pages/2048/App/App";
 
 import { Menu } from "./components/Menu/Menu";
@@ -32,6 +33,8 @@ import './App.css';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import FlixPage from './pages/FlixPage/FlixPage';
+import TagPage from './pages/TagPage/TagPage';
 AOS.init();
 
 function App() {
@@ -66,6 +69,9 @@ function App() {
               <Route path="/quiz" element={<Quiz />} />
               <Route path="/2048" element={<Game2048 />} />
               <Route path="/idezetek" element={<QuotesPage />} />
+              <Route path="/flix" element={<FlixPage />} />
+              <Route path="/content/:id" element={<ContentPage />} />
+              <Route path="/tags/:id" element={<TagPage />} />
               <Route path="*" element={<ErrorPage />} />
             </Routes>
           </Layout>

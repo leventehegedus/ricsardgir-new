@@ -44,10 +44,10 @@ export const Concert: React.FC = () => {
         <div>
           <div className="mb-4">
             <div className="uppercase font-black text-center">
-              {concert ?.id}. {concert ?.title}
+              {concert?.id}. {concert?.title}
             </div>
             <div className="text-center mb-4">
-              {location}, {concert ?.year}. {concert ?.date}
+              {location}, {concert?.year}. {concert?.date}
             </div>
             <div className="relative">
               <img src={"/concerts/" + concert.img} className="m-auto max-w-full mb-4"
@@ -59,11 +59,9 @@ export const Concert: React.FC = () => {
               {id && <Link to={`/buli/${+id - 1}`} className="absolute top-[50%] translate-y-[-50%] left-0 transition-all duration-1000 ease-in-out hover:text-red-500 hover:scale-125"><FaChevronLeft size={"3em"} /></Link>}
               {id && <Link to={`/buli/${+id + 1}`} className="absolute top-[50%] translate-y-[-50%] right-0 transition-all duration-1000 ease-in-out hover:text-red-500 hover:scale-125"><FaChevronRight size={"3em"} /></Link>}
             </div>
-            <div className="mb-4">
-              {concert.description}
-            </div>
+            <div className="mb-4" dangerouslySetInnerHTML={{ __html: concert.description }} />
             {concert.ytIds && <div className="mb-4">Koncertvideók:</div>}
-            {concert.ytIds ?.map(ytId => {
+            {concert.ytIds?.map(ytId => {
               return (
                 <div className="flex justify-center mb-4">
                   {isTabletOrBigger ?

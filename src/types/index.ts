@@ -120,3 +120,14 @@ export interface IMovieStoryBlock {
   title: string,
   size: string
 }
+
+export interface IContent {
+  id: number,
+  title: string,
+  url: string,
+  subtitle?: string,
+  description?: string,
+  img?: string,
+  ytIds?: string[],
+  tags?: string[]
+}

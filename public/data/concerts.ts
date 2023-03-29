@@ -1,0 +1,15 @@
+[
+  { id: 1, title: 'DZSDZSSUMMERFEST', description: '', locationId: 64, year: 2007, date: '', img: '1.jpg', size: 'item-rect-middle' },
+  { id: 2, title: 'DZSDZSSUMMERFEST', description: '', locationId: 64, year: 2008, date: '', img: '2.jpg', size: 'item-rect-middle' },
+  { id: 3, title: 'DZSDZSSUMMERFEST', description: '', locationId: 64, year: 2009, date: '', img: '3.jpg', size: 'item-small' },
+  { id: 4, title: 'Barlang', description: '', locationId: 4, year: 2009, date: 'november', img: '4.jpg', size: 'item-rect-middle' },
+  { id: 5, title: 'Fülibuli', description: '', locationId: 66, year: 2009, date: 'december', img: '5.jpg', size: 'item-small' },
+  { id: 6, title: 'Forrás Irodalmi Kávézó', description: 'Az első Ricsárdgir koncertünk volt, Albert Réka énekelt és Edina, ekkor még Dani nem állt mikrofon elé, csak a dalok között beszélt.', locationId: 87, year: 2010, date: 'július', img: '6.jpg', size: 'item-original' },
+  { id: 7, title: 'Ekszpanzió', description: 'Bali apukájának a fesztiválja volt, itt mondták nekünk, hogy ha még egyszer betesszük a lábunkat Nagymarosra, akkor felkötnek minket egy fára. Meg hogy a börtönben a csicskájuk leszünk.', locationId: 92, year: 2010, date: 'augusztus', img: '7.jpg', size: 'item-rect-right' },
+  { id: 8, title: 'Egrix', description: 'Itt még nem fizettek nekünk a koncertekért, de okosan azt a dealt kötöttük, hogy zárás után, kapjuk meg a koncerttermet privát bulinak. Elhívtuk a haverokat az egyetemről és mocskos egy nagy privát bulit tartottunk.', locationId: 60, year: 2010, date: 'szeptember', img: '8.jpg', size: 'item-small' },
+  { id: 9, title: 'Barlang', description: 'Első szentendrei koncertünk jól sikerült, de itt még feldolgozásokat játszottunk a Balatontól.', locationId: 4, year: 2010, date: 'október', img: '9.jpg', size: 'item-small' },
+  { id: 10, title: 'rézmál kávézó', description: 'Első pesti koncertünk itt volt, de csak azért, mert az Ed Is On lemondta, és a dobosuk felhívott minket, hogy menjünk játszani. FunFact, Az Ed Is On akkori dobosa és gitárosa játszottak a Ricsárdgírben még korábban.', locationId: 41, year: 2010, date: 'november', img: '10.jpg', size: 'item-small' },
+  { id: 11, title: 'filter', description: 'Első komolyabb pesti koncertünk volt, az 1160 zenekarral léptünk fel, abban a zenekarban játszott Laci, és volt egy olyan daluk, hogy I am the Vampire.', locationId: 16, year: 2010, date: 'december', img: '11.jpg', size: 'item-medium' },
+  { id: 12, title: 'barlang', description: 'A második szentendrei koncertünkön vette fel a Yellow Spots a Repülőgép című dalunkat, erre készült a klip is.', locationId: 4, year: 2010, date: 'december', img: '12.jpg', size: 'item-small' },
+  { id: 13, title: 'U26', description: 'Itt is az Ed Is On helyett mentünk, mi voltunk a beugró zenekaruk haha. 3 ember volt a koncerten.', locationId: 53, year: 2011, date: 'február', img: '13.jpg', size: 'item-original' },
+]

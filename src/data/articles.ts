@@ -28,7 +28,6 @@ export const articles: IArticle[] = [
   { url: 'http://velvet.hu/gumicukor/2017/01/15/szeretlek_palvin_barbi_-_hazai_celebekrol_szolo_dalok/ ', title: 'lenyűgöző trash videót készített' },
   { url: 'http://keretblog.hu/ev-vegi-toplista/ ', title: 'ha pár évtized múlva visszatekintenek a zenetörténészek, remélem visszaolvassák, hogy mi megmondtuk előre: a The Dark Side of The Moon fontos állomása a tetszhalott állapotban lévő magyar avantgárd zene történeti alakulásában.' },
   { url: 'https://www.europavox.com/bands/ricsardgir/ ', title: 'Ricsárdgír are irresistibly funny, dangerously catchy, unrepentantly absurd and thoroughly punk in attitude, though not always in music.' },
-  { url: 'http://nava.hu/talalati-lista/ ', title: 'főleg meghökkentő és nem hétköznapi' },
   { url: 'https://ripost.hu/cikk-kapja-be-darwin-18-os-fulledt-dal-szuletett-palvin-barbararol ', title: 'Ilyet még nem hal­lot­tál, de nem is lát­tál!' },
   { url: 'http://www.nyu.hu/tartalom/cikk/mi_tortent_a_magyar_alterrel_2010_utan ', title: 'önironikus, idióta, de mégis nagyon okos humorukkal szerintem egy nagyon jó alapjai az új, magyar értelmiségi gitárzenének.' },
   { url: 'https://dalszerzo.hu/2017/01/13/dalszerzo-playlist-18-a-kritikusok-kedvenc-magyar-lemezei/amp/ ', title: 'abszurd, egyszerre slágeres és avantgárd' },

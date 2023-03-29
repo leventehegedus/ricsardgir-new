@@ -3,11 +3,16 @@ import { Link } from "react-router-dom";
 import { routes } from "../../data/routes";
 import { SlidingTileGame } from "../SlidingTileGame/SlidingTileGame";
 import CanvasKoala from "../../components/CanvasKoala/CanvasKoala";
-
+import { useLocation } from 'react-router-dom';
 
 const tileStyle = "card__face w-[300px] h-[300px] text-center flex justify-center items-center p-4"
 
 export const HomePage: React.FC = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    console.log(location)
+  }, [])
 
   const getTextColor = (light: number) => {
     return light < 50 ? "text-white" : "text-black"
@@ -66,7 +71,10 @@ export const HomePage: React.FC = () => {
       {renderHomePageBlock(9, 9)}
       <SlidingTileGame folder={"killthekoala"} size={4} />
       <SlidingTileGame folder={"oldkoala"} size={6} />
-      <CanvasKoala />
+      {
+        location.pathname === '/' &&
+        <CanvasKoala />
+      }
     </div >
   )
 }

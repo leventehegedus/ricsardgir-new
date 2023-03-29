@@ -47,9 +47,9 @@ const loadImage = async (url: string) => {
     });
 };
 
-const imgKoala = await loadImage('canvasImages/img_01.png') as CanvasImageSource;
-const imgBg = await loadImage('canvasImages/gir.jpg') as CanvasImageSource;
-const explosion = await loadImage('canvasImages/explosion.png') as CanvasImageSource;
+const imgKoala = await loadImage('/canvasImages/img_01.png') as CanvasImageSource;
+const imgBg = await loadImage('/canvasImages/gir.jpg') as CanvasImageSource;
+const explosion = await loadImage('/canvasImages/explosion.png') as CanvasImageSource;
 
 class Agent implements IAgent {
     pos: { x: number; y: number; };

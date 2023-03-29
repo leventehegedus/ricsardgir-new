@@ -6,7 +6,7 @@
 }
 
 body {
-  cursor: url("./fav_mini.png") 20 11, auto;
+  cursor: url("/fav_mini.png") 20 11, auto;
 }
 
 .context {
@@ -278,9 +278,9 @@ body {
   grid-row-end: span 3;
 }
 
-iframe {
+/* iframe {
   width: 100%;
-}
+} */
 
 iframe drawer {
   margin: 0;
