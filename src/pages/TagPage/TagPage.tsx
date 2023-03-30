@@ -5,6 +5,7 @@ import { ErrorPage } from "../../pages/ErrorPage/ErrorPage";
 import YouTube from 'react-youtube';
 import { useMediaQuery } from 'react-responsive'
 import { IContent } from "../../types";
+import ContentTile from "../../components/ContentTile/ContentTile";
 
 const emptyImages: string[] = [
   "/concerts/empty.jpg",
@@ -50,9 +51,8 @@ export const TagPage: React.FC = () => {
           <div className="text-3xl">#{id}</div>
         </div>
 
-        {contents.map((block, index) => {
-          return renderArticleBlock(block, index)})
-        }
+        {contents.map((block, index) => 
+          <ContentTile {...block} id={index}/>)}
       </div>
       :
       <ErrorPage />

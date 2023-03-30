@@ -5,6 +5,7 @@ import { ErrorPage } from "../../pages/ErrorPage/ErrorPage";
 import YouTube from 'react-youtube';
 import { useMediaQuery } from 'react-responsive'
 import { IContent } from "../../types";
+import ContentTile from "../../components/ContentTile/ContentTile";
 
 const emptyImages: string[] = [
   "/concerts/empty.jpg",
@@ -50,11 +51,9 @@ export const ContentsPage: React.FC = () => {
                 <div className="md:h-16 font-black text-gir-500 text-9xl row-span-2 col-span-1 flex justify-center">
                     <div className="text-3xl">#{tag}</div>
                 </div>
-                {contents.map(content => {
+                {contents.map((content, index) => {
                     if(content.tags?.includes(tag)){
-                        return <div className={`relative flex flex-col border border-white item-small overflow-hidden shadow-lg  bg-black p-2 transition-all duration-1000 ease-in-out hover:invert hover:scale-105	${Math.random() > 0.5 ? "hover:rotate-1" : "hover:rotate-[-1deg]"} ${content.title.length > 120 ? Math.random() > 0.5 ? "row-span-2" : "col-span-2" : ""}`}>
-                            {content.title}
-                        </div>
+                        return <ContentTile {...content} id={index}/> 
                     }
                 })}
                 <div className="row-span-1 col-span-5">
