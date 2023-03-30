@@ -35,6 +35,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import FlixPage from './pages/FlixPage/FlixPage';
 import TagPage from './pages/TagPage/TagPage';
+import ContentsPage from './pages/ContentsPage/ContentsPage';
 AOS.init();
 
 function App() {
@@ -70,6 +71,7 @@ function App() {
               <Route path="/2048" element={<Game2048 />} />
               <Route path="/idezetek" element={<QuotesPage />} />
               <Route path="/flix" element={<FlixPage />} />
+              <Route path="/contents/" element={<ContentsPage />} />
               <Route path="/content/:id" element={<ContentPage />} />
               <Route path="/tags/:id" element={<TagPage />} />
               <Route path="*" element={<ErrorPage />} />
