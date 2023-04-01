@@ -7,8 +7,7 @@ export const routes: IRoute[] = [
     description: "Szeress bele Laciba vagy Évába, de tudd, hogy nincsen sárkány.",
     img: "./home/tinder.jpg",
     gif: "./home/tinder.gif",
-    url: "/tinder",
-    emoji: "💔"
+    url: "/tinder"
   },
   {
     id: 1,
@@ -16,8 +15,7 @@ export const routes: IRoute[] = [
     description: "Meghámozzuk a bulikrumplit, megfőzzük a partypityókát és a héját felgyújtjuk.",
     img: "./home/bulikrumpli.jpg",
     gif: "./home/bulikrumpli.gif",
-    url: "/buli",
-    emoji: "🥔"
+    url: "/buli"
   },
   {
     id: 2,
@@ -25,8 +23,7 @@ export const routes: IRoute[] = [
     description: "Mozart a zene Beethovenje...",
     img: "./home/ricsaj.jpg",
     gif: "./home/ricsaj.gif",
-    url: "/ricsaj",
-    emoji: "🔊"
+    url: "/ricsaj"
   },
   {
     id: 3,
@@ -34,8 +31,7 @@ export const routes: IRoute[] = [
     description: "Vegyél anyádnak Szintislaci pólót karácsonyra!?!",
     img: "./home/morcs.jpg",
     gif: "./home/morcs.gif",
-    url: "/merch",
-    emoji: "🎁"
+    url: "/merch"
   },
   {
     id: 4,
@@ -43,8 +39,7 @@ export const routes: IRoute[] = [
     description: "Tudod, hogy ki volt a Ricsárdgír első énekese? Mi sem!",
     img: "./home/quiz.jpg",
     gif: "./home/quiz.gif",
-    url: "/quiz",
-    emoji: "❓"
+    url: "/quiz"
   },
   {
     id: 5,
@@ -52,8 +47,7 @@ export const routes: IRoute[] = [
     description: "A ricsárdgír mint produkció izgalmasabb a saját zenéjénél... - Sajó Dávid",
     img: "./home/shit.jpg",
     gif: "./home/shit.gif",
-    url: "/szar",
-    emoji: "💩"
+    url: "/szar"
   },
   {
     id: 6,
@@ -61,8 +55,7 @@ export const routes: IRoute[] = [
     description: "Jobb, mint a youtube!",
     img: "./home/videogif.jpg",
     gif: "./home/videogif.gif",
-    url: "/video",
-    emoji: "📹"
+    url: "/video"
   },
   {
     id: 7,
@@ -70,8 +63,7 @@ export const routes: IRoute[] = [
     description: "Szeretnénk forgatni egy filmet nagyon sok pénzből, hogy senki se nézze meg.",
     img: "./home/money.jpg",
     gif: "./home/money.gif",
-    url: "/money",
-    emoji: "💸"
+    url: "/money"
   },
   {
     id: 8,
@@ -79,8 +71,7 @@ export const routes: IRoute[] = [
     description: "Ha unatkozol és meguntad a szerelmed. Vagy az életet. Vagy mind a kettőt.",
     img: "./home/2048.jpg",
     gif: "./home/2048.gif",
-    url: "/2048",
-    emoji: "🔢"
+    url: "/2048"
   },
   {
     id: 9,
@@ -88,8 +79,7 @@ export const routes: IRoute[] = [
     description: "Jól csak a szívével lát az ember, ami igazán lényeges az a vaníliaízű piskótasütemény",
     img: "",
     gif: "",
-    url: "/idezetek",
-    emoji: "📚"
+    url: "/idezetek"
   },
   {
     id: 10,
@@ -97,7 +87,14 @@ export const routes: IRoute[] = [
     description: "Hallottad, hogy feloszlott a Beatles?",
     img: "",
     gif: "",
-    url: "/timeline",
-    emoji: "📚"
+    url: "/timeline"
+  },
+  {
+    id: 10,
+    title: "Gírstream",
+    description: "neked a netflix, nekem a videa",
+    img: "",
+    gif: "",
+    url: "/contents"
   },
 ]

@@ -93,8 +93,7 @@ export interface IRoute {
   description: string,
   img: string,
   gif: string,
-  url: string,
-  emoji?: string
+  url: string
 }
 
 export interface ILocation {
