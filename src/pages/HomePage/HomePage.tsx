@@ -75,6 +75,7 @@ export const HomePage: React.FC = () => {
         location.pathname === '/' &&
         <CanvasKoala />
       }
+      {renderHomePageBlock(10, 11)}
     </div >
   )
 }

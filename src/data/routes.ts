@@ -90,7 +90,7 @@ export const routes: IRoute[] = [
     url: "/timeline"
   },
   {
-    id: 10,
+    id: 11,
     title: "Gírstream",
     description: "neked a netflix, nekem a videa",
     img: "",
