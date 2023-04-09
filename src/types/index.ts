@@ -130,3 +130,7 @@ export interface IContent {
   ytIds?: string[],
   tags?: string[]
 }
+
+export interface ITagDescriptionTileProps {
+  tag: string
+}

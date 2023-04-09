@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from 'react-router';
+import { useParams, useNavigate } from 'react-router';
 import { Link } from "react-router-dom";
 import { ErrorPage } from "../../pages/ErrorPage/ErrorPage";
 import YouTube from 'react-youtube';
@@ -8,6 +8,7 @@ import { IContent } from "../../types";
 
 export const ContentPage: React.FC = () => {
 
+  const navigate = useNavigate();
   const { id } = useParams();
   const [content, setContent] = useState<IContent>();
   const isTabletOrBigger = useMediaQuery({ minWidth: 768 })
@@ -61,13 +62,13 @@ export const ContentPage: React.FC = () => {
           <div className="font-black">
             {content.tags?.map(tag => {
               return (
-                <Link to={`/tags/${tag}`} className="hover:text-red-500">#{tag} </Link>
+                <Link to={`/tag/${tag}`} className="hover:text-red-500">#{tag} </Link>
               )
             })
             }
           </div>
           <div className="font-black flex justify-between items-center">
-            <Link to={'/buli'} className="hover:text-red-500">Vissza</Link>
+            <div onClick={() => navigate(-1)} className="hover:text-red-500">Vissza</div>
           </div>
         </div>
         :

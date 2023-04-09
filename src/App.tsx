@@ -73,7 +73,7 @@ function App() {
               <Route path="/flix" element={<FlixPage />} />
               <Route path="/contents/" element={<ContentsPage />} />
               <Route path="/content/:id" element={<ContentPage />} />
-              <Route path="/tags/:id" element={<TagPage />} />
+              <Route path="/tag/:id" element={<TagPage />} />
               <Route path="*" element={<ErrorPage />} />
             </Routes>
           </Layout>

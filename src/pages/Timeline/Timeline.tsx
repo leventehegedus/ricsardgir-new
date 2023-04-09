@@ -65,7 +65,7 @@ export const Timeline: React.FC = () => {
           )
         })}
       </div>
-      <div className="w-full mt-[1000px] p-4 font-black text-gir-500 text-6xl flex justify-center">
+      <div className="w-full mt-[10000px] p-4 font-black text-gir-500 text-6xl flex justify-center">
         <span>"vagy. nem."</span>
       </div>
     </>

@@ -6,6 +6,7 @@ import YouTube from 'react-youtube';
 import { useMediaQuery } from 'react-responsive'
 import { IContent } from "../../types";
 import ContentTile from "../../components/ContentTile/ContentTile";
+import { TagDescriptionTile } from "../../components/TagDescriptionTile/TagDescriptionTile";
 
 const emptyImages: string[] = [
   "/concerts/empty.jpg",
@@ -30,13 +31,13 @@ export const ContentsPage: React.FC = () => {
         setContents(response)
         let tagArray: string[] = []
         response.forEach((res: IContent) => {
-            if(res.tags){
-                res.tags.forEach((tag: string) => {
-                    if(tagArray.indexOf(tag) < 0){
-                        tagArray.push(tag)
-                    }
-                });
-            }
+          if (res.tags) {
+            res.tags.forEach((tag: string) => {
+              if (tagArray.indexOf(tag) < 0) {
+                tagArray.push(tag)
+              }
+            });
+          }
         });
         setTags(tagArray)
       }).catch(err => {
@@ -45,22 +46,22 @@ export const ContentsPage: React.FC = () => {
   }, [])
 
   return (
-      <div className="p-4 max-w-7xl	m-auto">
-        {tags.map((tag, index) => {
-            return <div className="md:grid grid-cols-[repeat(auto-fit,_minmax(12rem,_1fr))] auto-rows-[8rem] gap-x-6 gap-y-6">
-                <div className="md:h-16 font-black text-gir-500 text-9xl row-span-2 col-span-1 flex justify-center">
-                    <div className="text-3xl">#{tag}</div>
-                </div>
-                {contents.map((content, index) => {
-                    if(content.tags?.includes(tag)){
-                        return <ContentTile {...content} id={index}/> 
-                    }
-                })}
-                <div className="row-span-1 col-span-5">
-                </div>
-            </div>
-        })}
-      </div>
+    <div className="p-4 max-w-7xl	m-auto">
+      {tags.map((tag, index) => {
+        return <div className="md:grid grid-cols-[repeat(auto-fit,_minmax(12rem,_1fr))] auto-rows-[8rem] gap-x-6 gap-y-6">
+          <TagDescriptionTile tag={tag} />
+          {contents.filter((content) => content.tags?.includes(tag)).slice(0, 12).map(content => {
+            return <ContentTile {...content} id={content.id} />
+
+          })}
+          <Link to={`/tag/${tag}`} className="text-white hover:text-gir-500">
+            <div>Kattints ide a további tartalmakért a <span className="text-gir-500 font-black">{tag}</span> témában</div>
+          </Link>
+          <div className="row-span-1 h-16 col-span-1 md:col-span-3 lg:col-span-4 xl:col-span-5">
+          </div>
+        </div>
+      })}
+    </div>
   )
 }
 

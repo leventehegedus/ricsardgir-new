@@ -35,7 +35,7 @@ export const TagPage: React.FC = () => {
 
   const renderArticleBlock = (block: IContent, id: number) => {
     return (
-      <a key={id} href={block.url} target={block.url.indexOf("http") > -1 ? "__blank" : ""} className={`relative flex flex-col border border-white item-small overflow-hidden shadow-lg  bg-black p-2 transition-all duration-1000 ease-in-out hover:invert hover:scale-105	${Math.random() > 0.5 ? "hover:rotate-1" : "hover:rotate-[-1deg]"} ${block.title.length > 120 ? Math.random() > 0.5 ? "row-span-2" : "col-span-2" : ""}`}>
+      <a key={id} href={block.url} target={block.url.indexOf("http") > -1 ? "__blank" : ""} className={`relative flex flex-col border border-white item-small overflow-hidden shadow-lg  bg-black p-2 transition-all duration-1000 ease-in-out hover:invert hover:scale-105	${Math.random() > 0.5 ? "hover:rotate-1" : "hover:rotate-[-1deg]"} ${block.title.length > 120 ? Math.random() > 0.5 ? "row-span-2" : "col-span-2" : ""}`}>
         <img src={block.img || emptyImages[Math.floor(Math.random() * emptyImages.length)]}
           className={`h-full w-full opacity-70 object-cover	object-top transition-all duration-1000 ease-in-out hover:invert hover:scale-105 ${Math.random() > 0.5 ? "hover:rotate-1" : "hover:rotate-[-1deg]"}`}
         />
@@ -45,14 +45,14 @@ export const TagPage: React.FC = () => {
   }
 
   return (
-      id ?
-      <div className="md:grid grid-cols-[repeat(auto-fit,_minmax(12rem,_1fr))] auto-rows-[8rem] gap-x-6 gap-y-6">
+    id ?
+      <div className="p-4 max-w-7xl	m-auto md:grid grid-cols-[repeat(auto-fit,_minmax(12rem,_1fr))] auto-rows-[8rem] gap-x-6 gap-y-6">
         <div className="md:h-16 font-black text-gir-500 item-small">
           <div className="text-3xl">#{id}</div>
         </div>
 
-        {contents.map((block, index) => 
-          <ContentTile {...block} id={index}/>)}
+        {contents.map((block, index) =>
+          <ContentTile {...block} id={index} />)}
       </div>
       :
       <ErrorPage />
