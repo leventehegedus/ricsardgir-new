@@ -25,10 +25,13 @@ export const MusicPage: React.FC = () => {
           <div className="text-2xl mb-4 md:mb-0">{album.release_date}</div>
         </a>
         {album.album_type === "album" &&
-          <div className="item-large mb-8">
+          <div className={`${album.shop_link ? "item-large" : "item-small"} mb-8`}>
             {album.additional_info?.map((line, index) => <div key={index}>{line}</div>)}
             <br />
-            <a href={album.shop_link} target="_blank" className="underline hover:text-gir-500">Itt veheted meg CD-n, ha nem tudsz mit kezdeni a pénzeddel</a>
+            {
+              album.shop_link &&
+              <a href={album.shop_link} target="_blank" className="underline hover:text-gir-500">Itt veheted meg CD-n, ha nem tudsz mit kezdeni a pénzeddel</a>
+            }
           </div>
         }
         {
