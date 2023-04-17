@@ -5,14 +5,11 @@ import { animations } from "../../data/animations";
 import { locations } from "../../data/locations";
 import { useMediaQuery } from 'react-responsive'
 import { FaVideo } from "react-icons/fa";
-
-import { useRandomAnimation } from '../../hooks/useRandomAnimation';
 import { useRandomEmptyImage } from '../../hooks/useRandomEmptyImage';
 
 export const ContentTile: React.FC<IContent> = (props) => {
   const isTabletOrBigger = useMediaQuery({ minWidth: 768 })
   const isDesktop = useMediaQuery({ minWidth: 1024 })
-  const animation = useRandomAnimation();
   const emptyImage = useRandomEmptyImage();
 
 

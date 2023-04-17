@@ -12,7 +12,7 @@ export const tinderMembers: ITinderProfile[] = [
       "/01.gif",
       "/02.gif",
       "/03.gif"
-    ]
+    ],
   },
   {
     id: "levi",
@@ -130,6 +130,7 @@ export const tinderMembers: ITinderProfile[] = [
       "/06.jpg",
       "/07.jpg",
       "/08.jpg"
-    ]
+    ],
+    interests: ["főzés", "éneklés", "punk", "futás", "spagetti", "kutyák"]
   }
 ]

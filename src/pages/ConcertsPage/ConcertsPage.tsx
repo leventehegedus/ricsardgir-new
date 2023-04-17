@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { ConcertYear } from "../../components/ConcertYear/ConcertYear";
-import Map from "../../components/Map/Map.jsx";
+import { Map } from "../../components/Map/Map";
 import { IConcertYear } from "../../types";
 import { concerts } from "../../data/concerts";
 import { useMediaQuery } from 'react-responsive'

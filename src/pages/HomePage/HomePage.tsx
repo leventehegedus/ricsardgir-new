@@ -75,9 +75,8 @@ export const HomePage: React.FC = () => {
         </div>
       </a>
       {renderHomePageBlock(11, 11)}
-      {renderHomePageBlock(2, 3)}
       <SlidingTileGame folder={"danilaci"} size={3} />
-      {renderHomePageBlock(4, 4)}
+      {renderHomePageBlock(2, 3)}
       <SlidingTileGame folder={"nincsensarkany"} size={4} />
       {renderHomePageBlock(5, 6)}
       <a href={"https://open.spotify.com/playlist/0RhyV3VaGs9mk9F84yVPvT"} target="_blank" className={`card ${getRotation(Math.random())}`}>
@@ -89,8 +88,9 @@ export const HomePage: React.FC = () => {
           Offisöl Ricsárdgír turnébusz playlist. Ha végighallgatod úgy fogsz brékelni, mint Mártondani. Rosszul.
         </div>
       </a>
+      {renderHomePageBlock(4, 4)}
       <SlidingTileGame folder={"thedarksideofthemoon"} size={5} />
-      {renderHomePageBlock(7, 8)}
+      {renderHomePageBlock(7, 7)}
       <SlidingTileGame folder={"riseofthekoala"} size={4} />
       <a href={"https://soundcloud.com/thericsardgirls"} target="_blank" className={`card ${getRotation(Math.random())}`}>
         <div className={`${tileStyle}`}>
@@ -100,8 +100,9 @@ export const HomePage: React.FC = () => {
           Legjobb csajbanda az univerzumban
         </div>
       </a>
-      {renderHomePageBlock(9, 9)}
+      {renderHomePageBlock(8, 8)}
       <SlidingTileGame folder={"killthekoala"} size={4} />
+      {renderHomePageBlock(9, 9)}
       <SlidingTileGame folder={"oldkoala"} size={6} />
       {
         location.pathname === '/' &&

@@ -111,7 +111,8 @@ export interface ITinderProfile {
   location: string,
   shortBio: string,
   longBio: string,
-  images: string[]
+  images: string[],
+  interests?: string[]
 }
 
 export interface IMovieStoryBlock {
