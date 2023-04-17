@@ -5,6 +5,7 @@ import { animations } from "../../data/animations";
 import { locations } from "../../data/locations";
 import { useMediaQuery } from 'react-responsive'
 import { FaVideo } from "react-icons/fa";
+import { useRandomEmptyImage } from '../../hooks/useRandomEmptyImage';
 
 const imgSizes: string[] = [
   "item-original",
@@ -15,28 +16,19 @@ const imgSizes: string[] = [
   "item-rect-right"
 ]
 
-const emptyImages: string[] = [
-  "/concerts/empty.jpg",
-  "/concerts/empty_2.jpg",
-  "/concerts/empty_3.jpg",
-  "/concerts/empty_4.jpg",
-  "/concerts/empty_5.jpg",
-  "/concerts/empty_6.jpg",
-  "/concerts/empty_7.jpg"
-]
-
 export const ConcertTile: React.FC<IConcert> = (props) => {
   const isTabletOrBigger = useMediaQuery({ minWidth: 768 })
   const isDesktop = useMediaQuery({ minWidth: 1024 })
 
   const randomImg = Math.floor(Math.random() * imgSizes.length);
-  const randomEmptyImg = Math.floor(Math.random() * emptyImages.length);
   const randomAnimation = Math.floor(Math.random() * animations.length);
+  const emptyImage = useRandomEmptyImage();
+
 
   const [location, setLocation] = useState("");
 
-  useEffect(() =>  {
-    let locationObject = locations.filter(loc =>  loc.id === props.locationId)[0];
+  useEffect(() => {
+    let locationObject = locations.filter(loc => loc.id === props.locationId)[0];
     let locationString = locationObject.place ? locationObject.place + ', ' + locationObject.city : locationObject.city
     setLocation(locationString);
   }, [])
@@ -44,26 +36,26 @@ export const ConcertTile: React.FC<IConcert> = (props) => {
 
   return (
     <>
-      <Link to={`/buli/${props.id}`} className={`flex flex-col border border-black overflow-hidden shadow-lg	${isDesktop ? props.size ? props.size : imgSizes[randomImg] : Math.random() >  0.5 ? "item-small" : "item-medium"}`}
-        data-aos={isTabletOrBigger && animations[randomAnimation]}
+      <Link to={`/buli/${props.id}`} className={`flex mb-8 md:mb-0 flex-col border border-black bg-white p-4 overflow-hidden shadow-lg ${isDesktop ? props.size ? props.size : imgSizes[randomImg] : Math.random() > 0.5 ? "item-small" : "item-medium"}`}
+        data-aos={isTabletOrBigger && animations[randomAnimation]} title={props.description}
       >
-        <div className="h-full w-full overflow-hidden relative">
+        <div className={`h-full w-full overflow-hidden relative ${Math.random() > 0.8 && "rotate-[180deg]"}`}>
           <img src={"./concerts/" + props.img}
             onError={({ currentTarget }) => {
               currentTarget.onerror = null; // prevents looping
-              currentTarget.src = emptyImages[randomEmptyImg];
+              currentTarget.src = emptyImage;
             }}
-            className={`h-full w-full object-cover	object-top transition-all duration-1000 ease-in-out hover:invert hover:scale-105 ${Math.random() >  0.5 ? "hover:rotate-1" : "hover:rotate-[-1deg]"}`}
+            className={`h-full w-full object-cover object-top transition-all duration-1000 ease-in-out hover:invert hover:scale-105 ${Math.random() > 0.5 ? "hover:rotate-1" : "hover:rotate-[-1deg]"}`}
           />
-          { props.ytIds &&
-            <FaVideo size={"2em"} className="absolute top-2 right-2 text-gir-500"/>
+          {props.ytIds &&
+            <FaVideo size={"1em"} className="absolute top-2 right-2 text-gir-500" />
           }
         </div>
-        <div className="bg-black p-2 text-xs">
-          <div>
+        <div className={`pt-4 ${Math.random() > 0.8 && "scale-x-[-1]"}`}>
+          <div className="uppercase text-gray-900 font-black pb-2">
             {props.id}. {props.title}
           </div>
-          <div>
+          <div className="text-xs text-gray-700">
             {location}, {props.year}. {props.date}
           </div>
         </div>

@@ -32,7 +32,7 @@ export const Track: React.FC<ITrack> = (props) => {
   }
 
   return (
-    <div className="flex flex-col border border-black overflow-hidden shadow-lg item-small mb-4 md:mb-0"
+    <div className="flex flex-col border border-black overflow-hidden shadow-lg item-small mb-4 md:mb-0 p-4 bg-white"
       data-aos={isTabletOrBigger && animations[randomAnimation]}
     >
       <div className="h-full w-full overflow-hidden relative">
@@ -45,13 +45,9 @@ export const Track: React.FC<ITrack> = (props) => {
           <FaRegPlayCircle onClick={() => { onButtonClick(!isPlaying) }} onMouseLeave={() => { onButtonClick(false) }} className={`${iconStyle} opacity-0 hover:opacity-100`} size={"9em"} />
         }
       </div>
-      <div className="bg-black p-2 text-xs">
-        <div>
-          {props.track_number}. {props.name}
-        </div>
-        <div>
-          {calculateDuration(props.duration_ms)}
-        </div>
+      <div className="bg-white pt-2">
+        <span className="font-black text-gray-900 pb-2 uppercase">{props.track_number}. {props.name} </span>
+        <span className="text-gray-700">{calculateDuration(props.duration_ms)}</span>
       </div>
       <audio
         src={props.preview_url}

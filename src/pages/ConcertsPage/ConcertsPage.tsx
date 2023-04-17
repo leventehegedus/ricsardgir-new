@@ -4,6 +4,8 @@ import { Map } from "../../components/Map/Map";
 import { IConcertYear } from "../../types";
 import { concerts } from "../../data/concerts";
 import { useMediaQuery } from 'react-responsive'
+import { FaRegCheckSquare, FaRegSquare } from "react-icons/fa";
+import { useScrollPosition } from "../../hooks/useScrollPosition";
 
 
 const allConcerts: IConcertYear[] = [{
@@ -49,38 +51,61 @@ const allConcerts: IConcertYear[] = [{
 {
   year: 2019,
   content: concerts.filter(concert => concert.year === 2019)
-}
-]
+},
+{
+  year: 2020,
+  content: concerts.filter(concert => concert.year === 2020)
+}, {
+  year: 2021,
+  content: concerts.filter(concert => concert.year === 2021)
+}, {
+  year: 2022,
+  content: concerts.filter(concert => concert.year === 2022)
+}, {
+  year: 2023,
+  content: concerts.filter(concert => concert.year === 2023)
+}]
 
 
 export const ConcertsPage: React.FC = () => {
 
   const isTabletOrBigger = useMediaQuery({ minWidth: 768 })
 
-  const [showMap, setShowMap] = useState(false);
+  const [showMap, setShowMap] = useState(true);
+  const [videoFilter, setVideoFilter] = useState(false);
 
   return (
     <div className="pt-20">
-      <div className="lg:fixed top-20 w-full z-20 p-4 text-center flex  justify-center">
-        <div className="bg-black p-2 flex items-center">
-          <span>Térképes nézet: </span>
-          <button onClick={() => { setShowMap(!showMap) }} className="border-solid border-white border hover:text-gir-500 hover:font-black p-2 shadow-[2px_2px_0_rgb(255,255,255)] hover:shadow-[0px_0px_0_rgb(255,255,255)] hover:mt-[2px] hover:mb-[-2px] hover:ml-[2px] hover:mr-[-2px]">{showMap ? 'kikapcs' : 'bekapcs'}</button>
-          {
-            isTabletOrBigger && allConcerts ?.sort((a, b) => b.year - a.year).map((year, index) => {
-              return (
-                <a key={index} href={`#year${year.year}`} className={`p-2 hover:text-gir-500 hover:font-black ${Math.random() > 0.6 && "rotate-180"}`}>{year.year}</a>
-              )
-            })}
-        </div >
+      <div className="lg:fixed lg:left-0 top-20 w-full z-20 p-4 text-center flex  justify-center z-[1001]">
+        <div className="bg-black p-2">
+          <div className="flex gap-8">
+            <div className="flex items-center">
+              <span>Térképes nézet:</span>
+              <button onClick={() => { setShowMap(!showMap) }} className="ml-2">{showMap ? <FaRegCheckSquare size="2em" /> : <FaRegSquare size="2em" />}</button>
+            </div>
+            <div className="flex items-center">
+              <span>Csak videós koncertek:</span>
+              <button onClick={() => { setVideoFilter(!videoFilter) }} className="ml-2">{videoFilter ? <FaRegCheckSquare size="2em" /> : <FaRegSquare size="2em" />}</button>
+            </div>
+          </div>
+          <div className="flex flex-wrap">
+            {
+              isTabletOrBigger && allConcerts?.sort((a, b) => b.year - a.year).map((year, index) => {
+                return (
+                  <a key={index} href={`#year${year.year}`} className={`p-2 hover:text-gir-500 hover:font-black ${Math.random() > 0.6 && "rotate-180"}`}>{year.year}</a>
+                )
+              })}
+          </div >
+        </div>
       </div>
       {showMap &&
-        <div className="p-8 z-20 w-full grayscale">
+        <div className="p-8 z-20 w-full">
           <Map />
         </div>
       }
-      {allConcerts ?.sort((a, b) => b.year - a.year).map((year, index) => {
+      {allConcerts?.sort((a, b) => b.year - a.year).map((year, index) => {
         return (
-          <ConcertYear {...year} key={index} />
+          <ConcertYear {...year} key={index} videoFilter={videoFilter} />
         )
       })}
     </div>

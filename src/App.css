@@ -232,10 +232,7 @@ body {
   background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
-.item-original {
-  grid-row: span 1;
-}
-
+.item-original,
 .item-small {
   grid-row: span 2;
 }
@@ -284,4 +281,12 @@ body {
 
 iframe drawer {
   margin: 0;
+}
+
+.leaflet-container a {
+  color: black;
+}
+
+.leaflet-container a:hover {
+  color: #ff002b;
 }

@@ -8,25 +8,16 @@ import { ErrorPage } from "../../pages/ErrorPage/ErrorPage";
 import YouTube from 'react-youtube';
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useMediaQuery } from 'react-responsive'
-
-
-const emptyImages: string[] = [
-  "/concerts/empty.jpg",
-  "/concerts/empty_2.jpg",
-  "/concerts/empty_3.jpg",
-  "/concerts/empty_4.jpg",
-  "/concerts/empty_5.jpg",
-  "/concerts/empty_6.jpg",
-  "/concerts/empty_7.jpg"
-]
+import { useRandomEmptyImage } from '../../hooks/useRandomEmptyImage';
 
 export const Concert: React.FC = () => {
 
   const { id } = useParams();
   const [concert, setConcert] = useState<IConcert>();
   const [location, setLocation] = useState("");
-  const randomEmptyImg = Math.floor(Math.random() * emptyImages.length);
   const isTabletOrBigger = useMediaQuery({ minWidth: 768 })
+  const emptyImage = useRandomEmptyImage();
+
 
   useEffect(() => {
     let concert = concerts.filter(conc => conc.id === Number(id))[0];
@@ -53,7 +44,7 @@ export const Concert: React.FC = () => {
               <img src={"/concerts/" + concert.img} className="m-auto max-w-full mb-4"
                 onError={({ currentTarget }) => {
                   currentTarget.onerror = null; // prevents looping
-                  currentTarget.src = emptyImages[randomEmptyImg];
+                  currentTarget.src = emptyImage;
                 }}
               />
               {id && <Link to={`/buli/${+id - 1}`} className="absolute top-[50%] translate-y-[-50%] left-0 transition-all duration-1000 ease-in-out hover:text-red-500 hover:scale-125"><FaChevronLeft size={"3em"} /></Link>}

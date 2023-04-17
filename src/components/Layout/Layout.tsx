@@ -11,7 +11,7 @@ export const Layout: React.FC<Props> = ({ children }) => {
   }, [])
 
   return (
-    <div className="p-2 sm:p-4 max-w-7xl m-auto overflow-hidden text-white">
+    <div className="p-2 sm:p-4 xl:pl-2 xl:pr-2 2xl:pl-0 2xl:pr-0 max-w-7xl m-auto overflow-hidden text-white">
       {children}
     </div>
   )

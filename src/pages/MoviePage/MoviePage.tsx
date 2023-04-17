@@ -12,7 +12,7 @@ export const MoviePage: React.FC = () => {
     size: string
   }, id: number) => {
     return (
-      <div className={`mb-4 md:mb-0 flex flex-col border border-solid border-white overflow-hidden shadow-lg  bg-black p-2 transition-all duration-1000 ease-in-out hover:invert hover:scale-105 ${Math.random() > 0.5 ? "hover:rotate-1" : "hover:rotate-[-1deg]"} ${block.size}`}
+      <div className={`mb-4 md:mb-0 flex flex-col border border-solid border-white overflow-hidden shadow-lg  bg-black p-4 transition-all duration-1000 ease-in-out hover:invert hover:scale-105 ${block.img && "bg-white"} ${Math.random() > 0.5 ? "hover:rotate-1" : "hover:rotate-[-1deg]"} ${block.size}`}
         data-aos={animations[randomAnimation]}
         data-aos-duration="1000"
         key={id}

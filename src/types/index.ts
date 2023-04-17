@@ -12,7 +12,8 @@ export interface IConcert {
 
 export interface IConcertYear {
   year: number,
-  content: IConcert[]
+  content: IConcert[],
+  videoFilter?: boolean
 }
 
 export interface IArticle {

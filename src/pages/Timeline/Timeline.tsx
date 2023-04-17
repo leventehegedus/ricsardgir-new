@@ -38,7 +38,7 @@ export const Timeline: React.FC = () => {
     title: string
   }) => {
     return (
-      <div className="mb-4 md:mb-0 flex flex-col border border-solid border-white overflow-hidden shadow-lg p-2"
+      <div className={`mb-4 md:mb-0 flex flex-col border border-solid border-white overflow-hidden shadow-lg p-4 ${block.img && "bg-white"}`}
         data-aos={animations[randomAnimation]}
         data-aos-duration="1000"
       >

@@ -55,7 +55,7 @@ export const Tinder: React.FC = () => {
 
   return (
     <div className="w-full h-[calc(100vh-80px)] relative">
-      {members ?.map((member, index) => <TinderCard
+      {members?.map((member, index) => <TinderCard
         key={index}
         member={member}
         index={index}
@@ -73,14 +73,14 @@ export const Tinder: React.FC = () => {
         ariaHideApp={false}
       >
         {selectedMember &&
-          <div className="w-full h-full bg-black p-8 overflow-auto relative">
+          <div className="w-full h-full bg-black p-8 overflow-auto relative text-white">
             <div className="mb-4">{selectedMember.name}</div>
             <div className="mb-4">{selectedMember.shortBio}</div>
             <div className="mb-4">{selectedMember.longBio}</div>
             <div>
-              {selectedMember ?.images.map((img, index) => {
+              {selectedMember?.images.map((img, index) => {
                 return (
-                  <div className={`flex mb-8 flex-col border border-black overflow-hidden shadow-lg ${Math.random() > 0.5 ? "item-original" : "item-small"}`}
+                  <div className={`flex mb-8 flex-col border border-black overflow-hidden shadow-lg`}
                     key={index}
                   >
                     <img src={`/tinder/${selectedMember.id}/${img}`} className="h-full w-full object-cover	object-top" />
