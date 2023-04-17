@@ -95,5 +95,15 @@ export const locations: ILocation[] = [
   { id: 93, city: 'Budakalász ', place: '', latlng: [47.6221161, 18.9986831] },
   { id: 94, city: 'Csillebérc', place: '', latlng: [47.4943878, 18.9582101] },
   { id: 95, city: 'Budapest', place: 'Warm up udvar', latlng: [47.5416737, 19.044766] },
-  { id: 96, city: 'Budapest', place: 'Wawe', latlng: [0, 0] }
+  { id: 96, city: 'Budapest', place: 'Wawe', latlng: [0, 0] },
+  { id: 97, city: 'Budapest', place: 'BME', latlng: [47.47325685842633, 19.061178387579137] },
+  { id: 98, city: 'Pécs', place: 'Pécsi Est Café', latlng: [46.0724802, 18.2233642] },
+  { id: 99, city: 'Sopron', place: 'Hangár', latlng: [47.6906215, 16.5645585] },
+  { id: 100, city: 'Szentes', place: 'Ifiház', latlng: [46.6542479, 20.2525446] },
+  { id: 101, city: 'Veszprém', place: 'Expresszó', latlng: [0, 0] },
+  { id: 102, city: 'Tatabány', place: 'Roxxy', latlng: [0, 0] },
+  { id: 103, city: 'Körmend', place: 'Alterába fesztivál', latlng: [0, 0] },
+  { id: 104, city: 'Jánossomorja', place: 'Sós Antal Közösségi Ház', latlng: [0, 0] },
+  { id: 105, city: 'Budapest', place: 'Bakáts tér', latlng: [0, 0] },
+  { id: 106, city: 'Szombathely', place: 'Szimfónia', latlng: [0, 0] }
 ]
