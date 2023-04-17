@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
 import { ConcertYear } from "../../components/ConcertYear/ConcertYear";
-import { Map } from "../../components/Map/Map";
+import Map from "../../components/Map/Map.jsx";
 import { IConcertYear } from "../../types";
 import { concerts } from "../../data/concerts";
 import { useMediaQuery } from 'react-responsive'
 import { FaRegCheckSquare, FaRegSquare } from "react-icons/fa";
-import { useScrollPosition } from "../../hooks/useScrollPosition";
-
 
 const allConcerts: IConcertYear[] = [{
   year: 2007,
