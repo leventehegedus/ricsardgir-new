@@ -131,6 +131,7 @@ export const tinderMembers: ITinderProfile[] = [
       "/07.jpg",
       "/08.jpg"
     ],
-    interests: ["főzés", "éneklés", "punk", "futás", "spagetti", "kutyák"]
+    interests: ["főzés", "éneklés", "punk", "futás", "spagetti", "kutyák"],
+    songs: ["Éva otthon", "Azonistúl","Fúj de fáj"]
   }
 ]

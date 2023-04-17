@@ -66,11 +66,11 @@ export const Tinder: React.FC = () => {
     )
   }
 
-  const renderInterests = (interests: string[]) => {
+  const renderListElements = (title:string, interests: string[]) => {
     return (
       <div>
         <div className="text-gray-900 font-black pb-2">
-          Érdeklődés
+          {title}
         </div>
         <div className="flex flex-wrap gap-x-2 gap-y-2">
           {interests.map((interest, index) => {
@@ -109,7 +109,8 @@ export const Tinder: React.FC = () => {
             <div className="w-full sm:w-1/3 overflow-auto flex flex-col gap-4 mb-4 sm:mb-0">
               {renderAboutBlock(`${selectedMember.name}, ${new Date().getFullYear() - selectedMember.yearOfBirth}`, selectedMember.shortBio)}
               {renderAboutBlock("Lakhely", selectedMember.location)}
-              {selectedMember.interests && renderInterests(selectedMember.interests)}
+              {selectedMember.interests && renderListElements("Érdeklődés", selectedMember.interests)}
+              {selectedMember.songs && renderListElements("Kedvenc gír dalok", selectedMember.songs)}
               {renderAboutBlock("Rólam", selectedMember.longBio)}
             </div>
             <div className="w-full sm:w-2/3 overflow-auto">
