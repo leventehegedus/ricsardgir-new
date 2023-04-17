@@ -6,7 +6,7 @@ export interface IConcert {
   date: string,
   locationId: number,
   img: string,
-  size: string,
+  size?: string,
   ytIds?: string[]
 }
 
