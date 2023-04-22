@@ -1517,6 +1517,152 @@
     "uri": "spotify:album:2UHn9hcBBAJR9zPKSWhftA"
   },
   {
+    "album_group": "album",
+    "album_type": "album",
+    "artists": [
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/43xJ0NtAEMfFO4IWZeun4f"
+        },
+        "href": "https://api.spotify.com/v1/artists/43xJ0NtAEMfFO4IWZeun4f",
+        "id": "43xJ0NtAEMfFO4IWZeun4f",
+        "name": "Milan Hodovan",
+        "type": "artist",
+        "uri": "spotify:artist:43xJ0NtAEMfFO4IWZeun4f"
+      }
+    ],
+    "copyrights": [
+      {
+        "text": "2022 HODOVAN Records",
+        "type": "C"
+      },
+      {
+        "text": "2022 HODOVAN Records",
+        "type": "P"
+      }
+    ],
+    "external_ids": {
+      "upc": "196865500585"
+    },
+    "external_urls": {
+      "spotify": "https://open.spotify.com/album/1rlPSuiZvN72aDximVnbLL"
+    },
+    "genres": [],
+    "href": "https://api.spotify.com/v1/albums/1rlPSuiZvN72aDximVnbLL",
+    "id": "1rlPSuiZvN72aDximVnbLL",
+    "images": [
+      {
+        "height": 640,
+        "url": "https://i.scdn.co/image/ab67616d0000b27339b8d4ee077c2afeb0ba38f7",
+        "width": 640
+      },
+      {
+        "height": 300,
+        "url": "https://i.scdn.co/image/ab67616d00001e0239b8d4ee077c2afeb0ba38f7",
+        "width": 300
+      },
+      {
+        "height": 64,
+        "url": "https://i.scdn.co/image/ab67616d0000485139b8d4ee077c2afeb0ba38f7",
+        "width": 64
+      }
+    ],
+    "label": "HODOVAN Records",
+    "name": "Zanox - Risks and Side Effects (Original Motion Picture Soundtrack)",
+    "popularity": 3,
+    "release_date": "2022-06-17",
+    "release_date_precision": "day",
+    "total_tracks": 25,
+    "additional_info": ["A Zanox – Kockázatok és mellékhatások című film zenéje. A filmben a Let's Dance és a Test Fala mellett két új szám is szerepel, a Hülye vagy és a My Horse 2 filmre igazított változata. A film zeneszerzője Hodován Milán"],
+    "tracks": {
+      "href": "https://api.spotify.com/v1/albums/1rlPSuiZvN72aDximVnbLL/tracks?offset=0&limit=50&locale=en,hu;q=0.9,en-US;q=0.8,de;q=0.7,it;q=0.6,fr;q=0.5",
+      "items": [{
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/43xJ0NtAEMfFO4IWZeun4f"
+            },
+            "href": "https://api.spotify.com/v1/artists/43xJ0NtAEMfFO4IWZeun4f",
+            "id": "43xJ0NtAEMfFO4IWZeun4f",
+            "name": "Milan Hodovan",
+            "type": "artist",
+            "uri": "spotify:artist:43xJ0NtAEMfFO4IWZeun4f"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/1F0VVhw2sUlJONnuGXbnQm"
+            },
+            "href": "https://api.spotify.com/v1/artists/1F0VVhw2sUlJONnuGXbnQm",
+            "id": "1F0VVhw2sUlJONnuGXbnQm",
+            "name": "Ricsárdgír",
+            "type": "artist",
+            "uri": "spotify:artist:1F0VVhw2sUlJONnuGXbnQm"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 140000,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/1P3DNeqvcRQ5gkLDWt8oY9"
+        },
+        "href": "https://api.spotify.com/v1/tracks/1P3DNeqvcRQ5gkLDWt8oY9",
+        "id": "1P3DNeqvcRQ5gkLDWt8oY9",
+        "is_local": false,
+        "name": "Fresh Start",
+        "preview_url": "https://p.scdn.co/mp3-preview/b4b36c3473b7ad30b05797c934a5344b4c55a1c3?cid=cfe923b2d660439caf2b557b21f31221",
+        "track_number": 14,
+        "type": "track",
+        "uri": "spotify:track:1P3DNeqvcRQ5gkLDWt8oY9"
+      },
+      {
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/43xJ0NtAEMfFO4IWZeun4f"
+            },
+            "href": "https://api.spotify.com/v1/artists/43xJ0NtAEMfFO4IWZeun4f",
+            "id": "43xJ0NtAEMfFO4IWZeun4f",
+            "name": "Milan Hodovan",
+            "type": "artist",
+            "uri": "spotify:artist:43xJ0NtAEMfFO4IWZeun4f"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/1F0VVhw2sUlJONnuGXbnQm"
+            },
+            "href": "https://api.spotify.com/v1/artists/1F0VVhw2sUlJONnuGXbnQm",
+            "id": "1F0VVhw2sUlJONnuGXbnQm",
+            "name": "Ricsárdgír",
+            "type": "artist",
+            "uri": "spotify:artist:1F0VVhw2sUlJONnuGXbnQm"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 157000,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/0TLSauSKjznetKZBomzrF3"
+        },
+        "href": "https://api.spotify.com/v1/tracks/0TLSauSKjznetKZBomzrF3",
+        "id": "0TLSauSKjznetKZBomzrF3",
+        "is_local": false,
+        "name": "Lottery",
+        "preview_url": "https://p.scdn.co/mp3-preview/852c2b2842887b7a2c1ff46a4c91035d9980b8a6?cid=cfe923b2d660439caf2b557b21f31221",
+        "track_number": 23,
+        "type": "track",
+        "uri": "spotify:track:0TLSauSKjznetKZBomzrF3"
+      }
+      ],
+      "limit": 50,
+      "next": null,
+      "offset": 0,
+      "previous": null,
+      "total": 25
+    },
+    "type": "album",
+    "uri": "spotify:album:1rlPSuiZvN72aDximVnbLL"
+  },
+  {
     "album_type": "single",
     "artists": [
       {
@@ -1709,5 +1855,402 @@
     },
     "type": "album",
     "uri": "spotify:album:2sVKtjP1dEhCOaS2kVq3iu"
+  },
+  {
+    "album_type": "album",
+    "total_tracks": 11,
+    "additional_info": [
+      "Ricsárdgír:",
+      "Mártondani - ének, gitár, dalszöveg",
+      "Paál László - szintis, vokál",
+      "Zsirai Andris - basszus",
+      "Huszár Ákos - dob",
+      "Borszukovszky Flóra -ének",
+      "Papp Éva - ének",
+      "Tóth Dóra Lilla - ének, kórus, hegedű",
+      "Weil András - Banjo, gityószóló, tangóharmónika",
+      "Deák Edina - arculat, lemez design, ArtWork",
+      "Németh Barnabás - road (őt most csak így ide írtuk)",
+      "A Nem egy tánc utolsó versszakát Kabai Viktor írta, köszi, Love",
+      "A My Horse 2 dalszövegét félig Borszukovszky Flóra írta.",
+      "A felvételeket készítették: Weil András, Huszár Ákos",
+      "A lemez producerei: Márton Dániel, Paál László, Weil András",
+      "Mixing, mastering: Weil András"
+    ],
+    "shop_link": "https://popshop.hu/ricsardgir/17621-ricsardgir-kill-the-koala-cd.html",
+    "external_urls": {
+      "spotify": "https://open.spotify.com/album/0FeIBA5I5PypmtmiQ4t6dk"
+    },
+    "href": "https://api.spotify.com/v1/albums/0FeIBA5I5PypmtmiQ4t6dk",
+    "id": "0FeIBA5I5PypmtmiQ4t6dk",
+    "images": [
+      {
+        "url": "https://i.scdn.co/image/ab67616d0000b2736b350889798e0747dafcaa15",
+        "height": 640,
+        "width": 640
+      },
+      {
+        "url": "https://i.scdn.co/image/ab67616d00001e026b350889798e0747dafcaa15",
+        "height": 300,
+        "width": 300
+      },
+      {
+        "url": "https://i.scdn.co/image/ab67616d000048516b350889798e0747dafcaa15",
+        "height": 64,
+        "width": 64
+      }
+    ],
+    "name": "Kill the Koala",
+    "release_date": "2023-01-21",
+    "release_date_precision": "day",
+    "type": "album",
+    "uri": "spotify:album:0FeIBA5I5PypmtmiQ4t6dk",
+    "copyrights": [
+      {
+        "text": "© 2023 Mertez Management",
+        "type": "C"
+      },
+      {
+        "text": "℗ 2023 Mertez Management",
+        "type": "P"
+      }
+    ],
+    "external_ids": {
+      "upc": "00602455209115"
+    },
+    "genres": [],
+    "label": "Universal Music Kft. Hungary",
+    "popularity": 37,
+    "artists": [
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/1F0VVhw2sUlJONnuGXbnQm"
+        },
+        "href": "https://api.spotify.com/v1/artists/1F0VVhw2sUlJONnuGXbnQm",
+        "id": "1F0VVhw2sUlJONnuGXbnQm",
+        "name": "Ricsárdgír",
+        "type": "artist",
+        "uri": "spotify:artist:1F0VVhw2sUlJONnuGXbnQm"
+      }
+    ],
+    "tracks": {
+      "href": "https://api.spotify.com/v1/albums/0FeIBA5I5PypmtmiQ4t6dk/tracks?offset=0&limit=50&locale=en,hu;q=0.9,en-US;q=0.8,de;q=0.7,it;q=0.6,fr;q=0.5",
+      "limit": 50,
+      "next": null,
+      "offset": 0,
+      "previous": null,
+      "total": 11,
+      "items": [
+        {
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1F0VVhw2sUlJONnuGXbnQm"
+              },
+              "href": "https://api.spotify.com/v1/artists/1F0VVhw2sUlJONnuGXbnQm",
+              "id": "1F0VVhw2sUlJONnuGXbnQm",
+              "name": "Ricsárdgír",
+              "type": "artist",
+              "uri": "spotify:artist:1F0VVhw2sUlJONnuGXbnQm"
+            }
+          ],
+          "disc_number": 1,
+          "duration_ms": 246857,
+          "explicit": true,
+          "external_urls": {
+            "spotify": "https://open.spotify.com/track/52WtmonGgalH1cGVdSmchC"
+          },
+          "href": "https://api.spotify.com/v1/tracks/52WtmonGgalH1cGVdSmchC",
+          "id": "52WtmonGgalH1cGVdSmchC",
+          "name": "Szóljon a szar",
+          "preview_url": "https://p.scdn.co/mp3-preview/f3801df42345bbb2f1f5cb0b9e56e34c15549eaf?cid=cfe923b2d660439caf2b557b21f31221",
+          "track_number": 1,
+          "type": "track",
+          "uri": "spotify:track:52WtmonGgalH1cGVdSmchC",
+          "is_local": false
+        },
+        {
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1F0VVhw2sUlJONnuGXbnQm"
+              },
+              "href": "https://api.spotify.com/v1/artists/1F0VVhw2sUlJONnuGXbnQm",
+              "id": "1F0VVhw2sUlJONnuGXbnQm",
+              "name": "Ricsárdgír",
+              "type": "artist",
+              "uri": "spotify:artist:1F0VVhw2sUlJONnuGXbnQm"
+            }
+          ],
+          "disc_number": 1,
+          "duration_ms": 237900,
+          "explicit": true,
+          "external_urls": {
+            "spotify": "https://open.spotify.com/track/3Sl743P9MYaQwU6njnoMar"
+          },
+          "href": "https://api.spotify.com/v1/tracks/3Sl743P9MYaQwU6njnoMar",
+          "id": "3Sl743P9MYaQwU6njnoMar",
+          "name": "Fúj de fáj",
+          "preview_url": "https://p.scdn.co/mp3-preview/8fbaec87f9fbfea80d1514baa0d788e72644411d?cid=cfe923b2d660439caf2b557b21f31221",
+          "track_number": 2,
+          "type": "track",
+          "uri": "spotify:track:3Sl743P9MYaQwU6njnoMar",
+          "is_local": false
+        },
+        {
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1F0VVhw2sUlJONnuGXbnQm"
+              },
+              "href": "https://api.spotify.com/v1/artists/1F0VVhw2sUlJONnuGXbnQm",
+              "id": "1F0VVhw2sUlJONnuGXbnQm",
+              "name": "Ricsárdgír",
+              "type": "artist",
+              "uri": "spotify:artist:1F0VVhw2sUlJONnuGXbnQm"
+            }
+          ],
+          "disc_number": 1,
+          "duration_ms": 181573,
+          "explicit": false,
+          "external_urls": {
+            "spotify": "https://open.spotify.com/track/4BEZRzaYeFDAh74Ti55GPU"
+          },
+          "href": "https://api.spotify.com/v1/tracks/4BEZRzaYeFDAh74Ti55GPU",
+          "id": "4BEZRzaYeFDAh74Ti55GPU",
+          "name": "Nem egy tánc",
+          "preview_url": "https://p.scdn.co/mp3-preview/2bf6147e50440c4ce0f775196d68968df64a2ea8?cid=cfe923b2d660439caf2b557b21f31221",
+          "track_number": 3,
+          "type": "track",
+          "uri": "spotify:track:4BEZRzaYeFDAh74Ti55GPU",
+          "is_local": false
+        },
+        {
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1F0VVhw2sUlJONnuGXbnQm"
+              },
+              "href": "https://api.spotify.com/v1/artists/1F0VVhw2sUlJONnuGXbnQm",
+              "id": "1F0VVhw2sUlJONnuGXbnQm",
+              "name": "Ricsárdgír",
+              "type": "artist",
+              "uri": "spotify:artist:1F0VVhw2sUlJONnuGXbnQm"
+            }
+          ],
+          "disc_number": 1,
+          "duration_ms": 165555,
+          "explicit": true,
+          "external_urls": {
+            "spotify": "https://open.spotify.com/track/4TE9SBBLIQTZi6ZAzhW10w"
+          },
+          "href": "https://api.spotify.com/v1/tracks/4TE9SBBLIQTZi6ZAzhW10w",
+          "id": "4TE9SBBLIQTZi6ZAzhW10w",
+          "name": "Popszakma",
+          "preview_url": "https://p.scdn.co/mp3-preview/8450b53619e683a3281f7e9b06fb397b3adc4068?cid=cfe923b2d660439caf2b557b21f31221",
+          "track_number": 4,
+          "type": "track",
+          "uri": "spotify:track:4TE9SBBLIQTZi6ZAzhW10w",
+          "is_local": false
+        },
+        {
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1F0VVhw2sUlJONnuGXbnQm"
+              },
+              "href": "https://api.spotify.com/v1/artists/1F0VVhw2sUlJONnuGXbnQm",
+              "id": "1F0VVhw2sUlJONnuGXbnQm",
+              "name": "Ricsárdgír",
+              "type": "artist",
+              "uri": "spotify:artist:1F0VVhw2sUlJONnuGXbnQm"
+            }
+          ],
+          "disc_number": 1,
+          "duration_ms": 219124,
+          "explicit": false,
+          "external_urls": {
+            "spotify": "https://open.spotify.com/track/30xk2cKY72fi98KbHO4LwT"
+          },
+          "href": "https://api.spotify.com/v1/tracks/30xk2cKY72fi98KbHO4LwT",
+          "id": "30xk2cKY72fi98KbHO4LwT",
+          "name": "Hülye vagy",
+          "preview_url": "https://p.scdn.co/mp3-preview/61b2c39918c96e24d7d4736b26440cc9b8c4e57a?cid=cfe923b2d660439caf2b557b21f31221",
+          "track_number": 5,
+          "type": "track",
+          "uri": "spotify:track:30xk2cKY72fi98KbHO4LwT",
+          "is_local": false
+        },
+        {
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1F0VVhw2sUlJONnuGXbnQm"
+              },
+              "href": "https://api.spotify.com/v1/artists/1F0VVhw2sUlJONnuGXbnQm",
+              "id": "1F0VVhw2sUlJONnuGXbnQm",
+              "name": "Ricsárdgír",
+              "type": "artist",
+              "uri": "spotify:artist:1F0VVhw2sUlJONnuGXbnQm"
+            }
+          ],
+          "disc_number": 1,
+          "duration_ms": 213600,
+          "explicit": true,
+          "external_urls": {
+            "spotify": "https://open.spotify.com/track/2V6MiKhxbnBpf5RN1RNzAD"
+          },
+          "href": "https://api.spotify.com/v1/tracks/2V6MiKhxbnBpf5RN1RNzAD",
+          "id": "2V6MiKhxbnBpf5RN1RNzAD",
+          "name": "Ciki vagyok",
+          "preview_url": "https://p.scdn.co/mp3-preview/24d05981377ddcf245665db78dae19e11f280fd1?cid=cfe923b2d660439caf2b557b21f31221",
+          "track_number": 6,
+          "type": "track",
+          "uri": "spotify:track:2V6MiKhxbnBpf5RN1RNzAD",
+          "is_local": false
+        },
+        {
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1F0VVhw2sUlJONnuGXbnQm"
+              },
+              "href": "https://api.spotify.com/v1/artists/1F0VVhw2sUlJONnuGXbnQm",
+              "id": "1F0VVhw2sUlJONnuGXbnQm",
+              "name": "Ricsárdgír",
+              "type": "artist",
+              "uri": "spotify:artist:1F0VVhw2sUlJONnuGXbnQm"
+            }
+          ],
+          "disc_number": 1,
+          "duration_ms": 188166,
+          "explicit": false,
+          "external_urls": {
+            "spotify": "https://open.spotify.com/track/4xbX0sk3dVVkKIs0qqpgCA"
+          },
+          "href": "https://api.spotify.com/v1/tracks/4xbX0sk3dVVkKIs0qqpgCA",
+          "id": "4xbX0sk3dVVkKIs0qqpgCA",
+          "name": "My Horse 2: The Prequel",
+          "preview_url": "https://p.scdn.co/mp3-preview/c664c4862b3a53796df6a4ec7bf9eff38d5a4e53?cid=cfe923b2d660439caf2b557b21f31221",
+          "track_number": 7,
+          "type": "track",
+          "uri": "spotify:track:4xbX0sk3dVVkKIs0qqpgCA",
+          "is_local": false
+        },
+        {
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1F0VVhw2sUlJONnuGXbnQm"
+              },
+              "href": "https://api.spotify.com/v1/artists/1F0VVhw2sUlJONnuGXbnQm",
+              "id": "1F0VVhw2sUlJONnuGXbnQm",
+              "name": "Ricsárdgír",
+              "type": "artist",
+              "uri": "spotify:artist:1F0VVhw2sUlJONnuGXbnQm"
+            }
+          ],
+          "disc_number": 1,
+          "duration_ms": 160113,
+          "explicit": true,
+          "external_urls": {
+            "spotify": "https://open.spotify.com/track/0tCj8tpoqMuRZGbJkDS6Yp"
+          },
+          "href": "https://api.spotify.com/v1/tracks/0tCj8tpoqMuRZGbJkDS6Yp",
+          "id": "0tCj8tpoqMuRZGbJkDS6Yp",
+          "name": "A magyar ember",
+          "preview_url": "https://p.scdn.co/mp3-preview/d5594255350f8d22c69c8fa501ea084b1188d094?cid=cfe923b2d660439caf2b557b21f31221",
+          "track_number": 8,
+          "type": "track",
+          "uri": "spotify:track:0tCj8tpoqMuRZGbJkDS6Yp",
+          "is_local": false
+        },
+        {
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1F0VVhw2sUlJONnuGXbnQm"
+              },
+              "href": "https://api.spotify.com/v1/artists/1F0VVhw2sUlJONnuGXbnQm",
+              "id": "1F0VVhw2sUlJONnuGXbnQm",
+              "name": "Ricsárdgír",
+              "type": "artist",
+              "uri": "spotify:artist:1F0VVhw2sUlJONnuGXbnQm"
+            }
+          ],
+          "disc_number": 1,
+          "duration_ms": 204857,
+          "explicit": true,
+          "external_urls": {
+            "spotify": "https://open.spotify.com/track/3IVPkpCefM78y2OXa4NdXP"
+          },
+          "href": "https://api.spotify.com/v1/tracks/3IVPkpCefM78y2OXa4NdXP",
+          "id": "3IVPkpCefM78y2OXa4NdXP",
+          "name": "Égj velem",
+          "preview_url": "https://p.scdn.co/mp3-preview/2dba411cf21f925b009685f3448cf392d9a814df?cid=cfe923b2d660439caf2b557b21f31221",
+          "track_number": 9,
+          "type": "track",
+          "uri": "spotify:track:3IVPkpCefM78y2OXa4NdXP",
+          "is_local": false
+        },
+        {
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1F0VVhw2sUlJONnuGXbnQm"
+              },
+              "href": "https://api.spotify.com/v1/artists/1F0VVhw2sUlJONnuGXbnQm",
+              "id": "1F0VVhw2sUlJONnuGXbnQm",
+              "name": "Ricsárdgír",
+              "type": "artist",
+              "uri": "spotify:artist:1F0VVhw2sUlJONnuGXbnQm"
+            }
+          ],
+          "disc_number": 1,
+          "duration_ms": 214285,
+          "explicit": true,
+          "external_urls": {
+            "spotify": "https://open.spotify.com/track/3hS3LeQ910wnspNh3Wuzvb"
+          },
+          "href": "https://api.spotify.com/v1/tracks/3hS3LeQ910wnspNh3Wuzvb",
+          "id": "3hS3LeQ910wnspNh3Wuzvb",
+          "name": "Rajtad korizom",
+          "preview_url": "https://p.scdn.co/mp3-preview/c35a3d85d54482c037313aea4a542d31606c63ee?cid=cfe923b2d660439caf2b557b21f31221",
+          "track_number": 10,
+          "type": "track",
+          "uri": "spotify:track:3hS3LeQ910wnspNh3Wuzvb",
+          "is_local": false
+        },
+        {
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1F0VVhw2sUlJONnuGXbnQm"
+              },
+              "href": "https://api.spotify.com/v1/artists/1F0VVhw2sUlJONnuGXbnQm",
+              "id": "1F0VVhw2sUlJONnuGXbnQm",
+              "name": "Ricsárdgír",
+              "type": "artist",
+              "uri": "spotify:artist:1F0VVhw2sUlJONnuGXbnQm"
+            }
+          ],
+          "disc_number": 1,
+          "duration_ms": 223680,
+          "explicit": false,
+          "external_urls": {
+            "spotify": "https://open.spotify.com/track/7HGsKkBtpSCCLE1qycnguZ"
+          },
+          "href": "https://api.spotify.com/v1/tracks/7HGsKkBtpSCCLE1qycnguZ",
+          "id": "7HGsKkBtpSCCLE1qycnguZ",
+          "name": "Hol épp megyek",
+          "preview_url": "https://p.scdn.co/mp3-preview/c027ab4f006240dfd97c315459404ead3cbf9958?cid=cfe923b2d660439caf2b557b21f31221",
+          "track_number": 11,
+          "type": "track",
+          "uri": "spotify:track:7HGsKkBtpSCCLE1qycnguZ",
+          "is_local": false
+        }
+      ]
+    },
+    "album_group": "album"
   }
 ]
