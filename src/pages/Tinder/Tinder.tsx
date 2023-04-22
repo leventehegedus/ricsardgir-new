@@ -2,22 +2,23 @@ import { useState, useEffect } from "react";
 import { RiCloseCircleLine } from "react-icons/ri";
 import { tinderMembers } from "../../data/tinder";
 import Modal from 'react-modal';
-import { ITinderProfile } from "../../types";
+import { ITinderProfile, ITrack } from "../../types";
 import { useMediaQuery } from 'react-responsive'
 import TinderCard from "../../components/TinderCard/TinderCard";
-
+import { useAlbums } from '../../hooks/useAlbums';
+import TinderTrack from "../../components/TinderTrack.tsx/TinderTrack";
 
 const customStyles = {
   content: {
-    top: '50%',
+    top: '80px',
     left: '50%',
     right: 'auto',
     bottom: 'auto',
-    width: '80%',
+    width: '100%',
     maxWidth: '800px',
     height: '80%',
     marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
+    transform: 'translate(-50%,0)',
     zIndex: '100',
     padding: 0,
     borderRadius: 0,
@@ -33,7 +34,11 @@ export const Tinder: React.FC = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [selectedMember, setSelectedMember] = useState<ITinderProfile>()
   const isTabletOrBigger = useMediaQuery({ minWidth: 768 })
+  const albums = useAlbums();
 
+  let tracks: ITrack[] = [];
+
+  albums.forEach(album => album.tracks.items.forEach(track => tracks.push(track)));
 
   useEffect(() => {
     setMembers(tinderMembers);
@@ -66,7 +71,7 @@ export const Tinder: React.FC = () => {
     )
   }
 
-  const renderListElements = (title:string, interests: string[]) => {
+  const renderListElements = (title: string, interests: string[]) => {
     return (
       <div>
         <div className="text-gray-900 font-black pb-2">
@@ -85,8 +90,31 @@ export const Tinder: React.FC = () => {
     )
   }
 
+  const renderFavouriteTracks = (title: string, interests: string[]) => {
+    return (
+      <div>
+        <div className="text-gray-900 font-black pb-2">
+          {title}
+        </div>
+        <div className="flex flex-wrap gap-x-2 gap-y-2">
+          {interests.map((interest, index) => {
+            let myTrack = tracks.find(track => track.name === interest);
+            if (!myTrack) {
+              return null
+            }
+            return (
+              <div className="border border-solid border-[#ff002b] text-xs text-gir-500 hover:text-white hover:bg-[#ff002b] rounded-[0.25rem] cursor-pointer" key={index}>
+                <TinderTrack key={myTrack.id} {...myTrack} />
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    )
+  }
+
   return (
-    <div className="w-full h-[calc(100vh-80px)] relative">
+    <div className="w-full h-[100vh] md:h-[calc(100vh-80px)] relative">
       {!modalIsOpen && members?.map((member, index) => <TinderCard
         key={index}
         member={member}
@@ -110,7 +138,7 @@ export const Tinder: React.FC = () => {
               {renderAboutBlock(`${selectedMember.name}, ${new Date().getFullYear() - selectedMember.yearOfBirth}`, selectedMember.shortBio)}
               {renderAboutBlock("Lakhely", selectedMember.location)}
               {selectedMember.interests && renderListElements("Érdeklődés", selectedMember.interests)}
-              {selectedMember.songs && renderListElements("Kedvenc gír dalok", selectedMember.songs)}
+              {selectedMember.songs && renderFavouriteTracks("Kedvenc gír dalok", selectedMember.songs)}
               {renderAboutBlock("Rólam", selectedMember.longBio)}
             </div>
             <div className="w-full sm:w-2/3 overflow-auto">

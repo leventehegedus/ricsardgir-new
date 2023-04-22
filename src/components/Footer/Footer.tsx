@@ -86,7 +86,7 @@ export const Footer: React.FC = () => {
   }
 
   return (
-    <div className="p-4 w-full mt-16 bg-black">
+    <div className="p-4 w-full mt-16 bg-black text-xs md:text-base">
       <div className="flex justify-center items-center gap-x-4 flex-wrap">
         {urls && urls.map(url => {
           return renderLink(url)

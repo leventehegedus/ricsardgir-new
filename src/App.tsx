@@ -36,10 +36,16 @@ import "slick-carousel/slick/slick-theme.css";
 import FlixPage from './pages/FlixPage/FlixPage';
 import TagPage from './pages/TagPage/TagPage';
 import ContentsPage from './pages/ContentsPage/ContentsPage';
+import StatPage from './pages/StatPage/StatPage';
 AOS.init();
 
 function App() {
   const [isMenuOpen, setMenuOpen] = useState(false);
+
+  const scrollTop = () => {
+    window.scrollTo(0, 0);
+    return null
+  }
 
   return (
     <div className="App bg-black md:bg-transparent min-h-screen">
@@ -51,6 +57,7 @@ function App() {
       </MediaQuery>
       <div className="min-h-[calc(100vh-80px)]">
         <Router>
+          {scrollTop()}
           <WavyContainer />
           <TopBar isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
           <Menu isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
@@ -73,6 +80,7 @@ function App() {
               <Route path="/flix" element={<FlixPage />} />
               <Route path="/contents/" element={<ContentsPage />} />
               <Route path="/content/:id" element={<ContentPage />} />
+              <Route path="/stat" element={<StatPage />} />
               <Route path="/tag/:id" element={<TagPage />} />
               <Route path="*" element={<ErrorPage />} />
             </Routes>

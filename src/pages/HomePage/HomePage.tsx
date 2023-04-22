@@ -109,6 +109,7 @@ export const HomePage: React.FC = () => {
         <CanvasKoala />
       }
       {renderHomePageBlock(10, 10)}
+      <Link to={'/stat'}>stat</Link>
     </div >
   )
 }

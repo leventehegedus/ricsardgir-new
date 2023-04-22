@@ -88,7 +88,8 @@ export const tinderMembers: ITinderProfile[] = [
       "/01.jpg",
       "/02.jpg",
       "/03.jpg"
-    ]
+    ],
+    songs: ["SzintisLaci", "Szóljon a szar", "A pap", "Let's Dance", "My Horse"]
   },
   {
     id: "alma",
@@ -113,7 +114,8 @@ export const tinderMembers: ITinderProfile[] = [
       "/01.jpg",
       "/02.jpg",
       "/03.jpg"
-    ]
+    ],
+    songs: ["My Horse", "Let's Dance", "Burn"]
   }, {
     id: "eva",
     name: "Éva",
@@ -132,6 +134,6 @@ export const tinderMembers: ITinderProfile[] = [
       "/08.jpg"
     ],
     interests: ["főzés", "éneklés", "punk", "futás", "spagetti", "kutyák"],
-    songs: ["Éva otthon", "Azonistúl","Fúj de fáj"]
+    songs: ["Éva Otthon", "Azonistúl", "Fúj de fáj", "Szóljon a szar", "Kád"]
   }
 ]
