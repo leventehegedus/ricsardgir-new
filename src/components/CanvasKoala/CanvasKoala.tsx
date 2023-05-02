@@ -217,7 +217,7 @@ const CanvasKoala = (props: any) => {
         window.requestAnimationFrame(draw);
     }
 
-    return <canvas ref={canvasRef} width="300" height="300" />
+    return <canvas ref={canvasRef} width="300" height="300" className="gsap-card" />
 }
 
 export default CanvasKoala;

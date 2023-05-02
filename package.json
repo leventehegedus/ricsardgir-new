@@ -23,6 +23,7 @@
     "@types/styled-components": "^5.1.26",
     "aos": "^2.3.4",
     "canvas-sketch-util": "^1.10.0",
+    "gsap": "^3.11.5",
     "leaflet": "^1.9.3",
     "leaflet-heatmap": "^1.0.0",
     "leaflet.heat": "^0.2.0",

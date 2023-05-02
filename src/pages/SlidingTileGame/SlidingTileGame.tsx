@@ -136,7 +136,7 @@ export const SlidingTileGame: React.FC<SlidingTileGameProps> = props => {
   };
 
   return (
-    <div className="w-[300px] h-[300px]">
+    <div className="w-[300px] h-[300px] gsap-card">
       {
         puzzle && puzzle.map((rows, y) => {
           return (
