@@ -29,7 +29,8 @@ export const ContentPage: React.FC = () => {
 
   return (
     <div className="max-w-5xl pb-8 pt-8 text-white m-auto">
-      {content ?
+      <span>hamarosan</span>
+      {/* {content ?
         <div>
           <div className="mb-4">
             <div className="uppercase font-black text-center">
@@ -73,7 +74,7 @@ export const ContentPage: React.FC = () => {
         </div>
         :
         <ErrorPage />
-      }
+      } */}
     </div>
   )
 }

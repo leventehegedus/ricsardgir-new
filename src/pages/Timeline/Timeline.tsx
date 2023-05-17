@@ -11,6 +11,7 @@ const movieStoryBlock = [
   { year: '', text: 'Pájer Alma és Mártondani közösen lépnek fel a Barlangban, Dani gépzenét csinál, Alma pedig egy vibrátorba énekel a színpadon.' },
   { year: '', text: 'A Dzsdzs summerfesten megalakul a Richard Gere Klub zenekar, amiben Pájer Alma, Mártondani, Zsirai Andris és Süli Marci zenél. A koncerten leginkább feldolgozásokat játszanak, Európa Kiadót, Balatont, de van már hat saját daluk is.' },
   { year: 2008, text: 'Pájer Alma és Mártondani szakítanak, Alma kiszáll a zenekarból.' },
+  { img: './concerts/08.jpg' },
   { year: '', text: 'Zsirai Andris randizni kezd Előd Eszterrel, akit aztán Dani is randira hív a Főtérre. A konfliktust úgy oldják meg, hogy Esztert beveszik a bandába. Sülit Doór Attila kezdi helyettesíteni és Deák Edina is beszáll a zenekarba. Első közös fellépésük egy Sajnosbatár koncerten történik meg, ahol felmásznak a színpadra és se szó, se beszéd elveszik a hangszereket a Batártól. A világ legrosszabb koncertjét adják részegen, amitől Eszter zokogni kezdett és felhívta az apukáját, hogy menjen érte.' },
   { year: '', text: 'A második Dzsdzs Summerfesten a Richard Gere Klub 2 órás akusztikus koncertet ad elő, itt már szerepel a Repülőgép című dal és a Sohasem is. A zenekart ekkor Deák Edina, Előd Eszter, Doór Attila, Zsirai Andris és Mártondani alkotják. ' },
   { year: 2009, text: 'A No Remorse nevű zenekar előtt lépnek fel a Barlangban, a színpadon Mártondani bejelenti, hogy feloszlik a zenekar.' },
@@ -25,6 +26,7 @@ const movieStoryBlock = [
   { year: '', text: 'Próbálni kezdenek Dani anyukájának a pincéjében. Dani hegedűt akar a Ricsárdgírbe, ezért elhívja Daczi Danit hegedűlni, de véletlenül kettétöri a gitárját, Daczi Dani nem megy többet próbára.' },
   { year: 2010, text: 'Első pesti koncertünkön Laci előző zenekarával, az 1160-nal fellépünk a Filterben.' },
   { year: '', text: 'Első szentendrei koncertünk.' },
+  { img: './concerts/40.jpg' },
   { year: 2011, text: 'Megjelenik első magnókazettánk, amit ingyen lehet megszerezni a koncerteken, szimpátia alapján. 30db szám van rajta, és 6db különféle borítóval adjuk. A lemez címe: Ebábuobi válogatás kazetta.' },
   { year: '', text: 'Május 11-én fellépünk az A38-on a Kettős Tamás és a Vadszamarak előtt.' },
   { year: '', text: '2011 augusztus 1-én megjelenik a Repülőgép című első videoklipünk.' },
@@ -87,6 +89,7 @@ const movieStoryBlock = [
   { year: '', text: 'A Honfoglaló című műsorban az egyik kérdés az, hogy milyen néven ismerhetünk egy fiatal együttest? Ricsárdgír a válasz.' },
   { year: 2019, text: '2019 november 20 Megjelenik a SzintisLaci, és egy csapásra nemzetközi mém válik Laciból, több mint 8.000.000 megtekintéssel.' },
   { year: '', text: 'Barni lesz a roadunk.' },
+  { img: './concerts/76.jpg' },
   { year: '', text: 'Váradi Márton lesz a menedzserünk, és a Mertez Kiadóhoz kerülünk.' },
   { year: '', text: 'Első önálló turnén is van.' },
   { year: '', text: 'Heatlie Dávid és Kun Bálint lesz a dobosunk.' },
@@ -134,9 +137,9 @@ export const Timeline: React.FC = () => {
   const randomAnimation = Math.floor(Math.random() * animations.length);
 
   const renderStoryBlock = (block: {
-    text: string,
+    text?: string,
     img?: string,
-    year: string | number
+    year?: string | number
   }) => {
     return (
       <div className={`mb-4 md:mb-0 flex flex-col border border-solid border-white overflow-hidden shadow-lg p-4 ${block.img && "bg-white"}`}
@@ -161,13 +164,16 @@ export const Timeline: React.FC = () => {
         {movieStoryBlock.map((block, index) => {
           return (
             <div className="relative md:p-4 odd:left-0 even:left-[25%] md:even:left-[calc(50%+0.25rem)] w-3/4 z-10 md:z-0 md:w-1/2 bg-black md:bg-transparent after:absolute after:w-4 after:h-4 after:right-[-0.625rem] even:after:left-[-0.625rem] md:after:bg-white after:top-1/2 md:after:z-10 after:translate-y-[-50%] md:after:border after:border-solid after:border-black before:h-0 before:absolute before:top-1/2 before:w-0 before:z-10 before:border-8 before:border-solid before:border-white odd:before:right-0 odd:before:border-r-8 odd:before:border-transparent md:odd:before:border-l-white even:before:left-0 even:before:border-r-8 even:before:border-transparent md:even:before:border-r-white before:translate-y-[-50%]" key={index}>
-              {renderStoryBlock(block)}
+              {block && renderStoryBlock(block)}
             </div>
           )
         })}
       </div>
       <div className="w-full mt-[10000px] p-4 font-black text-gir-500 text-6xl flex justify-center">
-        <span>"vagy. nem."</span>
+        <span>idáig kár volt legörgetni</span>
+      </div>
+      <div className="w-full mt-[10000px] p-4 font-black text-gir-500 text-6xl flex justify-center">
+        <span>ide aztán meg végképp</span>
       </div>
     </>
   )

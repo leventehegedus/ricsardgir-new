@@ -18,8 +18,8 @@ export const MerchPage: React.FC = () => {
                 <img src={"./merch/" + merch.img} className="h-full w-full object-cover	object-center transition-all duration-1000 ease-in-out" />
               </div>
               <div>
-                <div className="font-black uppercase text-gray-900 mb-2">
-                  {merch.price} {merch.currency}
+                <div className="font-black text-gray-900 mb-2">
+                  {merch.price}{merch.currency}
                 </div>
                 <div className="text-gray-700 text-xs">
                   {merch.title}
@@ -31,7 +31,7 @@ export const MerchPage: React.FC = () => {
                 className="flex h-full w-full flex-col border border-black overflow-hidden shadow-lg bg-white  p-4"
                 target="__blank">
                 <div className="text-black">
-                  <div className="font-gray-900 text-4xl mb-4">{merch.price} {merch.currency}</div>
+                  <div className="font-gray-900 text-4xl mb-4">{merch.price}{merch.currency}</div>
                   <div className="font-gray-700 text-xs">{merch.description}</div>
                 </div>
               </a>

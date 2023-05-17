@@ -42,11 +42,6 @@ const urls: IUrl[] = [
     name: "soundcloud",
     url: "https://soundcloud.com/ricsardgir",
     text: "ricsardgir"
-  },
-  {
-    name: "tumblr",
-    url: "https://ricsardgir.tumblr.com/",
-    text: "tumblr"
   }
 ]
 
@@ -78,8 +73,6 @@ export const Footer: React.FC = () => {
         return <FaBandcamp />
       case 'soundcloud':
         return <FaSoundcloud />
-      case 'tumblr':
-        return <FaTumblr />
       default:
         return null;
     }

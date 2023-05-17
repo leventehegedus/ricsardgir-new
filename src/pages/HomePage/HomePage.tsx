@@ -4,38 +4,13 @@ import { routes } from "../../data/routes";
 import { SlidingTileGame } from "../SlidingTileGame/SlidingTileGame";
 import CanvasKoala from "../../components/CanvasKoala/CanvasKoala";
 import { useLocation } from 'react-router-dom';
-import { gsap } from 'gsap';
-import { Draggable } from "gsap/all";
 import React from "react";
-gsap.registerPlugin(Draggable)
 
 const tileStyle = "card__face w-[300px] h-[300px] text-center flex justify-center items-center"
 
 export const HomePage: React.FC = () => {
   const app = React.useRef<HTMLInputElement>(null);
   const location = useLocation();
-
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      // Draggable.create(".gsap-card");
-
-
-      gsap.from('.gsap-card', {
-        duration: 2,
-        opacity: 0,
-        delay: 0.5,
-        stagger: 0.15,
-        ease: 'bounce.out',
-        filter: 'grayscale(100%)',
-        // repeat: -1,
-        // yoyo: true,
-      });
-
-    }, app);
-
-    return () => ctx.revert();
-  }, []);
-
 
   useEffect(() => {
     console.log(location)
@@ -73,7 +48,7 @@ export const HomePage: React.FC = () => {
           {
 
             return (
-              <Link to={route.url} className={`card gsap-card ${getRotation(Math.random())}`} key={route.id}>
+              <Link to={route.url} className={`card ${getRotation(Math.random())}`} key={route.id}>
                 <div className={`${tileStyle} font-black text-3xl uppercase ${getTextColor(getColor().light)}`} style={{ backgroundColor: getBg(getColor().hue, getColor().saturation, getColor().light) }}>
                   {route.title}
                 </div>
@@ -92,7 +67,7 @@ export const HomePage: React.FC = () => {
     <div ref={app} className="m-auto w-fit max-w-7xl m-auto grid grid-cols-[repeat(1,300px)] sm:grid-cols-[repeat(2,300px)]  auto-rows-[300px] lg:grid-cols-[repeat(3,300px)] xl:grid-cols-[repeat(4,300px)] grid-flow-row-dense gap-y-4 gap-x-4">
       <SlidingTileGame folder={"koala"} size={4} />
       {renderHomePageBlock(0, 1)}
-      <a href={"https://www.youtube.com/watch?v=iCQ0dJ6nJXo"} target="_blank" className={`card ${getRotation(Math.random())} gsap-card`}>
+      <a href={"https://www.youtube.com/watch?v=iCQ0dJ6nJXo"} target="_blank" className={`card ${getRotation(Math.random())}`}>
         <div className={`${tileStyle}`}>
           <img src="./concerts/empty_6.jpg" />
           <div className="absolute flex justify-center items-center h-full w-full font-black text-3xl uppercase">spoiler</div>
@@ -106,7 +81,7 @@ export const HomePage: React.FC = () => {
       {renderHomePageBlock(2, 3)}
       <SlidingTileGame folder={"nincsensarkany"} size={4} />
       {renderHomePageBlock(5, 6)}
-      <a href={"https://open.spotify.com/playlist/0RhyV3VaGs9mk9F84yVPvT"} target="_blank" className={`card ${getRotation(Math.random())} gsap-card`}>
+      <a href={"https://open.spotify.com/playlist/0RhyV3VaGs9mk9F84yVPvT"} target="_blank" className={`card ${getRotation(Math.random())}`}>
         <div className={`${tileStyle}`}>
           <img src="./concerts/empty_4.jpg" className="object-cover h-full w-full" />
           <div className="absolute flex justify-center items-center h-full w-full font-black text-3xl uppercase text-black">PLAYLIST</div>
@@ -119,7 +94,7 @@ export const HomePage: React.FC = () => {
       <SlidingTileGame folder={"thedarksideofthemoon"} size={5} />
       {renderHomePageBlock(7, 7)}
       <SlidingTileGame folder={"riseofthekoala"} size={4} />
-      <a href={"https://soundcloud.com/thericsardgirls"} target="_blank" className={`card ${getRotation(Math.random())} gsap-card`}>
+      <a href={"https://soundcloud.com/thericsardgirls"} target="_blank" className={`card ${getRotation(Math.random())}`}>
         <div className={`${tileStyle}`}>
           <img src="./ricsardgirls.jpeg" className="object-cover h-full w-full" />
         </div>

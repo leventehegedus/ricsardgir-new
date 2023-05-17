@@ -59,7 +59,7 @@ export const routes: IRoute[] = [
   },
   {
     id: 7,
-    title: "pénzt",
+    title: "$$$P€NZ$$$",
     description: "Szeretnénk forgatni egy filmet nagyon sok pénzből, hogy senki se nézze meg.",
     img: "./home/money.jpg",
     gif: "./home/money.gif",
