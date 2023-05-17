@@ -112,6 +112,7 @@ export const HomePage: React.FC = () => {
       }
       {renderHomePageBlock(10, 10)}
       {/* <Link to={'/stat'} className="gsap-card card">stat</Link> */}
+      {<a href="https://teszt.ricsardgir.com" target="_blank">a ricsárdgír előző honlapja</a>}
     </div >
   )
 }

@@ -10,30 +10,84 @@ import { TagDescriptionTile } from "../../components/TagDescriptionTile/TagDescr
 
 export const ContentsPage: React.FC = () => {
 
-  const [contents, setContents] = useState<IContent[]>([]);
-  const [tags, setTags] = useState<string[]>([]);
+  // const [contents, setContents] = useState<IContent[]>([]);
+  // const [tags, setTags] = useState<string[]>([]);
+
+  // useEffect(() => {
+  //   fetch("/data/contents.ts")
+  //     .then(res => res.json())
+  //     .then(response => {
+  //       setContents(response)
+  //       let tagArray: string[] = []
+  //       response.forEach((res: IContent) => {
+  //         if (res.tags) {
+  //           res.tags.forEach((tag: string) => {
+  //             if (tagArray.indexOf(tag) < 0) {
+  //               tagArray.push(tag)
+  //             }
+  //           });
+  //         }
+  //       });
+  //       setTags(tagArray)
+  //     }).catch(err => {
+  //       console.log(err);
+  //     })
+  //   window.scroll(0, 0)
+  // }, [])
+
+  const calculateTimeLeft = () => {
+    let year = new Date().getFullYear();
+    const difference = +new Date(`${year}-8-1`) - +new Date();
+    let timeLeft = {};
+
+    if (difference > 0) {
+      timeLeft = {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60),
+      };
+    }
+
+    return timeLeft;
+  };
+
+  const [timeLeft, setTimeLeft] = useState<any>(calculateTimeLeft());
+  const [year] = useState(new Date().getFullYear());
 
   useEffect(() => {
-    fetch("/data/contents.ts")
-      .then(res => res.json())
-      .then(response => {
-        setContents(response)
-        let tagArray: string[] = []
-        response.forEach((res: IContent) => {
-          if (res.tags) {
-            res.tags.forEach((tag: string) => {
-              if (tagArray.indexOf(tag) < 0) {
-                tagArray.push(tag)
-              }
-            });
-          }
-        });
-        setTags(tagArray)
-      }).catch(err => {
-        console.log(err);
-      })
-    window.scroll(0, 0)
-  }, [])
+    setTimeout(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+  });
+
+  const timerComponents: any = [];
+  const translateToHun = (engExpr: string) => {
+    switch (engExpr) {
+      case 'days':
+        return 'nap'
+      case 'hours':
+        return 'óra'
+      case 'minutes':
+        return 'perc'
+      case 'seconds':
+        return 'másodperc'
+      default:
+        return null;
+    }
+  }
+
+  Object.keys(timeLeft).forEach((interval, index) => {
+    if (!timeLeft[interval]) {
+      return;
+    }
+
+    timerComponents.push(
+      <div key={index}>
+        {timeLeft[interval]} {translateToHun(interval)}{" "}
+      </div>
+    );
+  });
 
   return (
     <div className="p-4 max-w-7xl	m-auto">
@@ -53,7 +107,14 @@ export const ContentsPage: React.FC = () => {
           </div>
         )
       })} */}
-      <span>hamarosan</span>
+      <div className="text-gir-500 text-center text-3xl font-black">hamarosan</div>
+      <div className="text-center">
+        <h1>Nemzetközi  Ricsárdgír nap {year}</h1>
+        <div className="mt-4 mb-4">
+          <img className="text-center h-64 m-auto" src="./girnap.jpeg" />
+        </div>
+        {timerComponents.length ? timerComponents : <span>Boldog nemzetközi Ricsárdgír napot!</span>}
+      </div>
     </div>
   )
 }

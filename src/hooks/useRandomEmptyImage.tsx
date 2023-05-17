@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react';
 
 const emptyImages: string[] = [
-  "/concerts/empty.jpg",
+  "/concerts/empty_1.jpg",
   "/concerts/empty_2.jpg",
   "/concerts/empty_3.jpg",
   "/concerts/empty_4.jpg",
   "/concerts/empty_5.jpg",
   "/concerts/empty_6.jpg",
-  "/concerts/empty_7.jpg"
+  "/concerts/empty_7.jpg",
+  "/concerts/empty_8.jpg",
+  "/concerts/empty_9.jpg",
+  "/concerts/empty_10.jpg"
 ]
 
 export function useRandomEmptyImage() {
