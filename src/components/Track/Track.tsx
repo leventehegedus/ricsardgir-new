@@ -33,7 +33,7 @@ export const Track: React.FC<ITrack> = (props) => {
 
   return (
     <div className="flex flex-col border border-black overflow-hidden shadow-lg item-small mb-4 md:mb-0 p-4 bg-white"
-      data-aos={isTabletOrBigger && animations[randomAnimation]}
+    // data-aos={isTabletOrBigger && animations[randomAnimation]}
     >
       <div className="h-full w-full overflow-hidden relative">
         <img src={props.image}

@@ -37,7 +37,8 @@ export const ConcertTile: React.FC<IConcert> = (props) => {
   return (
     <>
       <Link to={`/buli/${props.id}`} className={`flex mb-8 md:mb-0 flex-col border border-black bg-white p-4 overflow-hidden shadow-lg ${isDesktop ? props.size ? props.size : imgSizes[randomImg] : Math.random() > 0.5 ? "item-small" : "item-medium"}`}
-        data-aos={isTabletOrBigger && animations[randomAnimation]} title={props.description}
+        // data-aos={isTabletOrBigger && animations[randomAnimation]}
+        title={props.description}
       >
         <div className={`h-full w-full overflow-hidden relative ${Math.random() > 0.8 && "rotate-[180deg]"}`}>
           <img src={"./concerts/" + props.img}

@@ -135,11 +135,12 @@ export const Tinder: React.FC = () => {
         {selectedMember &&
           <div className="w-full h-full bg-white rounded-[2rem] p-8 relative sm:flex flex-row-reverse justify-between gap-x-4 gap-y-4 overflow-auto sm:overflow-hidden">
             <div className="w-full sm:w-1/3 overflow-auto flex flex-col gap-4 mb-4 sm:mb-0">
-              {renderAboutBlock(`${selectedMember.name}, ${new Date().getFullYear() - selectedMember.yearOfBirth}`, selectedMember.shortBio)}
-              {renderAboutBlock("Lakhely", selectedMember.location)}
+              {/* {renderAboutBlock(`${selectedMember.name}, ${new Date().getFullYear() - selectedMember.yearOfBirth}`, selectedMember.shortBio)} */}
+              {renderAboutBlock(`${selectedMember.name}`, `${selectedMember.shortBio}`)}
+              {selectedMember.location && renderAboutBlock("Lakhely", selectedMember.location)}
               {selectedMember.interests && renderListElements("Érdeklődés", selectedMember.interests)}
               {selectedMember.songs && renderFavouriteTracks("Kedvenc gír dalok", selectedMember.songs)}
-              {renderAboutBlock("Rólam", selectedMember.longBio)}
+              {/* {renderAboutBlock("Rólam", selectedMember.longBio)} */}
             </div>
             <div className="w-full sm:w-2/3 overflow-auto">
               {selectedMember?.images.map((img, index) => {
@@ -147,7 +148,7 @@ export const Tinder: React.FC = () => {
                   <div className={`flex mb-8 last:mb-0 flex-col overflow-hidden sm:pr-4`}
                     key={index}
                   >
-                    <img src={`/tinder/${selectedMember.id}/${img}`} className="h-full w-full object-cover object-top rounded-[1rem]" />
+                    <img src={`/tinder/${selectedMember.id}/${img}`} className="h-full w-full object-cover rounded-[1rem]" />
                   </div>
                 )
               })}

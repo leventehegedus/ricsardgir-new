@@ -9,7 +9,7 @@ const settings = {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 3000
 };
 
@@ -65,14 +65,16 @@ export const TinderCard: React.FC<TinderCardProps> = (props) => {
                 <Slider {...settings} className="w-full h-full">
                     {member.images.map((img: string) => {
                         return (
-                            <img key={img} src={`/tinder/${member.id}/${img}`} onClick={() => { setSelectedMember(member); setIsOpen(true) }} className="w-full h-[16rem] md:h-[24rem] rounded-3xl object-cover object-top" />
+                            <img key={img} src={`/tinder/${member.id}/${img}`} onClick={() => { setSelectedMember(member); setIsOpen(true) }} className="w-full h-[16rem] md:h-[24rem] rounded-3xl object-cover object-center" />
                         )
                     })}
                 </Slider>
             </div>
             <div className="mb-4">
-                <div className="font-black mb-2 h-[1.5rem] line-clamp-1 text-gray-900">{member.name}, {new Date().getFullYear() - member.yearOfBirth}, {member.location}</div>
-                <div className="text-xs line-clamp-2 h-[2rem] text-gray-700">{member.shortBio}</div>
+                <div className="font-black mb-2 h-[1.5rem] line-clamp-1 text-gray-900 text-center">{member.name}
+                    {/* , {new Date().getFullYear() - member.yearOfBirth}, {member.location} */}
+                </div>
+                {<div className="text-xs text-center line-clamp-2 h-[2rem] text-gray-700">{member.shortBio}</div>}
             </div>
             <div className="flex justify-between md:justify-center md:gap-[4rem] h-2rem md:h-[3rem] items-center md:px-8">
                 <div onClick={() => { playSound(member, false); decideMember(index, false) }}><FaRegTimesCircle size={"3rem"} color={"#00D387"} className="hover:rotate-[360deg] cursor-pointer transition-all duration-1000 ease-in-out hover:scale-75" /></div>

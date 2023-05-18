@@ -90,6 +90,16 @@ export const HomePage: React.FC = () => {
           Offisöl Ricsárdgír turnébusz playlist. Ha végighallgatod úgy fogsz brékelni, mint Mártondani. Rosszul.
         </div>
       </a>
+      {renderHomePageBlock(10, 10)}
+      <a href={"https://www.youtube.com/watch?v=VGJYKX_4Qds"} target="_blank" className={`card ${getRotation(Math.random())}`}>
+        <div className={`${tileStyle}`}>
+          <img src="./richardgere.jpeg" className="object-cover h-full w-full" />
+          <div className="absolute flex justify-center items-center h-full w-full font-black text-3xl uppercase text-black">EXKLUZÍV INTERJÚ RICHARD GERE-REL</div>
+        </div>
+        <div className={`${tileStyle} card__face--back ${getTextColor(getColor().light)} p-4`} style={{ backgroundColor: getBg(getColor().hue, getColor().saturation, getColor().light) }}>
+          Exkluzív interjút készített Richard Gere-rel a Ricsárdgír
+        </div>
+      </a>
       {renderHomePageBlock(4, 4)}
       <SlidingTileGame folder={"thedarksideofthemoon"} size={5} />
       {renderHomePageBlock(7, 7)}
@@ -110,9 +120,26 @@ export const HomePage: React.FC = () => {
         location.pathname === '/' &&
         <CanvasKoala />
       }
-      {renderHomePageBlock(10, 10)}
       {/* <Link to={'/stat'} className="gsap-card card">stat</Link> */}
-      {<a href="https://teszt.ricsardgir.com" target="_blank">a ricsárdgír előző honlapja</a>}
+      <a href={"http://teszt.ricsardgir.com"} target="_blank" className={`card ${getRotation(Math.random())}`}>
+        <div className={`${tileStyle}`}>
+          <img src="./oldwebsite.jpg" className="object-cover h-full w-full" />
+          <div className="absolute flex justify-center items-center h-full w-full font-black text-3xl uppercase text-white">GÍRHONLAP 2.0</div>
+        </div>
+        <div className={`${tileStyle} card__face--back ${getTextColor(getColor().light)} p-4`} style={{ backgroundColor: getBg(getColor().hue, getColor().saturation, getColor().light) }}>
+          Az előző honlap, ami kevésbé jó, de ugyanannyiba került.
+        </div>
+      </a>
+      <a href={"https://teszt.ricsardgir.com/flappy/"} target="_blank" className={`card ${getRotation(Math.random())}`}>
+        <div className={`${tileStyle}`}>
+          <img src="./flappy.gif" className="object-cover h-full w-full object-left" />
+          <div className="absolute flex justify-center items-center h-full w-full font-black text-3xl uppercase text-black">Flappy koala</div>
+        </div>
+        <div className={`${tileStyle} card__face--back ${getTextColor(getColor().light)} p-4`} style={{ backgroundColor: getBg(getColor().hue, getColor().saturation, getColor().light) }}>
+          Járjuk a fellegekben a koala táncot, szárnyalj koala
+        </div>
+      </a>
+
     </div >
   )
 }

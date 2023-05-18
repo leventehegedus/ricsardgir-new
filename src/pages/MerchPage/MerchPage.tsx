@@ -12,7 +12,7 @@ export const MerchPage: React.FC = () => {
             <a href={merch.link}
               className="card__face flex flex-col border border-black overflow-hidden shadow-lg bg-white p-4"
               key={merch.id}
-              data-aos={animations[Math.floor(Math.random() * animations.length)]}
+              // data-aos={animations[Math.floor(Math.random() * animations.length)]}
               target="__blank">
               <div className="h-full w-full overflow-hidden mb-4">
                 <img src={"./merch/" + merch.img} className="h-full w-full object-cover	object-center transition-all duration-1000 ease-in-out" />

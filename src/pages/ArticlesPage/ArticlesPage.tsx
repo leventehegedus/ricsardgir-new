@@ -12,7 +12,7 @@ export const ArticlesPage: React.FC = () => {
     let domain = block.url.split('/')[2]
     return (
       <a href={block.url} target="__blank" className={`flex flex-col border border-white overflow-hidden shadow-lg  bg-black p-2 transition-all duration-1000 ease-in-out hover:invert hover:scale-105	${Math.random() > 0.5 ? "hover:rotate-1" : "hover:rotate-[-1deg]"} ${block.title.length > 120 ? Math.random() > 0.5 ? "row-span-2" : "col-span-2" : ""}`}
-        data-aos={animations[randomAnimation]}
+        // data-aos={animations[randomAnimation]}
         key={id}
       >
         <span>{block.title}</span>
