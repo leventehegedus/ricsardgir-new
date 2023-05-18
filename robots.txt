@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: http://ricsardgir.com/sitemap.xml
