@@ -24,6 +24,63 @@
   "quoteFrom": "drMáriás a Nincsen Sárkány című dalról"
 },
 {
-  "text": "Önbizalom, hit, tisztesség. Ennyit viszek csak ma a partyba",
-  "quoteFrom": "Paál László"
-}]
+  "text": "Sose hallgasd vissza a koncertfelvételeket, mert biztosan szarok",
+  "quoteFrom": "Mártondani tanácsa kezdő zenekaroknak"
+},
+{
+  "text": "Három hang is több, mint a semmi. Négy hang pedig több, mint három",
+  "quoteFrom": "Mártondani tanácsa kezdő zenekaroknak"
+},
+{
+  "text": "A jó zenésznek a hangok olyanok mint az anyajegy. Ha sok van belőlük akkor szarul néznek ki",
+  "quoteFrom": "Mártondani tanácsa kezdő zenekaroknak"
+},
+{
+  "text": "Mindig ügyelj arra, hogy ügyesen használd a képszerkesztő alkalmazásaidat a telefonodon. A profi kép ugyanis több lájkot hoz a zenekarodnak, mint hinnéd",
+  "quoteFrom": "Mártondani tanácsa kezdő zenekaroknak"
+},
+{
+  "text": "Egy jó gitáros sosem gitározik",
+  "quoteFrom": "Mártondani tanácsa kezdő zenekaroknak"
+},
+{
+  "text": "Ha eszedbe jut egy jó dallam, várj még vele. A dallamot ne rögzítsd sehol, csak a te fejedben legyen meg. Mielőtt gitárt ragadnál, aludj el, aztán nézz meg egy hosszú filmet és menj el bulizni",
+  "quoteFrom": "Mártondani tanácsa kezdő zenekaroknak"
+},
+{
+  "text": "Egy jó zenész mindig a gitárját nézi miközben játszik, így csak ritkán téveszt. Mindig nézd a gitárodat.",
+  "quoteFrom": "Mártondani tanácsa kezdő zenekaroknak"
+},
+{
+  "text": "Mindig legyél jóban a basszusgitárossal, mert általában ő a legerősebb. Legyél te a kutyája, ha arra kér. A cél az, hogy ne bántson. A jelszavad ezentúl: túlélés.",
+  "quoteFrom": "Mártondani tanácsa kezdő zenekaroknak"
+},
+{
+  "text": "Kezdő gitárosként sose gyakorolj. Csak várj.",
+  "quoteFrom": "Mártondani tanácsa kezdő zenekaroknak"
+},
+{
+  "text": "Legyen valami rendes állásod is, mert sosem fogsz tudni jól gitározni.",
+  "quoteFrom": "Mártondani tanácsa kezdő zenekaroknak"
+},
+{
+  "text": "Mindig a leghíresebb magyar zenészekkel fotózkodj, hogy többen kövessenek az instán.",
+  "quoteFrom": "Mártondani tanácsa kezdő zenekaroknak"
+},
+{
+  "text": "Mindig lepd meg a közönséged valamivel. Ha nincs ötleted, akkor a mikulás ruha mindig beválik.",
+  "quoteFrom": "Mártondani tanácsa kezdő zenekaroknak"
+},
+{
+  "text": "Mindig olyan gitárt vegyél, amelyik a legolcsóbb, még akkor is ha sok pénzed van.",
+  "quoteFrom": "Mártondani tanácsa kezdő zenekaroknak"
+},
+{
+  "text": "Mindig érdekeljen mit mondanak mások, és ne legyen saját véleményed.",
+  "quoteFrom": "Mártondani tanácsa kezdő zenekaroknak"
+},
+{
+  "text": "Mindig ügyelj arra, hogy sose járasd le magad.",
+  "quoteFrom": "Mártondani tanácsa kezdő zenekaroknak"
+}
+]
