@@ -1,6 +1,6 @@
 import { useState, useRef, useCallback, useMemo } from "react";
 import { FaRegPlayCircle, FaRegPauseCircle } from "react-icons/fa";
-import { ITrack } from "../../types";
+import { ITrack, VIEWMODE } from "../../types";
 
 const MS_IN_MINUTE = 60000;
 const MS_IN_SECOND = 1000;
@@ -21,7 +21,8 @@ export const Track = ({
   name,
   duration_ms,
   track_number,
-}: ITrack) => {
+  view,
+}: ITrack & { view: VIEWMODE }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -48,11 +49,23 @@ export const Track = ({
   }, []);
 
   return (
-    <div className="flex flex-col border overflow-hidden shadow-lg item-small mb-4 md:mb-0 p-4 bg-white">
-      <div className="h-full w-full overflow-hidden relative">
+    <div
+      className={`${view === VIEWMODE.GRID && "flex-col"} 
+        flex border overflow-hidden shadow-lg item-small mb-4 md:mb-0 p-4 bg-white gap-2 justify-between
+      `}
+    >
+      <div
+        className={`${
+          view === VIEWMODE.GRID
+            ? "h-full w-full"
+            : "h-16 w-16 flex items-center"
+        } overflow-hidden relative`}
+      >
         <img
           src={image}
-          className={`h-full w-full object-cover object-top ${rotationClass}`}
+          className={`${
+            view === VIEWMODE.GRID ? "h-full w-full" : "h-16 w-16"
+          } object-cover object-top ${rotationClass}`}
         />
 
         {isPlaying ? (
@@ -60,20 +73,28 @@ export const Track = ({
             onClick={() => setPlayState(false)}
             onMouseLeave={() => setPlayState(false)}
             className={iconStyle}
-            size="9em"
+            size={view === VIEWMODE.GRID ? "9em" : "3em"}
           />
         ) : (
           <FaRegPlayCircle
             onClick={() => setPlayState(true)}
             onMouseLeave={() => setPlayState(false)}
             className={`${iconStyle} opacity-0 hover:opacity-100`}
-            size="9em"
+            size={view === VIEWMODE.GRID ? "9em" : "3em"}
           />
         )}
       </div>
 
-      <div className="bg-white pt-2">
-        <span className="font-black text-gray-900 pb-2 uppercase truncate">
+      <div
+        className={`${
+          view === VIEWMODE.LINE ? "flex gap-2 items-center" : "pt-2"
+        } bg-white`}
+      >
+        <span
+          className={`${
+            view === VIEWMODE.GRID ? "pb-2" : ""
+          } font-black text-gray-900 uppercase truncate`}
+        >
           {track_number}. {name}
         </span>{" "}
         <span className="text-gray-700">{calculateDuration(duration_ms)}</span>

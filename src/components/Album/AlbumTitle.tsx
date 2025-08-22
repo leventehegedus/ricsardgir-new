@@ -1,10 +1,18 @@
-import { IAlbum } from "../../types";
+import { IAlbum, VIEWMODE } from "../../types";
 
-export const AlbumTitle = ({ album }: { album: IAlbum }) => (
+export const AlbumTitle = ({
+  album,
+  view,
+}: {
+  album: IAlbum;
+  view: VIEWMODE;
+}) => (
   <a
     href={album?.external_urls?.spotify}
     target="_blank"
-    className="md:h-16 font-black text-gir-500 item-small"
+    className={`${
+      view === VIEWMODE.GRID ? "md:h-16" : ""
+    } font-black text-gir-500 item-small`}
   >
     <div className="text-3xl">{album?.name}</div>
     <br />
